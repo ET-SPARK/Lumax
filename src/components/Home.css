@@ -1,0 +1,334 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.gallery__image {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.hero_section__heading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    /* Center the text horizontally */
+    z-index: 1;
+    /* Place the heading on top of the image */
+}
+
+.section_heading {
+    font-size: 24px;
+    color: white;
+    font-weight: bold;
+    margin: 0;
+    /* Remove default margin */
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px 20px;
+}
+
+
+/* Style the "Hello" text if needed */
+.hero_section__heading div:last-child p {
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
+}
+
+.hero__buttons {
+    display: block;
+    position: relative;
+    text-align: center;
+    margin-bottom: -16px;
+    padding-top: 16px;
+}
+
+.button {
+    font-size: 16px;
+    color: #fff;
+    background: #ab3b3f;
+    display: inline-block;
+    height: 60px;
+    line-height: 60px;
+    text-decoration: none;
+    text-align: center;
+    padding: 0 48px;
+    border-radius: 4px;
+    transition: background-color .2s ease-in-out;
+    cursor: pointer;
+    border: 0;
+    margin-left: 16px;
+    margin-bottom: 16px;
+}
+
+.button_size_small {
+    height: 40px;
+    line-height: 40px;
+    padding: 0 24px;
+}
+
+.section__heading_align_center {
+    text-align: center;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* Create a 3x3 grid */
+    gap: 20px;
+    /* Adjust the gap between grid items */
+    margin-right: 100px;
+    margin-left: 100px;
+}
+
+.grids {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* Create a 3x3 grid */
+    gap: 20px;
+    /* Adjust the gap between grid items */
+    margin-right: 100px;
+    margin-left: 100px;
+    margin-top: 20px;
+}
+
+.single_grid {
+    position: relative;
+    overflow: hidden;
+}
+
+.property_card {
+    display: block;
+    text-decoration: none;
+}
+
+.grid_img {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.2s;
+    /* Add a smooth hover effect if needed */
+}
+
+.grid_img:hover {
+    transform: scale(1.05);
+    /* Add a slight zoom effect on hover */
+}
+
+.property-card__price {
+    background-color: #ab3b3f;
+    padding: 8px 16px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    /* Display the spans in a column layout */
+    align-items: flex-start;
+}
+
+.card__price_text {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.property-card__summary {
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.property-card__details {
+    padding: 12px 16px;
+    background: #f6f7f9;
+    display: flex;
+    flex-direction: column;
+    /* Display the spans in a column layout */
+    align-items: flex-start;
+}
+
+.property-card__heading {
+    text-decoration: none;
+    color: #000;
+    font-size: 14px;
+    font-weight: 700;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+
+
+}
+
+.property-card__discription {
+    text-decoration: none;
+    color: #000;
+    margin-top: 8px;
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.property-card__features {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 8px;
+    text-decoration: none;
+    color: #000;
+}
+
+.property-card__features_bed {
+    margin-right: 10px;
+}
+
+.section_type_story {
+    background: #f6f7f9;
+    margin-top: 50px;
+}
+
+
+.section__heading {
+    background: #f6f7f9;
+}
+
+.section__heading_area {
+    margin: 20px 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.section__heading_head {
+    font-size: 32px;
+    font-weight: 700;
+    color: #000;
+    padding-bottom: 20px;
+}
+
+.section__paragraph {
+    font-size: 14px;
+    font-weight: 100;
+    color: #000;
+    margin: 10px;
+}
+
+.section__background-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(35, 31, 32, .85);
+}
+
+.grid_cols_3 {
+    background: #f6f7f9;
+    margin-top: 20px;
+    padding-top: 40px;
+}
+
+.property__card {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 700;
+    text-decoration: none;
+    margin: 20px;
+}
+
+.single_grid_text {
+    background-color: #ab3b3f;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+
+}
+
+.about_story {
+    margin-top: 50px;
+}
+
+.section___heading_align_center {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 700;
+    color: #000;
+    padding-bottom: 20px;
+}
+
+.container_type_global {
+    display: flex;
+    flex-direction: row;
+}
+
+.container_type_global_image {
+    border: 5px;
+}
+
+.article_card__details {
+    padding: 0 10px;
+}
+
+.article_card__heading {
+    font-size: 18px;
+    font-weight: 700;
+    margin-top: 24px;
+    color: #000;
+}
+
+.article_card__summary {
+    margin-top: 12px;
+    color: #343434;
+    font-size: 14px;
+}
+
+.grid2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* Create a 3x3 grid */
+    gap: 20px;
+    /* Adjust the gap between grid items */
+    margin-right: 70px;
+    margin-left: 70px;
+}
+
+@media screen and (max-width: 768px) {
+    .grids {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        /* Create a 3x3 grid */
+        gap: 20px;
+        /* Adjust the gap between grid items */
+        margin-right: 50px;
+        margin-left: 50px;
+        margin-top: 20px;
+    }
+
+    .property__card {
+        color: #fff;
+        font-size: 18px;
+        font-weight: 700;
+        text-decoration: none;
+        margin: 20px;
+    }
+
+    .grid {
+        /* Adjust the gap between grid items */
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+
+    .container_type_global {
+        display: block;
+    }
+
+    .container_type_global_image img {
+        width: 50%;
+    }
+
+}

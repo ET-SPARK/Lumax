@@ -1,0 +1,107 @@
+.contact__office {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact__office_heading {
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 20px;
+    margin-left: 100px;
+    margin-top: 20px;
+}
+
+.contact__detail_key {
+    font-weight: 700;
+    flex-basis: 100px;
+    font-size: 14px;
+}
+
+.contact__detail_value {
+    font-size: 14px;
+    margin-left: 20px;
+}
+
+.contact__details_space {
+    margin: 5px 0;
+    margin-left: 100px;
+}
+
+.contact__detail_value_red {
+    font-size: 14px;
+    margin-left: 20px;
+    color: red;
+}
+
+.contact__details {
+    display: flex;
+
+    justify-content: space-around;
+}
+
+.dropdown_input {
+    border: 2px solid gray;
+    padding: 10px 0px;
+    padding-right: 50px;
+    padding-left: 5px;
+    font-size: 14px;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.dropdown_input_option {
+    background: #ab3b3f;
+    text-align: start;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* Create a 3x3 grid */
+    gap: 20px;
+    grid-row-gap: 20px;
+    /* Adjust the gap between grid items */
+
+}
+
+.form {
+    margin-top: 50px;
+}
+
+.textare {
+    margin: 20px 100px;
+}
+
+.form__disclaimer {
+    margin-top: 32px;
+    margin-left: 100px;
+}
+
+.form__disclaimer a {
+    color: #ab3b3f;
+    text-decoration: none;
+    cursor: pointer;
+
+}
+
+.form__disclaimer {
+    display: flex;
+    flex-direction: column;
+}
+
+.submit {
+    background: #ab3b3f;
+    color: #fff;
+    margin-top: 10px;
+    box-shadow: none;
+    border-color: #ab3b3f;
+    border: #ab3b3f;
+    border-radius: 3px;
+    padding: 10px 20px;
+}
+
+@media screen and (max-width: 768px) {
+    .contact__office img {
+        display: none;
+    }
+}

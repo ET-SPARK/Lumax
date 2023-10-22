@@ -1,0 +1,165 @@
+.headerSection {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 120px;
+    margin-right: 120px;
+    align-items: center;
+
+    position: static;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+li {
+    margin-right: 30px;
+}
+
+li:last-child {
+    margin-right: 0;
+    /* Remove margin from the last item to prevent spacing */
+}
+
+.header__topbar {
+    height: 110px;
+}
+
+.header__logo {
+    width: 100%;
+    height: 85%;
+}
+
+.link_style {
+    color: #000;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.non_link_hov:hover {
+    color: red;
+}
+
+.link_style:hover {
+    color: red;
+}
+
+.lik:hover {
+    color: red;
+}
+
+.dropdown {
+    position: static;
+}
+
+.sticky-header {
+    position: sticky;
+    top: 0;
+    /* Adjust the value as needed */
+    z-index: 100;
+    /* Adjust the z-index as needed */
+    background-color: #fff;
+    box-shadow: 0 0 10px gray;
+    /* Customize the background color for the sticky header */
+    /* Add any other styles you need for the sticky header */
+}
+
+.prop {
+    position: absolute;
+    top: 5em;
+    left: 41em;
+    background-color: white;
+    padding: 30px 30px !important;
+    border-radius: 3px;
+    box-shadow: 0 0 10px gray;
+    /* Adjust the shadow color and size as needed */
+    color: #000;
+}
+
+.prop_style {
+    display: flex !important;
+    flex-direction: column !important;
+    padding: 10px 10px !important;
+    margin-right: 0px !important;
+}
+
+.prop_style span {
+    margin: 10px 10px;
+}
+
+.prop_style a {
+    text-decoration: none;
+    color: #000;
+    font-size: 14px;
+}
+
+.navList_Properties {
+    display: block;
+}
+
+.navList_Properties a {
+    text-decoration: none;
+    color: #000;
+    font-size: 14px;
+}
+
+.navList_Properties a:hover {
+    color: red;
+}
+
+@media screen and (min-width: 768px) {
+    .bars-icon {
+        display: none;
+    }
+
+    .navList_Properties {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .header__logo {
+        width: 60%;
+        height: 100%;
+        margin-top: 20px;
+        margin-left: 20px;
+    }
+
+    .navList {
+        display: block;
+        margin: 20px 20px;
+    }
+
+    .navList li {
+        padding: 10px 0;
+    }
+
+    .headerSection {
+        display: block;
+        margin-left: 0;
+    }
+
+    .header__topbar {
+        display: flex;
+        align-items: center;
+    }
+
+    .bars-icon {
+        display: block;
+        position: absolute;
+        top: 30px;
+        right: 10px;
+        z-index: 999;
+        /* Adjust the z-index as needed */
+        font-size: 24px;
+        /* Adjust the size as needed */
+        cursor: pointer;
+    }
+
+    .prop {
+        display: none;
+    }
+}
