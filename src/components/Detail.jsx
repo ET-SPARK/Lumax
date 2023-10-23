@@ -92,7 +92,7 @@ function Detail() {
       </div>
       <form className="form_detail">
         <h3>Make an enquiry</h3>
-        <span>
+        <span className="form_detail_subtitle">
           Interested in this property? Please fill in your details below, and we
           will contact you as soon as possible.
         </span>
