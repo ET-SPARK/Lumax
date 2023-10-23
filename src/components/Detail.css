@@ -106,10 +106,11 @@
         margin-left: 50px;
     }
 
+    .property__detail_summary h1 {
+        font-size: 18px;
+    }
+
     .detail_prop_style {
-        position: absolute;
-        top: 22.5em;
-        right: 12.5em;
         background-color: white;
         padding: 30px 30px !important;
         border-radius: 3px;

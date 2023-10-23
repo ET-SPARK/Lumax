@@ -40,19 +40,7 @@ function Detail() {
             onClick={() => {
               handleOnPress(setOnPress);
             }}
-          >
-            <FontAwesomeIcon icon={faCaretDown} />
-
-            {onPress && (
-              <span className="detail_prop_style">
-                <span>
-                  <a href="#">
-                    <b>$&nbsp;148</b>
-                  </a>
-                </span>
-              </span>
-            )}
-          </div>
+          ></div>
         </div>
       </div>
       <div className="detail_section_type_property">
