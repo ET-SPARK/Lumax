@@ -16,7 +16,7 @@
 }
 
 .property__detail_summary_header h1 {
-    color: lightslategray;
+    color: black;
     font-size: 28px;
 }
 
@@ -98,4 +98,27 @@
 
 .form_detail h3 span {
     text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+    .property__detail_summary {
+        display: block;
+        margin-left: 50px;
+    }
+
+    .detail_prop_style {
+        position: absolute;
+        top: 22.5em;
+        right: 12.5em;
+        background-color: white;
+        padding: 30px 30px !important;
+        border-radius: 3px;
+        box-shadow: 0 0 10px gray;
+        /* Adjust the shadow color and size as needed */
+        color: #000;
+        display: flex !important;
+        flex-direction: column !important;
+        padding: 10px 10px !important;
+        margin-right: 0px !important;
+    }
 }

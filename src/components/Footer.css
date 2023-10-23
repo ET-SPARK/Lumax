@@ -109,4 +109,17 @@
     .footer__navigation_block a {
         font-size: 12px;
     }
+
+    .footer__bottom {
+        display: block;
+    }
+
+    .footer__bottom span {
+        margin-left: 50px;
+    }
+
+    .footer__bottom img {
+        margin-top: 20px;
+        margin-left: 20px;
+    }
 }

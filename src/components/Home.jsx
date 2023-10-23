@@ -367,41 +367,32 @@ function Home() {
       <div class="section_type_story">
         <div class="section__heading">
           <div class="grid grid_cols_3">
-            <div class="single_grid single_grid_text">
-              <a href="#" class="property__card">
+            <a href="#" class=" single_grid_text">
+              <div class="property__card">
                 {" "}
-                For Sale <FontAwesomeIcon icon={faBuilding} />
-              </a>
-            </div>
-            <div class="single_grid single_grid_text">
-              <a href="#" class="property__card">
+                For Sale
+                <FontAwesomeIcon icon={faBuilding} />
+              </div>
+            </a>
+            <a href="#" class=" single_grid_text">
+              <div class="property__card">
                 {" "}
-                For Rent <FontAwesomeIcon icon={faBuildingUser} />
-              </a>
-            </div>
-            <div class="single_grid single_grid_text">
-              <a href="#" class="property__card">
-                {" "}
-                Commercial
-              </a>
-            </div>
-            <div class="single_grid single_grid_text">
-              <a href="#" class="property__card">
-                {" "}
-                List With Us
-              </a>
-            </div>
-            <div class="single_grid single_grid_text">
-              <a href="#" class="property__card">
-                {" "}
-                Property Alerts
-              </a>
-            </div>
-            <div class="single_grid single_grid_text ">
-              <a href="#" class="property__card">
-                Bond Calculator
-              </a>
-            </div>
+                For Rent
+                <FontAwesomeIcon icon={faBuildingUser} />
+              </div>
+            </a>
+            <a href="#" class=" single_grid_text">
+              <div class="property__card"> Commercial</div>
+            </a>
+            <a href="#" class=" single_grid_text">
+              <div class="property__card"> List With Us</div>
+            </a>
+            <a href="#" class=" single_grid_text">
+              <div class="property__card"> Property Alerts</div>
+            </a>
+            <a href="#" class=" single_grid_text">
+              <div class="property__card"> Bond Calculator</div>
+            </a>
           </div>
           <div class="section__heading_area">
             <span class="section__heading_head">

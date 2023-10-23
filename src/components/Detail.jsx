@@ -16,11 +16,17 @@ function Detail() {
       <Header />
       <div className="property__detail_summary">
         <div className="property__detail_summary_header">
-          <h1>0.5 BEDROOM FLAT TO RENT IN MUCKLENEUK.</h1>
-          <span>
-            <b>Ref # 2195619&nbsp;:&nbsp;</b>
-            Apartment in Muckleneuk
-          </span>
+          <div>
+            {" "}
+            <h1>0.5 BEDROOM FLAT TO RENT IN MUCKLENEUK.</h1>
+          </div>
+          <div>
+            {" "}
+            <span>
+              <b>Ref # 2195619&nbsp;:&nbsp;</b>
+              Apartment in Muckleneuk
+            </span>
+          </div>
         </div>
         <div className="property__detail_summary_price">
           <div>
@@ -36,6 +42,7 @@ function Detail() {
             }}
           >
             <FontAwesomeIcon icon={faCaretDown} />
+
             {onPress && (
               <span className="detail_prop_style">
                 <span>
