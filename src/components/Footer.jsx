@@ -6,6 +6,7 @@ import {
   faEnvelope,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Logo from "../images/LUMAX.png";
 
 function Footer() {
   return (
@@ -136,10 +137,14 @@ function Footer() {
           <span>© Huurkor. All rights reserved</span>
         </div>
         <div className="footer__bottom_logo">
-          <span>Powered by</span>
-          <a>
-            <img src="https://www.huurkor.co.za/assets/media/entegral-flex.2bc50e5844a02d4798efd5fdb25caf41.png" />
-          </a>
+          <div>
+            <span>Powered by</span>
+          </div>
+          <div>
+            <a>
+              <img src={Logo} alt="logo" />
+            </a>
+          </div>
         </div>
       </div>
     </div>

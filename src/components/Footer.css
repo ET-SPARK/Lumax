@@ -85,11 +85,16 @@
 }
 
 .footer__bottom_logo span {
-    font-size: 14px;
+    font-size: 18px;
 }
 
 .footer__bottom span {
     font-size: 14px;
+}
+
+.footer__bottom_logo img {
+    width: 200px;
+    margin-left: 20px;
 }
 
 @media screen and (max-width: 768px) {
@@ -116,10 +121,17 @@
 
     .footer__bottom span {
         margin-left: 50px;
+        margin-left: 100px;
     }
 
     .footer__bottom img {
         margin-top: 20px;
         margin-left: 20px;
+    }
+
+    .footer__bottom_logo {
+        display: block;
+        margin-left: 100px;
+        margin-top: 10px;
     }
 }

@@ -8,7 +8,7 @@ import {
   faXmark,
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
-
+import Logo from "../images/LUMAX.png";
 function Header() {
   const [onPress, setOnPress] = useState(false);
   const [onpressNav, setOnPressNav] = useState(true);
@@ -25,12 +25,9 @@ function Header() {
     <header class="sticky-header">
       <div class="headerSection">
         <div class="header__topbar">
-          <a href="./">
-            <img
-              src="https://www.huurkor.co.za/assets/media/logo.53ea496a4ecbaae8e2ed6770774f6be6.jpg"
-              class="header__logo"
-            />
-          </a>
+          <Link to="/">
+            <img src={Logo} alt="logo" class="header__logo" />
+          </Link>
           {onpressNav ? (
             <FontAwesomeIcon
               icon={faXmark}
