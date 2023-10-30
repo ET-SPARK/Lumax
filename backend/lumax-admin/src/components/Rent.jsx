@@ -211,6 +211,7 @@ function Rent() {
       <div class="grids">
         {posts
           .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
+          .slice(0, 3) // Get only the first 3 posts
           .map((post) => (
             <div key={post._id} class="single_grid">
               <a href="/detail" class="property_card">
