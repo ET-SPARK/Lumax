@@ -6,7 +6,7 @@ const postSchema = new mongoose.Schema({
     required: true,
   },
   price: {
-    type: Number,
+    type: String,
     required: true,
   },
   type: {
@@ -18,7 +18,7 @@ const postSchema = new mongoose.Schema({
     required: true,
   },
   numberOfBed: {
-    type: Number,
+    type: String,
     required: true,
   },
   title: {
@@ -30,11 +30,11 @@ const postSchema = new mongoose.Schema({
     required: true,
   },
   numberOfBath: {
-    type: Number,
+    type: String,
     required: true,
   },
   numberOfGarage: {
-    type: Number,
+    type: String,
     required: true,
   },
   propertySize: {

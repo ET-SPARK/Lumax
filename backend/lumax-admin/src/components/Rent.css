@@ -53,6 +53,7 @@ button {
     margin-right: 100px;
     margin-left: 100px;
     margin-top: 20px;
+    margin-bottom: 50px;
 }
 
 .single_grid {
@@ -157,4 +158,12 @@ button {
 .overlay-text p {
     margin: 0;
     /* Remove default margin */
+}
+
+.view_section__content_link {
+    color: #ab3b3f;
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 100px;
+    margin-top: 150px;
 }
