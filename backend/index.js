@@ -31,20 +31,50 @@ const Post = require("./models/post");
 
 app.post("/post", async (req, res) => {
   try {
-    // Extract data from the request body
-    const { number_of_rooms, size_of_house, description } = req.body;
-    // Create a new Post document
+    const {
+      image,
+      price,
+      type,
+      place,
+      numberOfBed,
+      title,
+      description,
+      numberOfBath,
+      numberOfGarage,
+      propertySize,
+      status,
+    } = req.body;
+
     const newPost = new Post({
-      number_of_rooms, // Use the data from the request body
-      size_of_house, // Use the data from the request body
-      description, // Use the data from the request body
+      image,
+      price,
+      type,
+      place,
+      numberOfBed,
+      title,
+      description,
+      numberOfBath,
+      numberOfGarage,
+      propertySize,
+      status,
     });
-    // Save the new document to the database
+
     const savedPost = await newPost.save();
-    // Respond with a success message
     res.status(200).json({ message: "Post successful", data: savedPost });
   } catch (error) {
     console.error("Error posting", error);
     res.status(500).json({ message: "Error posting", error: error.message });
+  }
+});
+
+app.get("/posts", async (req, res) => {
+  try {
+    const posts = await Post.find(); // Retrieve all posts from the database
+    res.status(200).json(posts);
+  } catch (error) {
+    console.error("Error retrieving posts", error);
+    res
+      .status(500)
+      .json({ message: "Error retrieving posts", error: error.message });
   }
 });

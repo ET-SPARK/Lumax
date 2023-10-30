@@ -1,0 +1,160 @@
+h2 {
+    text-align: center;
+    color: #ab3b3f;
+    ;
+}
+
+.my-form {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 16px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #ab3b3f;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.grids {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* Create a 3x3 grid */
+    gap: 20px;
+    /* Adjust the gap between grid items */
+    margin-right: 100px;
+    margin-left: 100px;
+    margin-top: 20px;
+}
+
+.single_grid {
+    position: relative;
+    overflow: hidden;
+}
+
+.property_card {
+    display: block;
+    text-decoration: none;
+}
+
+.grid_img {
+    width: 500px;
+    height: 300px;
+    display: block;
+    transition: transform 0.2s;
+    /* Add a smooth hover effect if needed */
+}
+
+.grid_img:hover {
+    transform: scale(1.05);
+    /* Add a slight zoom effect on hover */
+}
+
+.property-card__price {
+    background-color: #ab3b3f;
+    padding: 8px 16px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    /* Display the spans in a column layout */
+    align-items: flex-start;
+}
+
+.card__price_text {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.property-card__summary {
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.property-card__details {
+    padding: 12px 16px;
+    background: #f6f7f9;
+    display: flex;
+    flex-direction: column;
+    /* Display the spans in a column layout */
+    align-items: flex-start;
+}
+
+.property-card__heading {
+    text-decoration: none;
+    color: #000;
+    font-size: 14px;
+    font-weight: 700;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+
+
+}
+
+.property-card__discription {
+    text-decoration: none;
+    color: #000;
+    margin-top: 8px;
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.property-card__features {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 8px;
+    text-decoration: none;
+    color: #000;
+}
+
+.property-card__features_bed {
+    margin-right: 10px;
+}
+
+.post-container {
+    position: relative;
+}
+
+.overlay-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Add background color with transparency */
+    color: white;
+    padding: 10px;
+}
+
+/* Style the <p> text within the overlay */
+.overlay-text p {
+    margin: 0;
+    /* Remove default margin */
+}
