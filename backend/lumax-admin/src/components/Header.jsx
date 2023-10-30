@@ -51,6 +51,11 @@ function Header() {
                     Home
                   </Link>
                 </li>
+                <li>
+                  <Link to="/contact" class="link_style">
+                    Contact
+                  </Link>
+                </li>
                 <li class="non_link_hov">
                   <span
                     onClick={() => {
@@ -92,7 +97,7 @@ function Header() {
                 </li>
                 <li>
                   <Link to="/tools" class="link_style">
-                    Tools&nbsp; <FontAwesomeIcon icon={faCaretDown} />
+                    Tools
                   </Link>
                 </li>
                 <li>
@@ -100,21 +105,7 @@ function Header() {
                     News
                   </Link>
                 </li>
-                <li>
-                  <Link to="/about" class="link_style">
-                    About Us
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/contact" class="link_style">
-                    Contact
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/favourites" class="link_style">
-                    Favourites
-                  </Link>
-                </li>
+
                 <li>
                   <Link to="/likes" class="link_style">
                     <FontAwesomeIcon icon={faHeart} />
