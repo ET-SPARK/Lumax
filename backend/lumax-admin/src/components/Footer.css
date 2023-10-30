@@ -1,0 +1,137 @@
+.footer__top {
+    margin-top: 80px;
+    padding: 50px 0;
+    background-color: #211d1e;
+    color: #fff;
+}
+
+.footer__bottom {
+    padding: 20px 0;
+    background-color: #1d191a;
+    color: rgba(255, 255, 255, .8);
+}
+
+.footet_top_col {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer_top_row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.footer_top_row_footer_heading {
+    color: #fff;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 20px
+}
+
+.footer_top_row_footer_heading_links {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer_top_row_footer_heading_links_style {
+    cursor: pointer;
+    color: #fff;
+    font-size: 14px;
+}
+
+.footer_top_row_footer_heading_links_style_icon_text {
+    margin-left: 5px;
+}
+
+.footer_top_row_footer_heading_links_style_icon {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.footer_top_row_footer_heading_links2 {
+    margin-left: 115px;
+    margin-top: 30px;
+}
+
+.footer__navigation_block_text {
+    font-size: 14px;
+    font-weight: 700;
+    margin: 10px;
+}
+
+.footer__navigation_block {
+    padding: 5px;
+}
+
+.footer__navigation_block_text_link {
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 300;
+    margin-left: 5px;
+    color: white;
+}
+
+.footer__bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.footer__bottom_logo {
+    display: flex;
+    align-items: center;
+}
+
+.footer__bottom_logo span {
+    font-size: 18px;
+}
+
+.footer__bottom span {
+    font-size: 14px;
+}
+
+.footer__bottom_logo img {
+    width: 200px;
+    margin-left: 20px;
+}
+
+@media screen and (max-width: 768px) {
+    .footer_top_row {
+        display: block;
+        margin-left: 30px;
+    }
+
+    .footer_top_row_footer_heading_links2 {
+        margin-left: 10px !important;
+    }
+
+    .footer__navigation_block span {
+        font-size: 12px;
+    }
+
+    .footer__navigation_block a {
+        font-size: 12px;
+    }
+
+    .footer__bottom {
+        display: block;
+    }
+
+    .footer__bottom span {
+        margin-left: 50px;
+        margin-left: 100px;
+    }
+
+    .footer__bottom img {
+        margin-top: 20px;
+        margin-left: 20px;
+    }
+
+    .footer__bottom_logo {
+        display: block;
+        margin-left: 100px;
+        margin-top: 10px;
+    }
+}
