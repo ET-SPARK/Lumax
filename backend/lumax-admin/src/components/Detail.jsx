@@ -1,143 +1,237 @@
-import React, { useState } from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import Footer from "./Footer";
 import Header from "./Header";
 import "./Detail.css";
+import {
+  faBed,
+  faBath,
+  faVectorSquare,
+  faWarehouse,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCaretDown, faLocationDot } from "@fortawesome/free-solid-svg-icons";
+import { Link, useParams } from "react-router-dom";
 
 function Detail() {
-  const [onPress, setOnPress] = useState(false);
+  const [formData, setFormData] = useState({
+    image: "",
+    price: "",
+    type: "",
+    place: "",
+    numberOfBed: "",
+    title: "",
+    description: "",
+    numberOfBath: "",
+    numberOfGarage: "",
+    propertySize: "",
+    status: "",
+    ref: "",
+  });
+  const { postId } = useParams();
 
-  const handleOnPress = () => {
-    setOnPress(!onPress);
+  useEffect(() => {
+    // Fetch the specific post based on postId when the component mounts
+    async function fetchPostData() {
+      try {
+        const response = await axios.get(
+          `http://localhost:3000/post/${postId}`
+        );
+        const postData = response.data;
+
+        // Log the retrieved data to the console
+        console.log("Fetched data:", postData);
+
+        // Set the formData state with the retrieved data
+        setFormData({
+          image: postData.image,
+          price: postData.price,
+          type: postData.type,
+          place: postData.place,
+          numberOfBed: postData.numberOfBed,
+          title: postData.title,
+          description: postData.description,
+          numberOfBath: postData.numberOfBath,
+          numberOfGarage: postData.numberOfGarage,
+          propertySize: postData.propertySize,
+          status: postData.status,
+          ref: postData.ref,
+        });
+      } catch (error) {
+        console.error("Error fetching post data:", error);
+      }
+    }
+
+    if (postId) {
+      fetchPostData();
+    }
+  }, [postId]);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
   };
+
+  const handleUpdate = async () => {
+    try {
+      const response = await axios.put(
+        `http://localhost:3000/post/${postId}`,
+        formData
+      );
+      console.log("Post updated successfully:", response.data);
+      alert("Post updated successfully");
+    } catch (error) {
+      console.error("Error updating post:", error);
+    }
+  };
+
+  const handleDelete = async () => {
+    try {
+      await axios.delete(`http://localhost:3000/post/${postId}`);
+      console.log("Post deleted successfully");
+      alert("Post deleted successfully");
+      // You can redirect to another page after deletion if needed
+    } catch (error) {
+      console.error("Error deleting post:", error);
+    }
+  };
+
   return (
     <div>
       <Header />
-      <div className="property__detail_summary">
-        <div className="property__detail_summary_header">
+      <h2>Edit house for rent</h2>
+      <form>
+        <div className="form_flex">
           <div>
-            {" "}
-            <h1>0.5 BEDROOM FLAT TO RENT IN MUCKLENEUK.</h1>
+            <div className="form-group1">
+              <label htmlFor="image">Image URL:</label>
+              <input
+                type="text"
+                id="image"
+                name="image"
+                value={formData.image}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="form-group1">
+              <label htmlFor="price">Price:</label>
+              <input
+                type="text"
+                id="price"
+                name="price"
+                value={formData.price}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="form-group1">
+              <label htmlFor="numberOfBed">Number of Beds:</label>
+              <input
+                type="text"
+                id="numberOfBed"
+                name="numberOfBed"
+                value={formData.numberOfBed}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="form-group1">
+              <label htmlFor="description">Description:</label>
+              <input
+                type="text"
+                id="description"
+                name="description"
+                value={formData.description}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="form-group1">
+              <label htmlFor="numberOfGarage">Number of Garages:</label>
+              <input
+                type="text"
+                id="numberOfGarage"
+                name="numberOfGarage"
+                value={formData.numberOfGarage}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="form-group1">
+              <label htmlFor="propertySize">Property Size:</label>
+              <input
+                type="text"
+                id="propertySize"
+                name="propertySize"
+                value={formData.propertySize}
+                onChange={handleChange}
+              />
+            </div>
           </div>
           <div>
-            {" "}
-            <span>
-              <b>Ref # 2195619&nbsp;:&nbsp;</b>
-              Apartment in Muckleneuk
-            </span>
+            <div className="form-group1">
+              <label htmlFor="type">Type:</label>
+              <input
+                type="text"
+                id="type"
+                name="type"
+                value={formData.type}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="form-group1">
+              <label htmlFor="place">Place:</label>
+              <input
+                type="text"
+                id="place"
+                name="place"
+                value={formData.place}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="form-group1">
+              <label htmlFor="title">Title:</label>
+              <input
+                type="text"
+                id="title"
+                name="title"
+                value={formData.title}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="form-group1">
+              <label htmlFor="numberOfBath">Number of Baths:</label>
+              <input
+                type="text"
+                id="numberOfBath"
+                name="numberOfBath"
+                value={formData.numberOfBath}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="form-group1">
+              <label htmlFor="status">Status:</label>
+              <input
+                type="text"
+                id="status"
+                name="status"
+                value={formData.status}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="form-group1">
+              <label htmlFor="Ref">Ref number:</label>
+              <input
+                type="text"
+                id="ref"
+                name="ref"
+                value={formData.ref}
+                onChange={handleChange}
+              />
+            </div>
           </div>
         </div>
-        <div className="property__detail_summary_price">
-          <div>
-            {" "}
-            <h3>R &nbsp;2,810&nbsp;</h3>
-          </div>
-          <div>
-            / &nbsp;<b>month</b> &nbsp;
-          </div>
-          <div
-            onClick={() => {
-              handleOnPress(setOnPress);
-            }}
-          ></div>
-        </div>
-      </div>
-      <div className="detail_section_type_property">
-        <div className="detail_section_type_property_dev_img">
-          <img src="https://d4dw57nojnba9.cloudfront.net/eyJidWNrZXQiOiJzMy5lbnRlZ3JhbC5uZXQiLCJrZXkiOiJiL2ZfMWUzZTFmMjUzNTQwNDRkZDgyMWYyNGQ5OWViNGVkNDIuanBnIiwiZm9ybWF0IjoianBlZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTAwMCwiaGVpZ2h0IjoxMDAwLCJmaXQiOiJpbnNpZGUifX19" />
-        </div>
-        <div className="detail_section_type_property_dev_img">
-          <div className="detail_section_type_property_col">
-            <h3>Property Details</h3>
-            <span>
-              <FontAwesomeIcon icon={faLocationDot} />
-              &nbsp; <b>Crevillea St, Rosanne, 7</b>
-            </span>
-            <span>
-              Kitchen Living area Bathroom. Close to all shops and public
-              transport. Located close to schools and other amenities Available
-              Immediately Covered parking available at no additional cost.
-            </span>
-            <h3>Property Features</h3>
-            <span>
-              <b>Property Type:&nbsp;&nbsp;</b>Apartment
-            </span>
-            <span>
-              <b>Bedrooms:&nbsp;&nbsp;</b>2
-            </span>
-            <span>
-              <b>Bathrooms:&nbsp;&nbsp;</b>1
-            </span>
-            <span>
-              <b>Covered Parking:&nbsp;&nbsp;</b>yes
-            </span>
-            <span>
-              <b>Garden:&nbsp;&nbsp;</b>yes
-            </span>
-          </div>
-        </div>
-      </div>
-      <form className="form_detail">
-        <h3>Make an enquiry</h3>
-        <span className="form_detail_subtitle">
-          Interested in this property? Please fill in your details below, and we
-          will contact you as soon as possible.
-        </span>
-        <div className="textare">
-          <input
-            type="text"
-            id="name"
-            name="name"
-            className="dropdown_input"
-            value="Name"
-          />
-        </div>
-        <div className="textare">
-          <input
-            type="email"
-            id="email"
-            name="email"
-            className="dropdown_input"
-            value="Email"
-          />
-        </div>
-        <div className="textare">
-          <input
-            type="text"
-            id="phone"
-            name="phone"
-            className="dropdown_input"
-            value="Phone"
-          />
-        </div>
-        <div className="textare">
-          <input
-            className="dropdown_input"
-            id="area"
-            name="area"
-            value="Area"
-          />
-        </div>
-        <div className="textare">
-          <textarea
-            className="dropdown_input"
-            id="comments"
-            name="comments"
-            value="Message"
-          ></textarea>
-        </div>
-        <div className="form__disclaimer">
-          {" "}
-          <span>
-            By clicking on "submit" you agree to our{" "}
-            <a href="#">privacy policy</a>
-          </span>
-          <span>
-            {" "}
-            <input type="submit" name="submit" className="submit" />
-          </span>
-        </div>
+        <button type="button" onClick={handleUpdate}>
+          Update
+        </button>
+        <button type="button" onClick={handleDelete}>
+          Delete
+        </button>
       </form>
       <Footer />
     </div>

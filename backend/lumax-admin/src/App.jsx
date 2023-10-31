@@ -19,7 +19,7 @@ function App() {
         <Route path="/for-sale" element={<Sale />} />
         <Route path="/for-rent" element={<Rent />} />
         <Route path="/for-rent-detail" element={<DetailRentView />} />
-        <Route path="/detail" element={<Detail />} />
+        <Route path="/detail/:postId" element={<Detail />} />
       </Routes>
     </Router>
   );

@@ -38,7 +38,7 @@ function DetailRentView() {
           .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
           .map((post) => (
             <div key={post._id} class="single_grid">
-              <Link to="/detail" class="property_card">
+              <Link to={`/detail/${post._id}`} class="property_card">
                 <div className="post-container">
                   <img className="grid_img" src={post.image} alt="Post" />
                   <div className="overlay-text">
