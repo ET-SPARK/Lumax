@@ -51,6 +51,7 @@ function Rent() {
     numberOfGarage: "",
     propertySize: "",
     status: "",
+    ref: "",
   });
 
   const handleChange = (e) => {
@@ -82,6 +83,7 @@ function Rent() {
           numberOfGarage: "",
           propertySize: "",
           status: "",
+          ref: "",
         });
       } catch (error) {
         console.error("Error sending form data:", error);
@@ -93,128 +95,142 @@ function Rent() {
     <div>
       <Header />
       <h2>Add house for rent</h2>
-      <div className="my-form">
-        <form onSubmit={handleSubmit}>
-          <div className="form-group">
-            <label htmlFor="image">Image URL:</label>
-            <input
-              type="text"
-              id="image"
-              name="image"
-              value={formData.image}
-              onChange={handleChange}
-            />
+      <form onSubmit={handleSubmit}>
+        <div className="form_flex">
+          <div>
+            <div className="form-group1">
+              <label htmlFor="image">Image URL:</label>
+              <input
+                type="text"
+                id="image"
+                name="image"
+                value={formData.image}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="form-group1">
+              <label htmlFor="price">Price:</label>
+              <input
+                type="text"
+                id="price"
+                name="price"
+                value={formData.price}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="form-group1">
+              <label htmlFor="numberOfBed">Number of Beds:</label>
+              <input
+                type="text"
+                id="numberOfBed"
+                name="numberOfBed"
+                value={formData.numberOfBed}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="form-group1">
+              <label htmlFor="description">Description:</label>
+              <input
+                type="text"
+                id="description"
+                name="description"
+                value={formData.description}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="form-group1">
+              <label htmlFor="numberOfGarage">Number of Garages:</label>
+              <input
+                type="text"
+                id="numberOfGarage"
+                name="numberOfGarage"
+                value={formData.numberOfGarage}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="form-group1">
+              <label htmlFor="propertySize">Property Size:</label>
+              <input
+                type="text"
+                id="propertySize"
+                name="propertySize"
+                value={formData.propertySize}
+                onChange={handleChange}
+              />
+            </div>
           </div>
-          <div className="form-group">
-            <label htmlFor="price">Price:</label>
-            <input
-              type="text"
-              id="price"
-              name="price"
-              value={formData.price}
-              onChange={handleChange}
-            />
+          <div>
+            <div className="form-group1">
+              <label htmlFor="type">Type:</label>
+              <input
+                type="text"
+                id="type"
+                name="type"
+                value={formData.type}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="form-group1">
+              <label htmlFor="place">Place:</label>
+              <input
+                type="text"
+                id="place"
+                name="place"
+                value={formData.place}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="form-group1">
+              <label htmlFor="title">Title:</label>
+              <input
+                type="text"
+                id="title"
+                name="title"
+                value={formData.title}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="form-group1">
+              <label htmlFor="numberOfBath">Number of Baths:</label>
+              <input
+                type="text"
+                id="numberOfBath"
+                name="numberOfBath"
+                value={formData.numberOfBath}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="form-group1">
+              <label htmlFor="status">Status:</label>
+              <input
+                type="text"
+                id="status"
+                name="status"
+                value={formData.status}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="form-group1">
+              <label htmlFor="Ref">Ref number:</label>
+              <input
+                type="text"
+                id="ref"
+                name="ref"
+                value={formData.ref}
+                onChange={handleChange}
+              />
+            </div>
           </div>
-          <div className="form-group">
-            <label htmlFor="type">Type:</label>
-            <input
-              type="text"
-              id="type"
-              name="type"
-              value={formData.type}
-              onChange={handleChange}
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="place">Place:</label>
-            <input
-              type="text"
-              id="place"
-              name="place"
-              value={formData.place}
-              onChange={handleChange}
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="numberOfBed">Number of Beds:</label>
-            <input
-              type="text"
-              id="numberOfBed"
-              name="numberOfBed"
-              value={formData.numberOfBed}
-              onChange={handleChange}
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="title">Title:</label>
-            <input
-              type="text"
-              id="title"
-              name="title"
-              value={formData.title}
-              onChange={handleChange}
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="description">Description:</label>
-            <input
-              type="text"
-              id="description"
-              name="description"
-              value={formData.description}
-              onChange={handleChange}
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="numberOfBath">Number of Baths:</label>
-            <input
-              type="text"
-              id="numberOfBath"
-              name="numberOfBath"
-              value={formData.numberOfBath}
-              onChange={handleChange}
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="numberOfGarage">Number of Garages:</label>
-            <input
-              type="text"
-              id="numberOfGarage"
-              name="numberOfGarage"
-              value={formData.numberOfGarage}
-              onChange={handleChange}
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="propertySize">Property Size:</label>
-            <input
-              type="text"
-              id="propertySize"
-              name="propertySize"
-              value={formData.propertySize}
-              onChange={handleChange}
-            />
-          </div>
-          <div className="form-group">
-            <label htmlFor="status">Status:</label>
-            <input
-              type="text"
-              id="status"
-              name="status"
-              value={formData.status}
-              onChange={handleChange}
-            />
-          </div>
-          <button type="submit">Submit</button>
-        </form>
-      </div>
+        </div>
+        <button type="submit">Submit</button>
+      </form>
       <div class="grids">
         {posts
           .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
           .slice(0, 3) // Get only the first 3 posts
           .map((post) => (
             <div key={post._id} class="single_grid">
-              <a href="/detail" class="property_card">
+              <Link to="/detail" class="property_card">
                 <div className="post-container">
                   <img className="grid_img" src={post.image} alt="Post" />
                   <div className="overlay-text">
@@ -256,16 +272,17 @@ function Rent() {
                       &nbsp; {post.numberOfBath}&nbsp;
                     </div>
                     <div class="property-card__features_bed">
-                      <FontAwesomeIcon icon={faVectorSquare} /> &nbsp;
-                      {post.propertySize}&nbsp; m<sup>2</sup>&nbsp;
+                      <FontAwesomeIcon icon={faVectorSquare} />
+                      &nbsp;
+                      {post.propertySize}m<sup>2</sup>&nbsp;
                     </div>
                     <div>
                       <FontAwesomeIcon icon={faWarehouse} />
-                      &nbsp; {post.numberOfGarage}&nbsp;
+                      &nbsp;{post.numberOfGarage}&nbsp;
                     </div>
                   </div>
                 </div>
-              </a>
+              </Link>
             </div>
           ))}
       </div>

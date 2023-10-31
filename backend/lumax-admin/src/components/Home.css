@@ -25,14 +25,3 @@ input {
     border-radius: 3px;
     font-size: 16px;
 }
-
-button {
-    width: 100%;
-    padding: 10px;
-    background-color: #ab3b3f;
-    color: #fff;
-    border: none;
-    border-radius: 3px;
-    font-size: 16px;
-    cursor: pointer;
-}

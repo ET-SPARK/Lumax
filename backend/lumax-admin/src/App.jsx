@@ -7,6 +7,7 @@ import News from "./components/News";
 import Sale from "./components/Sale";
 import Rent from "./components/Rent";
 import DetailRentView from "./components/DetailRentView";
+import Detail from "./components/Detail";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/for-sale" element={<Sale />} />
         <Route path="/for-rent" element={<Rent />} />
         <Route path="/for-rent-detail" element={<DetailRentView />} />
+        <Route path="/detail" element={<Detail />} />
       </Routes>
     </Router>
   );

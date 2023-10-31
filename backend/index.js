@@ -43,6 +43,7 @@ app.post("/post", async (req, res) => {
       numberOfGarage,
       propertySize,
       status,
+      ref,
     } = req.body;
 
     const newPost = new Post({
@@ -57,6 +58,7 @@ app.post("/post", async (req, res) => {
       numberOfGarage,
       propertySize,
       status,
+      ref,
     });
 
     const savedPost = await newPost.save();
