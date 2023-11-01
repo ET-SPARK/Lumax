@@ -115,8 +115,8 @@
 }
 
 .grid_img {
-    width: 100%;
-    height: auto;
+    width: 500px;
+    height: 300px;
     display: block;
     transition: transform 0.2s;
     /* Add a smooth hover effect if needed */
@@ -193,6 +193,42 @@
     margin-top: 50px;
 }
 
+.post-container {
+    position: relative;
+}
+
+.overlay-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Add background color with transparency */
+    color: white;
+    padding: 10px;
+}
+
+/* Style the <p> text within the overlay */
+.overlay-text p {
+    margin: 0;
+    /* Remove default margin */
+}
+
+.view_section__content_link {
+    color: #ab3b3f;
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 100px;
+    margin-top: 150px;
+}
+
+sup {
+    font-size: 9px;
+}
+
+.form-group-flex {
+    display: flex;
+    flex-direction: column;
+}
 
 .section__heading {
     background: #f6f7f9;
