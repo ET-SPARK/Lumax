@@ -136,3 +136,117 @@ app.delete("/post/:id", async (req, res) => {
       .json({ message: "Error deleting post", error: error.message });
   }
 });
+
+const Sale = require("./models/sale");
+
+app.post("/sale", async (req, res) => {
+  try {
+    const {
+      image,
+      price,
+      type,
+      place,
+      numberOfBed,
+      title,
+      description,
+      numberOfBath,
+      numberOfGarage,
+      propertySize,
+      status,
+      ref,
+    } = req.body;
+
+    const newSale = new Sale({
+      image,
+      price,
+      type,
+      place,
+      numberOfBed,
+      title,
+      description,
+      numberOfBath,
+      numberOfGarage,
+      propertySize,
+      status,
+      ref,
+    });
+
+    const savedSale = await newSale.save();
+    res.status(200).json({ message: "Sale successful", data: savedSale });
+  } catch (error) {
+    console.error("Error sale posting", error);
+    res
+      .status(500)
+      .json({ message: "Error sale posting", error: error.message });
+  }
+});
+
+//get all sales
+app.get("/sales", async (req, res) => {
+  try {
+    const sales = await Sale.find(); // Retrieve all posts from the database
+    res.status(200).json(sales);
+  } catch (error) {
+    console.error("Error retrieving posts", error);
+    res
+      .status(500)
+      .json({ message: "Error retrieving posts", error: error.message });
+  }
+});
+
+// get specific sale
+app.get("/sale/:saleId", async (req, res) => {
+  try {
+    const saleId = req.params.saleId; // Retrieve the postId from the URL parameters
+    const sale = await Sale.findById(saleId); // Retrieve the post with the specified postId from the database
+
+    if (!sale) {
+      // If no post is found with the given postId, return a 404 response
+      return res.status(404).json({ message: "Sale not found" });
+    }
+
+    // If a post is found, return it as a JSON response
+    res.status(200).json(sale);
+  } catch (error) {
+    console.error("Error retrieving sale", error);
+    res
+      .status(500)
+      .json({ message: "Error retrieving sale", error: error.message });
+  }
+});
+
+//update Sale
+app.put("/sale/:id", async (req, res) => {
+  const saleId = req.params.id;
+  const updatedSaleData = req.body;
+
+  try {
+    const updatedSale = await Sale.findByIdAndUpdate(saleId, updatedSaleData, {
+      new: true,
+    });
+    res
+      .status(200)
+      .json({ message: "Sale updated successfully", data: updatedSale });
+  } catch (error) {
+    console.error("Error updating sale", error);
+    res
+      .status(500)
+      .json({ message: "Error updating sale", error: error.message });
+  }
+});
+
+// Delete a sale
+
+app.delete("/sale/:id", async (req, res) => {
+  const saleId = req.params.id;
+
+  try {
+    await Sale.findByIdAndRemove(saleId);
+    res.status(200).json({ message: "sale deleted successfully" });
+  } catch (error) {
+    console.error("Error deleting sale", error);
+    res
+      .status(500)
+      .json({ message: "Error deleting sale", error: error.message });
+  }
+});

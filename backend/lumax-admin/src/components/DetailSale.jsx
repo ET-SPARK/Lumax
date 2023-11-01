@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Footer from "./Footer";
 import Header from "./Header";
-import "./Rent.css";
+import "./Detail.css";
 import {
   faBed,
   faBath,
@@ -10,34 +10,9 @@ import {
   faWarehouse,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
-function Sale() {
-  const [posts, setPosts] = useState([]);
-
-  useEffect(() => {
-    // Fetch posts when the component mounts
-    async function fetchPosts() {
-      try {
-        const response = await axios.get("http://localhost:3000/sales");
-        setPosts(response.data);
-      } catch (error) {
-        console.error("Error fetching posts:", error);
-      }
-    }
-
-    fetchPosts();
-  }, []);
-
-  const [expandedDescriptions, setExpandedDescriptions] = useState({});
-
-  const toggleDescription = (postId) => {
-    setExpandedDescriptions((prev) => ({
-      ...prev,
-      [postId]: !prev[postId],
-    }));
-  };
-
+function DetailSale() {
   const [formData, setFormData] = useState({
     image: "",
     price: "",
@@ -52,49 +27,80 @@ function Sale() {
     status: "",
     ref: "",
   });
+  const { postId } = useParams();
+
+  useEffect(() => {
+    // Fetch the specific post based on postId when the component mounts
+    async function fetchPostData() {
+      try {
+        const response = await axios.get(
+          `http://localhost:3000/sale/${postId}`
+        );
+        const postData = response.data;
+        console.log(postData);
+
+        // Log the retrieved data to the console
+        console.log("Fetched data:", postData);
+
+        // Set the formData state with the retrieved data
+        setFormData({
+          image: postData.image,
+          price: postData.price,
+          type: postData.type,
+          place: postData.place,
+          numberOfBed: postData.numberOfBed,
+          title: postData.title,
+          description: postData.description,
+          numberOfBath: postData.numberOfBath,
+          numberOfGarage: postData.numberOfGarage,
+          propertySize: postData.propertySize,
+          status: postData.status,
+          ref: postData.ref,
+        });
+      } catch (error) {
+        console.error("Error fetching sale data:", error);
+      }
+    }
+
+    if (postId) {
+      fetchPostData();
+    }
+  }, [postId]);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    // Check if any of the fields is empty
-    if (Object.values(formData).some((value) => value === "")) {
-      alert("Please fill in all fields before submitting.");
-    } else {
-      try {
-        const response = await axios.post(
-          "http://localhost:3000/sale",
-          formData
-        );
-        console.log("Form data sent successfully:", response.data);
-        // Clear the form fields after successful submission
-        setFormData({
-          image: "",
-          price: "",
-          type: "",
-          place: "",
-          numberOfBed: "",
-          title: "",
-          description: "",
-          numberOfBath: "",
-          numberOfGarage: "",
-          propertySize: "",
-          status: "",
-          ref: "",
-        });
-      } catch (error) {
-        console.error("Error sending form data:", error);
-      }
+
+  const handleUpdate = async () => {
+    try {
+      const response = await axios.put(
+        `http://localhost:3000/sale/${postId}`,
+        formData
+      );
+      console.log("Sale updated successfully:", response.data);
+      alert("Sale updated successfully");
+    } catch (error) {
+      console.error("Error updating saleId:", error);
+    }
+  };
+
+  const handleDelete = async () => {
+    try {
+      await axios.delete(`http://localhost:3000/sale/${postId}`);
+      console.log("sale deleted successfully");
+      alert("sale deleted successfully");
+      // You can redirect to another page after deletion if needed
+    } catch (error) {
+      console.error("Error deleting sale:", error);
     }
   };
 
   return (
     <div>
       <Header />
-      <h2>Add house for Sale</h2>
-      <form onSubmit={handleSubmit}>
+      <h2>Edit house for rent</h2>
+      <form>
         <div className="form_flex">
           <div>
             <div className="form-group1">
@@ -221,78 +227,16 @@ function Sale() {
             </div>
           </div>
         </div>
-        <button type="submit">Submit</button>
+        <button type="button" onClick={handleUpdate}>
+          Update
+        </button>
+        <button type="button" onClick={handleDelete}>
+          Delete
+        </button>
       </form>
-      <div class="grids">
-        {posts
-          .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
-          .slice(0, 3) // Get only the first 3 posts
-          .map((post) => (
-            <div key={post._id} class="single_grid">
-              <Link to={`/detail-sale/${post._id}`} class="property_card">
-                <div className="post-container">
-                  <img className="grid_img" src={post.image} alt="Post" />
-                  <div className="overlay-text">
-                    <p>{post.status}</p>
-                  </div>
-                </div>
-                <div class="property-card__price">
-                  <span class="card__price_text">
-                    {" "}
-                    {post.price}&nbsp;br&nbsp; / &nbsp;month
-                  </span>
-                  <span class="property-card__summary card__price_text">
-                    {post.type},&nbsp; Renral Monthly
-                  </span>
-                  <span class="property-card__summary card__price_text">
-                    {post.place}
-                  </span>
-                </div>
-                <div class="property-card__details">
-                  <span class="property-card__heading">{post.title}</span>
-                  <span class="property-card__discription">
-                    {expandedDescriptions[post._id] ? (
-                      post.description
-                    ) : (
-                      <>
-                        {post.description.slice(0, 150)}
-                        {post.description.length > 150 && <span>...</span>}
-                      </>
-                    )}
-                  </span>
-                  <div class="property-card__features">
-                    <div class="property-card__features_bed">
-                      <FontAwesomeIcon icon={faBed} />
-                      &nbsp;
-                      {post.numberOfBed}&nbsp;
-                    </div>
-                    <div>
-                      <FontAwesomeIcon icon={faBath} />
-                      &nbsp; {post.numberOfBath}&nbsp;
-                    </div>
-                    <div class="property-card__features_bed">
-                      <FontAwesomeIcon icon={faVectorSquare} />
-                      &nbsp;
-                      {post.propertySize}m<sup>2</sup>&nbsp;
-                    </div>
-                    <div>
-                      <FontAwesomeIcon icon={faWarehouse} />
-                      &nbsp;{post.numberOfGarage}&nbsp;
-                    </div>
-                  </div>
-                </div>
-              </Link>
-            </div>
-          ))}
-      </div>
-      <div className="view_section__content">
-        <Link to="/for-sale-detail" className="view_section__content_link">
-          View all properties for sale
-        </Link>
-      </div>
       <Footer />
     </div>
   );
 }
 
-export default Sale;
+export default DetailSale;

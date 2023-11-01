@@ -94,7 +94,7 @@ function Rent() {
   return (
     <div>
       <Header />
-      <h2>Add house for rent</h2>
+      <h2>Add house for Rent</h2>
       <form onSubmit={handleSubmit}>
         <div className="form_flex">
           <div>
