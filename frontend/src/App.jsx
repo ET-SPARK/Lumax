@@ -8,6 +8,8 @@ import News from "./components/News";
 import Sale from "./components/Sale";
 import Rent from "./components/Rent";
 import Detail from "./components/Detail";
+import DetailRentView from "./components/DetailRentView";
+import DetailSaleView from "./components/DetailSaleView";
 
 function App() {
   return (
@@ -19,7 +21,9 @@ function App() {
         <Route path="/news" element={<News />} />
         <Route path="/for-sale" element={<Sale />} />
         <Route path="/for-rent" element={<Rent />} />
-        <Route path="/detail" element={<Detail />} />
+        <Route path="/for-rent-detail" element={<DetailRentView />} />
+        <Route path="/for-sale-detail" element={<DetailSaleView />} />
+        <Route path="/detail/:postId" element={<Detail />} />
       </Routes>
     </Router>
   );
