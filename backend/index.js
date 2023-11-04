@@ -250,3 +250,30 @@ app.delete("/sale/:id", async (req, res) => {
       .json({ message: "Error deleting sale", error: error.message });
   }
 });
+
+// comments
+const Comment = require("./models/comment");
+
+app.post("/comment", async (req, res) => {
+  try {
+    const { name, email, phone, area, comments, ref } = req.body;
+    const newComment = new Comment({
+      name,
+      email,
+      phone,
+      area,
+      comments,
+      ref,
+    });
+
+    const savedComment = await newComment.save();
+    res
+      .status(200)
+      .json({ message: "Comment added successfully", data: savedComment });
+  } catch (error) {
+    console.error("Error adding comment", error);
+    res
+      .status(500)
+      .json({ message: "Error adding comment", error: error.message });
+  }
+});

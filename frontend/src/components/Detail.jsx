@@ -69,6 +69,50 @@ function Detail() {
 
   const { price } = formData; // Destructure the price from the formData
 
+  const [formValues, setFormValues] = useState({
+    name: "Name",
+    email: "Email",
+    phone: "Phone Number",
+    area: "Area",
+    comments: "comment",
+  });
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const postData = {
+      name: formValues.name,
+      email: formValues.email,
+      phone: formValues.phone,
+      area: formValues.area,
+      comments: formValues.comments,
+      ref: formData.ref,
+    };
+    try {
+      const response = await axios.post(
+        "http://localhost:3000/comment",
+        postData
+      );
+
+      console.log("Form data sent to the server:", response.data);
+
+      setFormValues({
+        name: "",
+        email: "",
+        phone: "",
+        area: "",
+        comments: "",
+      });
+    } catch (error) {
+      console.error("Error submitting form:", error);
+    }
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormValues({ ...formValues, [name]: value });
+  };
+
   return (
     <div>
       <Header />
@@ -136,7 +180,7 @@ function Detail() {
           </div>
         </div>
       </div>
-      <form className="form_detail">
+      <form className="form_detail" onSubmit={handleSubmit}>
         <h3>Make an enquiry</h3>
         <span className="form_detail_subtitle">
           Interested in this property? Please fill in your details below, and we
@@ -148,7 +192,8 @@ function Detail() {
             id="name"
             name="name"
             className="dropdown_input"
-            value="Name"
+            value={formValues.name}
+            onChange={handleChange}
           />
         </div>
         <div className="textare">
@@ -157,7 +202,8 @@ function Detail() {
             id="email"
             name="email"
             className="dropdown_input"
-            value="Email"
+            value={formValues.email}
+            onChange={handleChange}
           />
         </div>
         <div className="textare">
@@ -166,7 +212,8 @@ function Detail() {
             id="phone"
             name="phone"
             className="dropdown_input"
-            value="Phone"
+            value={formValues.phone}
+            onChange={handleChange}
           />
         </div>
         <div className="textare">
@@ -174,7 +221,8 @@ function Detail() {
             className="dropdown_input"
             id="area"
             name="area"
-            value="Area"
+            value={formValues.area}
+            onChange={handleChange}
           />
         </div>
         <div className="textare">
@@ -182,17 +230,16 @@ function Detail() {
             className="dropdown_input"
             id="comments"
             name="comments"
-            value="Message"
+            value={formValues.comments}
+            onChange={handleChange}
           ></textarea>
         </div>
         <div className="form__disclaimer">
-          {" "}
           <span>
             By clicking on "submit" you agree to our{" "}
             <a href="#">privacy policy</a>
           </span>
           <span>
-            {" "}
             <input type="submit" name="submit" className="submit" />
           </span>
         </div>
