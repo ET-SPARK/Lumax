@@ -1,16 +1,74 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Footer from "./Footer";
 import Header from "./Header";
 import "./Detail.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretDown, faLocationDot } from "@fortawesome/free-solid-svg-icons";
+import { useParams } from "react-router-dom";
+import axios from "axios";
 
 function Detail() {
   const [onPress, setOnPress] = useState(false);
 
+  const [formData, setFormData] = useState({
+    image: "",
+    price: "",
+    type: "",
+    place: "",
+    numberOfBed: "",
+    title: "",
+    description: "",
+    numberOfBath: "",
+    numberOfGarage: "",
+    propertySize: "",
+    status: "",
+    ref: "",
+  });
+  const { postId } = useParams();
+
+  useEffect(() => {
+    // Fetch the specific post based on postId when the component mounts
+    async function fetchPostData() {
+      try {
+        const response = await axios.get(
+          `http://localhost:3000/post/${postId}`
+        );
+        const postData = response.data;
+
+        // Log the retrieved data to the console
+        console.log("Fetched data:", postData);
+
+        // Set the formData state with the retrieved data
+        setFormData({
+          image: postData.image,
+          price: postData.price, // Assuming price is a key in your postData object
+          type: postData.type,
+          place: postData.place,
+          numberOfBed: postData.numberOfBed,
+          title: postData.title,
+          description: postData.description,
+          numberOfBath: postData.numberOfBath,
+          numberOfGarage: postData.numberOfGarage,
+          propertySize: postData.propertySize,
+          status: postData.status,
+          ref: postData.ref,
+        });
+      } catch (error) {
+        console.error("Error fetching post data:", error);
+      }
+    }
+
+    if (postId) {
+      fetchPostData();
+    }
+  }, [postId]);
+
   const handleOnPress = () => {
     setOnPress(!onPress);
   };
+
+  const { price } = formData; // Destructure the price from the formData
+
   return (
     <div>
       <Header />
@@ -18,20 +76,20 @@ function Detail() {
         <div className="property__detail_summary_header">
           <div>
             {" "}
-            <h1>0.5 BEDROOM FLAT TO RENT IN MUCKLENEUK.</h1>
+            <h1>{formData.title}</h1>
           </div>
           <div>
             {" "}
             <span>
-              <b>Ref # 2195619&nbsp;:&nbsp;</b>
-              Apartment in Muckleneuk
+              <b>Ref # {formData.ref} :&nbsp;</b>
+              Apartment in {formData.place}
             </span>
           </div>
         </div>
         <div className="property__detail_summary_price">
           <div>
             {" "}
-            <h3>R &nbsp;2,810&nbsp;</h3>
+            <h3>&nbsp;{formData.price}&nbsp; ETB</h3>
           </div>
           <div>
             / &nbsp;<b>month</b> &nbsp;
@@ -45,35 +103,35 @@ function Detail() {
       </div>
       <div className="detail_section_type_property">
         <div className="detail_section_type_property_dev_img">
-          <img src="https://d4dw57nojnba9.cloudfront.net/eyJidWNrZXQiOiJzMy5lbnRlZ3JhbC5uZXQiLCJrZXkiOiJiL2ZfMWUzZTFmMjUzNTQwNDRkZDgyMWYyNGQ5OWViNGVkNDIuanBnIiwiZm9ybWF0IjoianBlZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MTAwMCwiaGVpZ2h0IjoxMDAwLCJmaXQiOiJpbnNpZGUifX19" />
+          <img src={formData.image} />
         </div>
         <div className="detail_section_type_property_dev_img">
           <div className="detail_section_type_property_col">
             <h3>Property Details</h3>
             <span>
               <FontAwesomeIcon icon={faLocationDot} />
-              &nbsp; <b>Crevillea St, Rosanne, 7</b>
+              &nbsp; <b>{formData.place}</b>
             </span>
-            <span>
-              Kitchen Living area Bathroom. Close to all shops and public
-              transport. Located close to schools and other amenities Available
-              Immediately Covered parking available at no additional cost.
-            </span>
+            <span>{formData.description}</span>
             <h3>Property Features</h3>
             <span>
-              <b>Property Type:&nbsp;&nbsp;</b>Apartment
+              <b>Property Type:&nbsp;&nbsp;</b>
+              {formData.type}
             </span>
             <span>
-              <b>Bedrooms:&nbsp;&nbsp;</b>2
+              <b>Bedrooms:&nbsp;&nbsp;</b>
+              {formData.numberOfBed}
             </span>
             <span>
-              <b>Bathrooms:&nbsp;&nbsp;</b>1
+              <b>Bathrooms:&nbsp;&nbsp;</b>
+              {formData.numberOfBath}
             </span>
             <span>
-              <b>Covered Parking:&nbsp;&nbsp;</b>yes
+              <b>Covered Parking:&nbsp;&nbsp;</b>
+              {formData.numberOfGarage}
             </span>
             <span>
-              <b>Garden:&nbsp;&nbsp;</b>yes
+              <b>Garden:&nbsp;&nbsp;</b>yes?
             </span>
           </div>
         </div>
