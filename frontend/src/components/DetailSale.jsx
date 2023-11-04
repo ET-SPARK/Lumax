@@ -31,7 +31,7 @@ function DetailSale() {
     async function fetchPostData() {
       try {
         const response = await axios.get(
-          `http://localhost:3000/post/${postId}`
+          `http://localhost:3000/sale/${postId}`
         );
         const postData = response.data;
 
