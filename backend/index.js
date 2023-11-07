@@ -277,3 +277,30 @@ app.post("/comment", async (req, res) => {
       .json({ message: "Error adding comment", error: error.message });
   }
 });
+
+// Sale comments
+const SaleComment = require("./models/saleComment");
+
+app.post("/saleComment", async (req, res) => {
+  try {
+    const { name, email, phone, area, comments, ref } = req.body;
+    const newComment = new SaleComment({
+      name,
+      email,
+      phone,
+      area,
+      comments,
+      ref,
+    });
+
+    const savedComment = await newComment.save();
+    res
+      .status(200)
+      .json({ message: "Sale Comment added successfully", data: savedComment });
+  } catch (error) {
+    console.error("Error adding comment", error);
+    res
+      .status(500)
+      .json({ message: "Error adding comment", error: error.message });
+  }
+});
