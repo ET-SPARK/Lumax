@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Footer from "./Footer";
 import Header from "./Header";
 import "./Contacts.css";
@@ -8,8 +8,50 @@ import {
   faEnvelope,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import axios from "axios";
 
 function Contacts() {
+  const [formValues, setFormValues] = useState({
+    name: "Name",
+    email: "Email",
+    phone: "Phone Number",
+    area: "Area",
+    comments: "comment",
+    dropdown: "I went to buy",
+  });
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const postData = {
+      name: formValues.name,
+      email: formValues.email,
+      phone: formValues.phone,
+      area: formValues.area,
+      comments: formValues.comments,
+      dropdown: formValues.dropdown,
+    };
+    try {
+      const response = await axios.post(
+        "http://localhost:3000/contact",
+        postData
+      );
+      console.log("Form data sent to the server:", response.data);
+      setFormValues({
+        name: "Name",
+        email: "Email",
+        phone: "Phone Number",
+        area: "Area",
+        comments: "comment",
+        dropdown: "I went to buy",
+      });
+    } catch (error) {
+      console.error("Error submitting form:", error);
+    }
+  };
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormValues({ ...formValues, [name]: value });
+  };
   return (
     <div>
       <Header />
@@ -46,14 +88,15 @@ function Contacts() {
               admin@huurkor.co.za
             </span>
           </span>
-          <form className="form">
+          <form className="form" onSubmit={handleSubmit}>
             <div className="textare">
               <input
                 type="text"
                 id="name"
                 name="name"
                 className="dropdown_input"
-                value="Name"
+                value={formValues.name}
+                onChange={handleChange}
               />
             </div>
             <div className="textare">
@@ -62,7 +105,8 @@ function Contacts() {
                 id="email"
                 name="email"
                 className="dropdown_input"
-                value="Email"
+                value={formValues.email}
+                onChange={handleChange}
               />
             </div>
             <div className="textare">
@@ -71,7 +115,8 @@ function Contacts() {
                 id="phone"
                 name="phone"
                 className="dropdown_input"
-                value="Phone"
+                value={formValues.phone}
+                onChange={handleChange}
               />
             </div>
             <div className="textare">
@@ -79,7 +124,8 @@ function Contacts() {
                 className="dropdown_input"
                 id="area"
                 name="area"
-                value="Area"
+                value={formValues.area}
+                onChange={handleChange}
               />
             </div>
             <div className="textare">
@@ -87,24 +133,21 @@ function Contacts() {
                 className="dropdown_input"
                 id="comments"
                 name="comments"
-                value="Message"
+                value={formValues.comments}
+                onChange={handleChange}
               ></textarea>
             </div>
             <div className="textare">
               <select
                 id="dropdown"
-                name="I went to buy"
+                name="dropdown"
                 className="dropdown_input"
+                value={formValues.dropdown}
+                onChange={handleChange}
               >
-                <option value="Option 1">
-                  <span className="dropdown_input_option">I went to buy</span>
-                </option>
-                <option value="Option 2">
-                  <span className="dropdown_input_option"> I went to sale</span>
-                </option>
-                <option value="Option 3">
-                  <span className="dropdown_input_option">I went to rent</span>
-                </option>
+                <option value="I want to buy">I want to buy</option>
+                <option value="I want to sell">I want to sell</option>
+                <option value="I want to rent">I want to rent</option>
               </select>
             </div>
             <div className="form__disclaimer">

@@ -304,3 +304,30 @@ app.post("/saleComment", async (req, res) => {
       .json({ message: "Error adding comment", error: error.message });
   }
 });
+
+// Contact
+const Contact = require("./models/contact");
+
+app.post("/contact", async (req, res) => {
+  try {
+    const { name, email, phone, area, comments, dropdown } = req.body;
+    const newContact = new Contact({
+      name,
+      email,
+      phone,
+      area,
+      comments,
+      dropdown,
+    });
+
+    const savedContact = await newContact.save();
+    res
+      .status(200)
+      .json({ message: "Sale Comment added successfully", data: savedContact });
+  } catch (error) {
+    console.error("Error adding comment", error);
+    res
+      .status(500)
+      .json({ message: "Error adding comment", error: error.message });
+  }
+});
