@@ -20,12 +20,13 @@ function Contacts() {
     }
     fetchContacts();
   }, []);
+
   return (
     <div>
       <Header />
       <div className="grids1">
         {posts
-          .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
+          .sort((b, a) => new Date(b.createdAt) - new Date(a.createdAt))
           .map((post) => (
             <div className="stylish-box">
               <div className="edit">
@@ -38,6 +39,7 @@ function Contacts() {
                   <div>{post.name}</div>
                   <div>{post.email}</div>
                   <div>{post.phone}</div>
+                  <div>{post.createdAt}</div>
                 </div>
               </div>
               <div className="info">
@@ -46,8 +48,23 @@ function Contacts() {
                 <div>{post.comments}</div>
               </div>
               <div className="manipulate">
-                <button>Add</button>
-                <button>Remove</button>
+                <button
+                  type="button"
+                  onClick={async () => {
+                    try {
+                      await axios.delete(
+                        `http://localhost:3000/contact/${post._id}`
+                      );
+                      console.log("Contact deleted successfully");
+                      alert("Contact deleted successfully");
+                      // You can redirect to another page after deletion if needed
+                    } catch (error) {
+                      console.error("Error deleting Contact:", error);
+                    }
+                  }}
+                >
+                  Delete
+                </button>
               </div>
             </div>
           ))}

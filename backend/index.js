@@ -344,3 +344,18 @@ app.get("/contact", async (req, res) => {
       .json({ message: "Error retrieving contacts", error: error.message });
   }
 });
+
+//delete contact
+app.delete("/contact/:id", async (req, res) => {
+  const contactId = req.params.id;
+
+  try {
+    await Contact.findByIdAndRemove(contactId);
+    res.status(200).json({ message: "contact deleted successfully" });
+  } catch (error) {
+    console.error("Error deleting contact", error);
+    res
+      .status(500)
+      .json({ message: "Error deleting contact", error: error.message });
+  }
+});
