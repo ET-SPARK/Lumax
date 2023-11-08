@@ -9,9 +9,7 @@
 
 .manipulate {
     display: flex;
-    align-items: center;
-    justify-content: space-around;
-    padding-top: 10px;
+    justify-content: space-evenly;
 }
 
 .manipulate span {
@@ -31,10 +29,23 @@
     color: white;
     font-size: 14px;
     line-height: 1.5em;
+    padding-left: 5px;
 }
 
 .edit {
     background-color: lightgray;
     display: flex;
     align-items: center;
+}
+
+.grids1 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    /* Create a 3x3 grid */
+    gap: 20px;
+    /* Adjust the gap between grid items */
+    margin-right: 100px;
+    margin-left: 100px;
+    margin-top: 20px;
+    margin-bottom: 50px;
 }

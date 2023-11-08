@@ -331,3 +331,16 @@ app.post("/contact", async (req, res) => {
       .json({ message: "Error adding comment", error: error.message });
   }
 });
+
+// get contacts
+app.get("/contact", async (req, res) => {
+  try {
+    const contacts = await Contact.find(); // Retrieve all contacts from the database
+    res.status(200).json(contacts);
+  } catch (error) {
+    console.error("Error retrieving contacts", error);
+    res
+      .status(500)
+      .json({ message: "Error retrieving contacts", error: error.message });
+  }
+});
