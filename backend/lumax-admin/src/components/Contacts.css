@@ -1,0 +1,40 @@
+.stylish-box {
+    padding: 5px 5px;
+    background-color: black;
+}
+
+.stylish-box {
+    color: white;
+}
+
+.manipulate {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding-top: 10px;
+}
+
+.manipulate span {
+    background-color: #ab3b3f;
+}
+
+.stylish-box img {
+    width: 100px;
+    height: 100px;
+    margin-right: 5px;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    background-color: #ab3b3f;
+    color: white;
+    font-size: 14px;
+    line-height: 1.5em;
+}
+
+.edit {
+    background-color: lightgray;
+    display: flex;
+    align-items: center;
+}
