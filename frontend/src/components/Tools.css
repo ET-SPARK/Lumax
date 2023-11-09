@@ -1,0 +1,13 @@
+/* Tools.css */
+
+.image-slider {
+    width: 100%;
+    height: 100%;
+    /* This makes the slider fill the screen height */
+}
+
+.slider-image {
+    object-fit: cover;
+    width: 100%;
+    height: 700px;
+}

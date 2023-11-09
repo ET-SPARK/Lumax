@@ -13,6 +13,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Footer from "./Footer";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import Tools from "./Tools";
 
 function Home() {
   const [posts, setPosts] = useState([]);
@@ -43,32 +44,7 @@ function Home() {
   return (
     <div>
       <Header />
-      <div className="container">
-        <div className="background-image">
-          <img
-            src="https://www.huurkor.co.za/assets/media/hero-slide-1b.a1f176c1cde190373cc45d9dafc93268.jpeg"
-            alt="Image"
-            className="gallery__image"
-          />
-          <div class="hero_section__heading">
-            <div>
-              <p class="section_heading">Finding Your Home</p>
-            </div>
-            <div class="hero__buttons">
-              <Link to="/for-sale">
-                <button className="button button_size_small">
-                  Buy A Property
-                </button>
-              </Link>
-              <Link to="/for-sale">
-                <button class="button button_size_small">
-                  Rent A Property
-                </button>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </div>
+      <Tools />
       <div class="section__heading_align_center">
         <h1>Our Featured Properties</h1>
         <h3>
