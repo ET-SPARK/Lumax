@@ -91,11 +91,6 @@ function Header() {
                   </span>
                 </li>
                 <li>
-                  <Link to="/tools" class="link_style">
-                    Tools&nbsp; <FontAwesomeIcon icon={faCaretDown} />
-                  </Link>
-                </li>
-                <li>
                   <Link to="/news" class="link_style">
                     News
                   </Link>
@@ -108,16 +103,6 @@ function Header() {
                 <li>
                   <Link to="/contact" class="link_style">
                     Contact
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/favourites" class="link_style">
-                    Favourites
-                  </Link>
-                </li>
-                <li>
-                  <Link to="/likes" class="link_style">
-                    <FontAwesomeIcon icon={faHeart} />
                   </Link>
                 </li>
               </ul>
@@ -172,11 +157,6 @@ function Header() {
                 </span>
               </li>
               <li>
-                <Link to="/tools" class="link_style">
-                  Tools&nbsp; <FontAwesomeIcon icon={faCaretDown} />
-                </Link>
-              </li>
-              <li>
                 <Link to="/news" class="link_style">
                   News
                 </Link>
@@ -189,16 +169,6 @@ function Header() {
               <li>
                 <Link to="/contact" class="link_style">
                   Contact
-                </Link>
-              </li>
-              <li>
-                <Link to="/favourites" class="link_style">
-                  Favourites
-                </Link>
-              </li>
-              <li>
-                <Link to="/likes" class="link_style">
-                  <FontAwesomeIcon icon={faHeart} />
                 </Link>
               </li>
             </ul>
