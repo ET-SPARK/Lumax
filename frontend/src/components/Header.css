@@ -110,6 +110,10 @@ li:last-child {
     color: red;
 }
 
+.mobileHeader {
+    display: none;
+}
+
 @media screen and (min-width: 768px) {
     .bars-icon {
         display: none;
@@ -161,5 +165,13 @@ li:last-child {
 
     .prop {
         display: none;
+    }
+
+    .DektopHeadet {
+        display: none;
+    }
+
+    .mobileHeader {
+        display: contents;
     }
 }
