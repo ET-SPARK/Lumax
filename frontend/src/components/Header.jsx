@@ -62,7 +62,11 @@ function Header() {
                   >
                     {" "}
                     Properties &nbsp;
-                    <FontAwesomeIcon icon={faCaretDown} />
+                    {up ? (
+                      <FontAwesomeIcon icon={faCaretDown} />
+                    ) : (
+                      <FontAwesomeIcon icon={faCaretUp} />
+                    )}
                     {nav && (
                       <ul class="navList navList_Properties ">
                         <li>
@@ -76,20 +80,6 @@ function Header() {
                           </Link>
                         </li>
                       </ul>
-                    )}
-                    {onPress && (
-                      <span className="prop prop_style">
-                        <span>
-                          <Link to="/for-sale" class="link_style">
-                            For Sale
-                          </Link>
-                        </span>
-                        <span>
-                          <Link to="/for-rent" class="link_style">
-                            For Rent
-                          </Link>
-                        </span>
-                      </span>
                     )}
                   </span>
                 </li>
