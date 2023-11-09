@@ -104,6 +104,7 @@
 .single_grid {
     position: relative;
     overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .property_card {
@@ -132,6 +133,11 @@
     flex-direction: column;
     /* Display the spans in a column layout */
     align-items: flex-start;
+    line-height: 2em;
+}
+
+.property-card__price:hover {
+    background-color: #000;
 }
 
 .card__price_text {
@@ -151,6 +157,7 @@
     flex-direction: column;
     /* Display the spans in a column layout */
     align-items: flex-start;
+    line-height: 1.5em;
 }
 
 .property-card__heading {

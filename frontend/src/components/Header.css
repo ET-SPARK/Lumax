@@ -70,7 +70,7 @@ li:last-child {
 .prop {
     position: absolute;
     top: 5em;
-    left: 41em;
+    right: 22em;
     background-color: white;
     padding: 30px 30px !important;
     border-radius: 3px;

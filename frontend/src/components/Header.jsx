@@ -6,6 +6,7 @@ import {
   faCaretDown,
   faBars,
   faXmark,
+  faCaretUp,
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import Logo from "../images/LUMAX.png";
@@ -13,10 +14,12 @@ function Header() {
   const [onPress, setOnPress] = useState(false);
   const [onpressNav, setOnPressNav] = useState(false);
   const [nav, setNav] = useState(false);
+  const [up, setUp] = useState(true);
 
   const handleOnPress = () => {
     setOnPress(!onPress);
     setNav(!nav);
+    setUp(!up);
   };
   const handleonpressNav = () => {
     setOnPressNav(!onpressNav);
@@ -125,7 +128,11 @@ function Header() {
                 >
                   {" "}
                   Properties &nbsp;
-                  <FontAwesomeIcon icon={faCaretDown} />
+                  {up ? (
+                    <FontAwesomeIcon icon={faCaretDown} />
+                  ) : (
+                    <FontAwesomeIcon icon={faCaretUp} />
+                  )}
                   {nav && (
                     <ul class="navList navList_Properties ">
                       <li>

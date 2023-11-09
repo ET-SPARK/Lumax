@@ -11,7 +11,7 @@ function Tools() {
   const settings = {
     dots: true,
     infinite: true,
-    speed: 1000,
+    speed: 100,
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
