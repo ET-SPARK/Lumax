@@ -256,12 +256,12 @@ const Comment = require("./models/comment");
 
 app.post("/comment", async (req, res) => {
   try {
-    const { name, email, phone, area, comments, ref } = req.body;
+    const { name, email, phone, comments, ref } = req.body;
     const newComment = new Comment({
       name,
       email,
       phone,
-      area,
+
       comments,
       ref,
     });
@@ -283,12 +283,11 @@ const SaleComment = require("./models/saleComment");
 
 app.post("/saleComment", async (req, res) => {
   try {
-    const { name, email, phone, area, comments, ref } = req.body;
+    const { name, email, phone, comments, ref } = req.body;
     const newComment = new SaleComment({
       name,
       email,
       phone,
-      area,
       comments,
       ref,
     });

@@ -13,10 +13,6 @@ const saleCommentSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  area: {
-    type: String,
-    required: true,
-  },
   comments: {
     type: String,
     required: true,

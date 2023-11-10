@@ -10,6 +10,7 @@ import DetailRentView from "./components/DetailRentView";
 import Detail from "./components/Detail";
 import DetailSaleView from "./components/DetailSaleView";
 import DetailSale from "./components/DetailSale";
+import Tools from "./components/Tools";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="/for-sale-detail" element={<DetailSaleView />} />
         <Route path="/detail/:postId" element={<Detail />} />
         <Route path="/detail-sale/:postId" element={<DetailSale />} />
+        <Route path="/tools" element={<Tools />} />
       </Routes>
     </Router>
   );

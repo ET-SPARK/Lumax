@@ -1,0 +1,94 @@
+.image-slider {
+    width: 100%;
+    height: 100%;
+}
+
+.slider-image {
+    object-fit: cover;
+    content: "";
+    width: 100%;
+    height: 600px;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+
+.slick-dots {
+    bottom: 30px;
+    /* Adjust the distance from the bottom as needed */
+}
+
+.slick-dots li {
+    margin: 0 5px;
+    /* Adjust the margin between dots as needed */
+}
+
+.slick-dots li button {
+    width: 20px;
+    /* Adjust the width of the dots as needed */
+    height: 20px;
+    /* Adjust the height of the dots as needed */
+    background-color: #fff;
+    /* Change the color of the dots as needed */
+    border-radius: 50%;
+    /* Make the dots circular */
+}
+
+.slick-dots li.slick-active button {
+    background-color: #000;
+    /* Change the active dot color as needed */
+}
+
+.hero_section__heading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    /* Center the text horizontally */
+    z-index: 1;
+    /* Place the heading on top of the image */
+}
+
+.section_heading {
+    font-size: 24px;
+    color: white;
+    font-weight: bold;
+    margin: 0;
+    /* Remove default margin */
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px 20px;
+}
+
+
+/* Style the "Hello" text if needed */
+.hero_section__heading div:last-child p {
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
+}
+
+.hero__buttons {
+    display: block;
+    position: relative;
+    text-align: center;
+    margin-bottom: -16px;
+    padding-top: 16px;
+}
+
+.button {
+    font-size: 16px;
+    color: #fff;
+    background: #ab3b3f;
+    display: inline-block;
+    height: 60px;
+    line-height: 60px;
+    text-decoration: none;
+    text-align: center;
+    padding: 0 48px;
+    border-radius: 4px;
+    transition: background-color .2s ease-in-out;
+    cursor: pointer;
+    border: 0;
+    margin-left: 16px;
+    margin-bottom: 16px;
+}

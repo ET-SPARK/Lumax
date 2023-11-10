@@ -73,7 +73,7 @@ function DetailSale() {
     name: "Name",
     email: "Email",
     phone: "Phone Number",
-    area: "Area",
+
     comments: "comment",
   });
 
@@ -84,7 +84,7 @@ function DetailSale() {
       name: formValues.name,
       email: formValues.email,
       phone: formValues.phone,
-      area: formValues.area,
+
       comments: formValues.comments,
       ref: formData.ref,
     };
@@ -100,7 +100,7 @@ function DetailSale() {
         name: "",
         email: "",
         phone: "",
-        area: "",
+
         comments: "",
       });
     } catch (error) {
@@ -133,9 +133,6 @@ function DetailSale() {
           <div>
             {" "}
             <h3>&nbsp;{formData.price}&nbsp; ETB</h3>
-          </div>
-          <div>
-            / &nbsp;<b>month</b> &nbsp;
           </div>
           <div
             onClick={() => {
@@ -212,15 +209,6 @@ function DetailSale() {
             name="phone"
             className="dropdown_input"
             value={formValues.phone}
-            onChange={handleChange}
-          />
-        </div>
-        <div className="textare">
-          <input
-            className="dropdown_input"
-            id="area"
-            name="area"
-            value={formValues.area}
             onChange={handleChange}
           />
         </div>

@@ -41,14 +41,18 @@ function Tools() {
       </div>
       <div class="hero_section__heading">
         <div>
-          <p class="section_heading">Finding Your Home</p>
+          <p class="section_heading">LUMAX ADMIN</p>
         </div>
         <div class="hero__buttons">
           <Link to="/for-sale">
-            <button className="button button_size_small">Buy A Property</button>
+            <button className="button button_size_small">
+              Sale Property Form
+            </button>
           </Link>
           <Link to="/for-sale">
-            <button class="button button_size_small">Rent A Property</button>
+            <button class="button button_size_small">
+              Rental Property From
+            </button>
           </Link>
         </div>
       </div>

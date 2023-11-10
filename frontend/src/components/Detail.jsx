@@ -73,7 +73,6 @@ function Detail() {
     name: "Name",
     email: "Email",
     phone: "Phone Number",
-    area: "Area",
     comments: "comment",
   });
 
@@ -84,7 +83,6 @@ function Detail() {
       name: formValues.name,
       email: formValues.email,
       phone: formValues.phone,
-      area: formValues.area,
       comments: formValues.comments,
       ref: formData.ref,
     };
@@ -100,7 +98,6 @@ function Detail() {
         name: "",
         email: "",
         phone: "",
-        area: "",
         comments: "",
       });
     } catch (error) {
@@ -216,15 +213,7 @@ function Detail() {
             onChange={handleChange}
           />
         </div>
-        <div className="textare">
-          <input
-            className="dropdown_input"
-            id="area"
-            name="area"
-            value={formValues.area}
-            onChange={handleChange}
-          />
-        </div>
+
         <div className="textare">
           <textarea
             className="dropdown_input"

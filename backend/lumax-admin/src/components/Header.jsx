@@ -96,19 +96,8 @@ function Header() {
                   </span>
                 </li>
                 <li>
-                  <Link to="/tools" class="link_style">
-                    Tools
-                  </Link>
-                </li>
-                <li>
                   <Link to="/news" class="link_style">
                     News
-                  </Link>
-                </li>
-
-                <li>
-                  <Link to="/likes" class="link_style">
-                    <FontAwesomeIcon icon={faHeart} />
                   </Link>
                 </li>
               </ul>
