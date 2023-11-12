@@ -240,8 +240,8 @@ function Home() {
           </div>
           <div class="section__heading_area">
             <span class="section__heading_head">
-              Achieve Your Property Investment and Rental Goals with Huurkor in
-              Pretoria
+              Achieve Your Property Investment and Rental Goals with LUMAX in
+              Addis Ababa
             </span>
             <span class="section__paragraph">
               Huurkor has distinguished our company as the real estate and
