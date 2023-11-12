@@ -11,6 +11,7 @@ import {
   faNewspaper,
   faAddressBook,
   faAddressCard,
+  faBell,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Footer from "./Footer";
@@ -230,7 +231,11 @@ function Home() {
               </div>
             </Link>
             <Link to="/" class=" single_grid_text">
-              <div class="property__card"> Property Alerts</div>
+              <div class="property__card">
+                {" "}
+                Property Alerts&nbsp;
+                <FontAwesomeIcon icon={faBell} />
+              </div>
             </Link>
           </div>
           <div class="section__heading_area">
