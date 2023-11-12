@@ -8,6 +8,7 @@ import {
   faBuildingUser,
   faVectorSquare,
   faWarehouse,
+  faNewspaper,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Footer from "./Footer";
@@ -253,31 +254,35 @@ function Home() {
       <div class="section_type_story">
         <div class="section__heading">
           <div class="grid grid_cols_3">
-            <Link to="/" class=" single_grid_text">
+            <Link to="/for-sale" class=" single_grid_text">
               <div class="property__card">
                 {" "}
                 For Sale&nbsp;
                 <FontAwesomeIcon icon={faBuilding} />
               </div>
             </Link>
-            <Link to="/" class=" single_grid_text">
+            <Link to="/for-rent" class=" single_grid_text">
               <div class="property__card">
                 {" "}
                 For Rent&nbsp;
                 <FontAwesomeIcon icon={faBuildingUser} />
               </div>
             </Link>
-            <Link to="/" class=" single_grid_text">
-              <div class="property__card"> Commercial</div>
+            <Link to="/news" class=" single_grid_text">
+              <div class="property__card">
+                {" "}
+                News&nbsp;
+                <FontAwesomeIcon icon={faNewspaper} />
+              </div>
             </Link>
-            <Link to="/" class=" single_grid_text">
-              <div class="property__card"> List With Us</div>
+            <Link to="/contact" class=" single_grid_text">
+              <div class="property__card"> Contact Us</div>
+            </Link>
+            <Link to="/about" class=" single_grid_text">
+              <div class="property__card"> About Us</div>
             </Link>
             <Link to="/" class=" single_grid_text">
               <div class="property__card"> Property Alerts</div>
-            </Link>
-            <Link to="/" class=" single_grid_text">
-              <div class="property__card"> Bond Calculator</div>
             </Link>
           </div>
           <div class="section__heading_area">
