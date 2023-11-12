@@ -9,6 +9,7 @@ import {
   faVectorSquare,
   faWarehouse,
   faNewspaper,
+  faAddressBook,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Footer from "./Footer";
@@ -276,7 +277,11 @@ function Home() {
               </div>
             </Link>
             <Link to="/contact" class=" single_grid_text">
-              <div class="property__card"> Contact Us</div>
+              <div class="property__card">
+                {" "}
+                Contact Us&nbsp;
+                <FontAwesomeIcon icon={faAddressBook} />
+              </div>
             </Link>
             <Link to="/about" class=" single_grid_text">
               <div class="property__card"> About Us</div>
