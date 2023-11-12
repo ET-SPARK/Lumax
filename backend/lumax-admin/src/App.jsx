@@ -11,6 +11,8 @@ import Detail from "./components/Detail";
 import DetailSaleView from "./components/DetailSaleView";
 import DetailSale from "./components/DetailSale";
 import Tools from "./components/Tools";
+import RentalForm from "./components/RentalForm";
+import SaleForm from "./components/SaleForm";
 
 function App() {
   return (
@@ -26,6 +28,8 @@ function App() {
         <Route path="/detail/:postId" element={<Detail />} />
         <Route path="/detail-sale/:postId" element={<DetailSale />} />
         <Route path="/tools" element={<Tools />} />
+        <Route path="/rental-form" element={<RentalForm />} />
+        <Route path="/sale-form" element={<SaleForm />} />
       </Routes>
     </Router>
   );

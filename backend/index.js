@@ -358,3 +358,16 @@ app.delete("/contact/:id", async (req, res) => {
       .json({ message: "Error deleting contact", error: error.message });
   }
 });
+
+// get sale comment
+app.get("/saleComment", async (req, res) => {
+  try {
+    const saleComments = await SaleComment.find(); // Retrieve all contacts from the database
+    res.status(200).json(saleComments);
+  } catch (error) {
+    console.error("Error retrieving contacts", error);
+    res
+      .status(500)
+      .json({ message: "Error retrieving contacts", error: error.message });
+  }
+});

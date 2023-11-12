@@ -12,32 +12,6 @@
     z-index: -1;
 }
 
-.slick-dots {
-    bottom: 30px;
-    /* Adjust the distance from the bottom as needed */
-}
-
-.slick-dots li {
-    margin: 0 5px;
-    /* Adjust the margin between dots as needed */
-}
-
-.slick-dots li button {
-    width: 20px;
-    /* Adjust the width of the dots as needed */
-    height: 20px;
-    /* Adjust the height of the dots as needed */
-    background-color: #fff;
-    /* Change the color of the dots as needed */
-    border-radius: 50%;
-    /* Make the dots circular */
-}
-
-.slick-dots li.slick-active button {
-    background-color: #000;
-    /* Change the active dot color as needed */
-}
-
 .hero_section__heading {
     position: absolute;
     top: 50%;

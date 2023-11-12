@@ -44,12 +44,12 @@ function Tools() {
           <p class="section_heading">LUMAX ADMIN</p>
         </div>
         <div class="hero__buttons">
-          <Link to="/for-sale">
+          <Link to="/sale-form">
             <button className="button button_size_small">
               Sale Property Form
             </button>
           </Link>
-          <Link to="/for-sale">
+          <Link to="/rental-form">
             <button class="button button_size_small">
               Rental Property From
             </button>
