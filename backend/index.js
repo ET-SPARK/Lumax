@@ -261,7 +261,6 @@ app.post("/comment", async (req, res) => {
       name,
       email,
       phone,
-
       comments,
       ref,
     });
@@ -369,5 +368,48 @@ app.get("/saleComment", async (req, res) => {
     res
       .status(500)
       .json({ message: "Error retrieving contacts", error: error.message });
+  }
+});
+
+//delete sale comment
+app.delete("/saleComment/:id", async (req, res) => {
+  const saleCommentId = req.params.id;
+
+  try {
+    await SaleComment.findByIdAndRemove(saleCommentId);
+    res.status(200).json({ message: "Sale Comment deleted successfully" });
+  } catch (error) {
+    console.error("Error deleting Sale Comment", error);
+    res
+      .status(500)
+      .json({ message: "Error deleting Sale Comment", error: error.message });
+  }
+});
+
+// get Rental comment
+app.get("/comment", async (req, res) => {
+  try {
+    const rentalComments = await Comment.find(); // Retrieve all contacts from the database
+    res.status(200).json(rentalComments);
+  } catch (error) {
+    console.error("Error retrieving contacts", error);
+    res
+      .status(500)
+      .json({ message: "Error retrieving contacts", error: error.message });
+  }
+});
+
+//delete Rental comment
+app.delete("/comment/:id", async (req, res) => {
+  const rentalCommentsId = req.params.id;
+
+  try {
+    await Comment.findByIdAndRemove(rentalCommentsId);
+    res.status(200).json({ message: "Rental Comment deleted successfully" });
+  } catch (error) {
+    console.error("Error deleting Rental Comment", error);
+    res
+      .status(500)
+      .json({ message: "Error deleting Rental Comment", error: error.message });
   }
 });
