@@ -253,9 +253,12 @@ function Home() {
               that you need.
             </span>
           </div>
-          <button class="button button_size_small ">
-            Read More About Huurkor
-          </button>
+
+          <Link to="/about">
+            <button class="button button_size_small ">
+              Read More About Huurkor
+            </button>
+          </Link>
         </div>
       </div>
       <div class="about_story">
