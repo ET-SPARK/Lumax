@@ -63,7 +63,7 @@ function Home() {
       <div class="section__heading_align_center">
         <h1>Our Featured Properties</h1>
         <h3>
-          Search for property to rent and for sale in Pretoria and surrounds
+          Search for property to rent and for sale in Addis Ababa and surrounds
         </h3>
       </div>
       <div class="grids">
@@ -253,32 +253,32 @@ function Home() {
       <div class="section_type_story">
         <div class="section__heading">
           <div class="grid grid_cols_3">
-            <a href="#" class=" single_grid_text">
+            <Link to="/" class=" single_grid_text">
               <div class="property__card">
                 {" "}
-                For Sale
+                For Sale&nbsp;
                 <FontAwesomeIcon icon={faBuilding} />
               </div>
-            </a>
-            <a href="#" class=" single_grid_text">
+            </Link>
+            <Link to="/" class=" single_grid_text">
               <div class="property__card">
                 {" "}
-                For Rent
+                For Rent&nbsp;
                 <FontAwesomeIcon icon={faBuildingUser} />
               </div>
-            </a>
-            <a href="#" class=" single_grid_text">
+            </Link>
+            <Link to="/" class=" single_grid_text">
               <div class="property__card"> Commercial</div>
-            </a>
-            <a href="#" class=" single_grid_text">
+            </Link>
+            <Link to="/" class=" single_grid_text">
               <div class="property__card"> List With Us</div>
-            </a>
-            <a href="#" class=" single_grid_text">
+            </Link>
+            <Link to="/" class=" single_grid_text">
               <div class="property__card"> Property Alerts</div>
-            </a>
-            <a href="#" class=" single_grid_text">
+            </Link>
+            <Link to="/" class=" single_grid_text">
               <div class="property__card"> Bond Calculator</div>
-            </a>
+            </Link>
           </div>
           <div class="section__heading_area">
             <span class="section__heading_head">
