@@ -62,7 +62,7 @@ function Footer() {
               <a href="#" class="footer_top_row_footer_heading_links_style">
                 <div className="footer_top_row_footer_heading_links_style_icon">
                   <div className="footer_top_row_footer_heading_links_style_icon_text">
-                    <Link to="/victim" className="footer_link">
+                    <Link to="/contact" className="footer_link">
                       <p> Contact</p>
                     </Link>
                   </div>
