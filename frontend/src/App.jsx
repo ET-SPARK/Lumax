@@ -13,6 +13,7 @@ import DetailSaleView from "./components/DetailSaleView";
 import DetailSale from "./components/DetailSale";
 import Tools from "./components/Tools";
 import Victim from "./components/Victim";
+import Privacy from "./components/Privacy";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
         <Route path="/detail-sale/:postId" element={<DetailSale />} />
         <Route path="/tools" element={<Tools />} />
         <Route path="/victim" element={<Victim />} />
+        <Route path="/privacy-policy" element={<Privacy />} />
       </Routes>
     </Router>
   );
