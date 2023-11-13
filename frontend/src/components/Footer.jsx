@@ -6,7 +6,7 @@ import {
   faEnvelope,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Logo from "../images/LUMAX.png";
+import Logo from "../images/spark.png";
 import { Link } from "react-router-dom";
 
 function Footer() {
@@ -148,9 +148,9 @@ function Footer() {
             <span>Powered by</span>
           </div>
           <div>
-            <a>
+            <Link to="/" className="footer_link">
               <img src={Logo} alt="logo" />
-            </a>
+            </Link>
           </div>
         </div>
       </div>
