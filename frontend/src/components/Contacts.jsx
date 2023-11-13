@@ -9,6 +9,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 function Contacts() {
   const [formValues, setFormValues] = useState({
@@ -153,8 +154,10 @@ function Contacts() {
             <div className="form__disclaimer">
               {" "}
               <span>
-                By clicking on "submit" you agree to our{" "}
-                <a href="#">privacy policy</a>
+                By clicking on "submit" you agree to our
+                <Link to="/privacy-policy" className="footer_link">
+                  <p> Privacy Policy</p>
+                </Link>
               </span>
               <span>
                 {" "}
