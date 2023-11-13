@@ -1,4 +1,13 @@
 .section__subheading {
     font-weight: 700;
-    font-size: 18px;
+    font-size: 16px;
+}
+
+.section__paragraph {
+    font-size: 14px;
+    line-height: 28px;
+}
+
+.intro {
+    font-size: 18px !important;
 }
