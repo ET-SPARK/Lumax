@@ -62,14 +62,18 @@ function Footer() {
               <a href="#" class="footer_top_row_footer_heading_links_style">
                 <div className="footer_top_row_footer_heading_links_style_icon">
                   <div className="footer_top_row_footer_heading_links_style_icon_text">
-                    <p> Contact</p>
+                    <Link to="/victim" className="footer_link">
+                      <p> Contact</p>
+                    </Link>
                   </div>
                 </div>
               </a>
               <a href="#" class="footer_top_row_footer_heading_links_style">
                 <div className="footer_top_row_footer_heading_links_style_icon">
                   <div className="footer_top_row_footer_heading_links_style_icon_text">
-                    <p> Privacy Policy</p>
+                    <Link to="/victim" className="footer_link">
+                      <p> Privacy Policy</p>
+                    </Link>
                   </div>
                 </div>
               </a>
