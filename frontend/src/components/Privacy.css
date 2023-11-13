@@ -1,9 +1,11 @@
 .section__subheading {
     font-weight: 700;
     font-size: 16px;
+    margin: 10px 0;
 }
 
 .section__paragraph {
     font-size: 14px;
     line-height: 28px;
+    text-align: justify;
 }
