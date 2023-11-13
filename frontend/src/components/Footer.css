@@ -97,6 +97,10 @@
     margin-left: 20px;
 }
 
+.footer_link {
+    color: #fff;
+}
+
 @media screen and (max-width: 768px) {
     .footer_top_row {
         display: block;
