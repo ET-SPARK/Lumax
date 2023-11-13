@@ -141,7 +141,7 @@ function Footer() {
       </div>
       <div class="footer__bottom">
         <div>
-          <span>© LUMAX. All rights reserved</span>
+          <span>© LUMAX Property Management. All rights reserved</span>
         </div>
         <div className="footer__bottom_logo">
           <div>
