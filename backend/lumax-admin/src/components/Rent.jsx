@@ -119,7 +119,7 @@ function Rent() {
               />
             </div>
             <div className="form-group1">
-              <label htmlFor="numberOfBed">Number of Beds:</label>
+              <label htmlFor="numberOfBed">Number of Bedroom:</label>
               <input
                 type="text"
                 id="numberOfBed"
@@ -191,7 +191,7 @@ function Rent() {
               />
             </div>
             <div className="form-group1">
-              <label htmlFor="numberOfBath">Number of Baths:</label>
+              <label htmlFor="numberOfBath">Number of Bathrooms:</label>
               <input
                 type="text"
                 id="numberOfBath"
