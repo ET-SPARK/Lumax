@@ -9,20 +9,20 @@ function About() {
       <Header />
       <div className="section__background_overlay" />
       <div>
-        <h1 className="section__heading_about ">About Huurkor</h1>
+        <h1 className="section__heading_about ">About LUMAX</h1>
       </div>
       <div className="section_theme_lightest">
         <div className="section__sub">
-          <span className="section__paragraph_heading">Who is Huurkor?</span>
+          <span className="section__paragraph_heading">Who is LUMAX?</span>
           <span className="section__paragraph">
-            Huurkor is comprised of a dedicated team of real estate
-            professionals working diligently to raise the standards of
-            excellence of the property industry in Pretoria. We work with
-            investors, landlords, tenants and consumers who want to trade in the
-            property industry with confidence. In 1976, we commenced sectional
-            title administration as part of our service offering, and we
-            continually assess our services to ensure that our agency remains in
-            tandem with the pulse of the real estate sector.
+            LUMAX is comprised of a dedicated team of real estate professionals
+            working diligently to raise the standards of excellence of the
+            property industry in Pretoria. We work with investors, landlords,
+            tenants and consumers who want to trade in the property industry
+            with confidence. In 1976, we commenced sectional title
+            administration as part of our service offering, and we continually
+            assess our services to ensure that our agency remains in tandem with
+            the pulse of the real estate sector.
           </span>
         </div>
         <div className="section__sub">
@@ -55,7 +55,7 @@ function About() {
             We operate in the greater Gauteng area, as well as other provinces
             throughout South Africa. As part of our expansion strategy, we are
             always looking at breaking into new regional and national markets.
-            At present, Huurkor has a footprint in the following provinces:
+            At present, LUMAX has a footprint in the following provinces:
           </span>
           <span>
             <ul className="section__paragraph_li">
@@ -85,9 +85,9 @@ function About() {
             further proof of our service excellence. With an extensive network
             of real estate investors, buyers, sellers and tenants, we are able
             to meet the ever-changing needs of our valued clients timeously and
-            in a professional manner. Choose Huurkor for the best property
-            related services in Pretoria and Gauteng, and trade in the industry
-            with confidence.
+            in a professional manner. Choose LUMAX for the best property related
+            services in Pretoria and Gauteng, and trade in the industry with
+            confidence.
           </span>
         </div>
       </div>
