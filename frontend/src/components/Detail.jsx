@@ -67,15 +67,12 @@ function Detail() {
     setOnPress(!onPress);
   };
 
-  const { price } = formData; // Destructure the price from the formData
-
   const [formValues, setFormValues] = useState({
     name: "Name",
     email: "Email",
     phone: "Phone Number",
-    comments: "comment",
+    comments: "Comment",
   });
-
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -219,8 +216,8 @@ function Detail() {
             className="dropdown_input"
             id="comments"
             name="comments"
-            value={formValues.comments}
             onChange={handleChange}
+            value={formValues.comments} // Make sure to bind the value to the state
           ></textarea>
         </div>
         <div className="form__disclaimer">
