@@ -111,6 +111,7 @@ function Contacts() {
                 value={formValues.name}
                 onChange={handleChange}
                 maxLength={50}
+                required
               />
             </div>
             <div className="textare">
@@ -122,6 +123,7 @@ function Contacts() {
                 value={formValues.email}
                 onChange={handleChange}
                 maxLength={50}
+                required
               />
             </div>
             <div className="textare">
@@ -133,6 +135,7 @@ function Contacts() {
                 value={formValues.phone}
                 onChange={handleChange}
                 maxLength={50}
+                required
               />
             </div>
             <div className="textare">
@@ -143,6 +146,7 @@ function Contacts() {
                 value={formValues.area}
                 onChange={handleChange}
                 maxLength={50}
+                required
               />
             </div>
             <div className="textare">
@@ -153,6 +157,7 @@ function Contacts() {
                 value={formValues.comments}
                 onChange={handleChange}
                 maxLength={250}
+                required
               ></textarea>
             </div>
             <div className="textare">
@@ -162,6 +167,7 @@ function Contacts() {
                 className="dropdown_input"
                 value={formValues.dropdown}
                 onChange={handleChange}
+                required
               >
                 <option value="I want to buy">I want to buy</option>
                 <option value="I want to sell">I want to sell</option>

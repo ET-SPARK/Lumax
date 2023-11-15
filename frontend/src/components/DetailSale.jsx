@@ -79,8 +79,28 @@ function DetailSale() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (
+      formValues.name === "Name" ||
+      formValues.email === "Email" ||
+      formValues.phone === "Phone Number" ||
+      formValues.comments === "Comment"
+    ) {
+      alert("Please fill your information in all fields");
+      return;
+    }
+
+    if (
+      formValues.name === "" ||
+      formValues.email === "" ||
+      formValues.phone === "" ||
+      formValues.comments === ""
+    ) {
+      alert("Please fill all fields");
+      return;
+    }
+
     if (!isCaptchaVerified) {
-      console.log("Please complete the reCAPTCHA verification.");
+      alert("Please complete the reCAPTCHA verification.");
       return;
     }
 
@@ -199,6 +219,7 @@ function DetailSale() {
             value={formValues.name}
             onChange={handleChange}
             maxLength={50}
+            required
           />
         </div>
         <div className="textare">
@@ -210,6 +231,7 @@ function DetailSale() {
             value={formValues.email}
             onChange={handleChange}
             maxLength={50}
+            required
           />
         </div>
         <div className="textare">
@@ -221,6 +243,7 @@ function DetailSale() {
             value={formValues.phone}
             onChange={handleChange}
             maxLength={50}
+            required
           />
         </div>
         <div className="textare">
@@ -231,6 +254,7 @@ function DetailSale() {
             value={formValues.comments}
             onChange={handleChange}
             maxLength={250}
+            required
           ></textarea>
         </div>
         <div className="textare">

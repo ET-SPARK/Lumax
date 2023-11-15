@@ -68,6 +68,7 @@ function Detail() {
     setOnPress(!onPress);
   };
   const [isCaptchaVerified, setCaptchaVerified] = useState(false);
+  console.log(formData.ref);
 
   const [formValues, setFormValues] = useState({
     name: "Name",
@@ -77,8 +78,28 @@ function Detail() {
   });
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (
+      formValues.name === "Name" ||
+      formValues.email === "Email" ||
+      formValues.phone === "Phone Number" ||
+      formValues.comments === "Comment"
+    ) {
+      alert("Please fill your information in all fields");
+      return;
+    }
+
+    if (
+      formValues.name === "" ||
+      formValues.email === "" ||
+      formValues.phone === "" ||
+      formValues.comments === ""
+    ) {
+      alert("Please fill all fields");
+      return;
+    }
+
     if (!isCaptchaVerified) {
-      console.log("Please complete the reCAPTCHA verification.");
+      alert("Please complete the reCAPTCHA verification.");
       return;
     }
 
