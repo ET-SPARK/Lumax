@@ -10,6 +10,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import ReCAPTCHA from "react-google-recaptcha";
 
 function Contacts() {
   const [formValues, setFormValues] = useState({
@@ -21,8 +22,15 @@ function Contacts() {
     dropdown: "I went to buy",
   });
 
+  const [isCaptchaVerified, setCaptchaVerified] = useState(false);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!isCaptchaVerified) {
+      console.log("Please complete the reCAPTCHA verification.");
+      return;
+    }
+
     const postData = {
       name: formValues.name,
       email: formValues.email,
@@ -52,6 +60,10 @@ function Contacts() {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormValues({ ...formValues, [name]: value });
+  };
+  const handleCaptchaChange = (value) => {
+    // Set the captcha verification state
+    setCaptchaVerified(true);
   };
   return (
     <div>
@@ -155,6 +167,12 @@ function Contacts() {
                 <option value="I want to sell">I want to sell</option>
                 <option value="I want to rent">I want to rent</option>
               </select>
+            </div>
+            <div className="textare">
+              <ReCAPTCHA
+                sitekey={import.meta.env.VITE_APP_RECAPTCHA_SITE_KEY}
+                onChange={handleCaptchaChange}
+              />
             </div>
             <div className="form__disclaimer">
               {" "}
