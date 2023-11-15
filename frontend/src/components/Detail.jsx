@@ -117,13 +117,13 @@ function Detail() {
       );
 
       console.log("Form data sent to the server:", response.data);
-
       setFormValues({
         name: "",
         email: "",
         phone: "",
         comments: "",
       });
+      alert("Form data sent. We will contact you soon.");
     } catch (error) {
       console.error("Error submitting form:", error);
     }

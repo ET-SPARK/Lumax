@@ -26,8 +26,30 @@ function Contacts() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (
+      formValues.name === "Name" ||
+      formValues.email === "Email" ||
+      formValues.phone === "Phone Number" ||
+      formValues.comments === "Comment" ||
+      formValues.area === "Area"
+    ) {
+      alert("Please fill your information in all fields");
+      return;
+    }
+
+    if (
+      formValues.name === "" ||
+      formValues.email === "" ||
+      formValues.phone === "" ||
+      formValues.comments === "" ||
+      formValues.area === ""
+    ) {
+      alert("Please fill all fields");
+      return;
+    }
+
     if (!isCaptchaVerified) {
-      console.log("Please complete the reCAPTCHA verification.");
+      alert("Please complete the reCAPTCHA verification.");
       return;
     }
 
@@ -53,6 +75,7 @@ function Contacts() {
         comments: "comment",
         dropdown: "I went to buy",
       });
+      alert("Form data sent. We will contact you soon.");
     } catch (error) {
       console.error("Error submitting form:", error);
     }
