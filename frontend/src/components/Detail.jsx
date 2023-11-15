@@ -6,6 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretDown, faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
+import ReCAPTCHA from "react-google-recaptcha";
 
 function Detail() {
   const [onPress, setOnPress] = useState(false);
@@ -66,6 +67,7 @@ function Detail() {
   const handleOnPress = () => {
     setOnPress(!onPress);
   };
+  const [isCaptchaVerified, setCaptchaVerified] = useState(false);
 
   const [formValues, setFormValues] = useState({
     name: "Name",
@@ -75,6 +77,10 @@ function Detail() {
   });
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!isCaptchaVerified) {
+      console.log("Please complete the reCAPTCHA verification.");
+      return;
+    }
 
     const postData = {
       name: formValues.name,
@@ -105,6 +111,10 @@ function Detail() {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormValues({ ...formValues, [name]: value });
+  };
+  const handleCaptchaChange = (value) => {
+    // Set the captcha verification state
+    setCaptchaVerified(true);
   };
 
   return (
@@ -223,6 +233,12 @@ function Detail() {
             value={formValues.comments}
             maxLength={250}
           ></textarea>
+        </div>
+        <div className="textare">
+          <ReCAPTCHA
+            sitekey={import.meta.env.VITE_APP_RECAPTCHA_SITE_KEY}
+            onChange={handleCaptchaChange}
+          />
         </div>
         <div className="form__disclaimer">
           <span>
