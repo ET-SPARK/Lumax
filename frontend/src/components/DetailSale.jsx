@@ -4,7 +4,7 @@ import Header from "./Header";
 import "./Detail.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretDown, faLocationDot } from "@fortawesome/free-solid-svg-icons";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import axios from "axios";
 
 function DetailSale() {
@@ -73,7 +73,6 @@ function DetailSale() {
     name: "Name",
     email: "Email",
     phone: "Phone Number",
-
     comments: "comment",
   });
 
@@ -190,6 +189,7 @@ function DetailSale() {
             className="dropdown_input"
             value={formValues.name}
             onChange={handleChange}
+            maxLength={50}
           />
         </div>
         <div className="textare">
@@ -200,6 +200,7 @@ function DetailSale() {
             className="dropdown_input"
             value={formValues.email}
             onChange={handleChange}
+            maxLength={50}
           />
         </div>
         <div className="textare">
@@ -210,6 +211,7 @@ function DetailSale() {
             className="dropdown_input"
             value={formValues.phone}
             onChange={handleChange}
+            maxLength={50}
           />
         </div>
         <div className="textare">
@@ -219,12 +221,15 @@ function DetailSale() {
             name="comments"
             value={formValues.comments}
             onChange={handleChange}
+            maxLength={250}
           ></textarea>
         </div>
         <div className="form__disclaimer">
           <span>
             By clicking on "submit" you agree to our{" "}
-            <a href="#">privacy policy</a>
+            <Link to="/privacy-policy" className="footer_link">
+              <p> Privacy Policy</p>
+            </Link>
           </span>
           <span>
             <input type="submit" name="submit" className="submit" />

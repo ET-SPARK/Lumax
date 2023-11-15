@@ -76,6 +76,10 @@
     padding: 0 24px;
 }
 
+.button_size_small:hover {
+    background: #000;
+}
+
 .section__heading_align_center {
     text-align: center;
 }
