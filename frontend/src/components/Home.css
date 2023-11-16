@@ -106,15 +106,31 @@
 }
 
 .single_grid {
-    position: relative;
-    overflow: hidden;
 
+    overflow: hidden;
 }
 
 .skeleton {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     animation: skeleton-loading 1s linear infinite alternate;
-    opacity: .6;
+    opacity: 0.6;
+}
+
+.skeleton-text {
+    height: 150px;
+    margin-left: 10px;
+    /* Adjust the height of your skeleton text */
+    background-color: hsl(200, 20%, 70%);
+    margin-top: 10px;
+    /* Adjust the margin as needed */
+}
+
+.skeleton-last {
+    height: 10px;
+    margin-left: 10px;
+    /* Adjust the height of your skeleton text */
+    background-color: hsl(200, 20%, 70%);
+    margin-top: 80px;
 }
 
 @keyframes skeleton-loading {
