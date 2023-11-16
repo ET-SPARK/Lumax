@@ -19,9 +19,9 @@ function Tools() {
   };
 
   const images = [
-    "https://www.huurkor.co.za/assets/media/hero-slide-1b.a1f176c1cde190373cc45d9dafc93268.jpeg",
+    "https://www.afdb.org/sites/default/files/styles/1700x900/public/a1-addis-sheger-river-yohannes-minas.jpg?itok=t4xJscqz",
     "https://www.huurkor.co.za/assets/media/hero-slide-2.e76c7c5bb427e0513f8e1e4a466320d3.jpeg",
-    "https://www.huurkor.co.za/assets/media/hero-slide-3b.aea39f31267767d01c7444b0a51e9f9e.jpeg",
+    "https://images.pexels.com/photos/7005450/pexels-photo-7005450.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
   ];
 
   return (

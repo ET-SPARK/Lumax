@@ -244,11 +244,10 @@ function Home() {
               Addis Ababa
             </span>
             <span class="section__paragraph">
-              Huurkor has distinguished our company as the real estate and
+            LUMAX has distinguished our company as the real estate and
               rentals agency that helps property professionals and tenants
-              access the expert and accessible solutions that they need. Our
-              history dates back to 1968 and we have helped thousands of South
-              African families buy, sell and rent their homes. Let our team of
+              access the expert and accessible solutions that they need. We have helped thousands of Ethiopian
+              families buy, sell and rent their homes. Let our team of
               property professionals help you buy, sell or rent the property
               that you need.
             </span>
@@ -256,7 +255,7 @@ function Home() {
 
           <Link to="/about">
             <button class="button button_size_small ">
-              Read More About Huurkor
+              Read More About LUMAX
             </button>
           </Link>
         </div>
