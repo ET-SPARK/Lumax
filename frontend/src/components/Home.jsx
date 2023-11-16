@@ -70,6 +70,17 @@ function Home() {
           Search for property to rent and for sale in Addis Ababa and surrounds
         </h3>
       </div>
+      <div className="grids ">
+        <div class="skeleton single_grid">
+          <div className="post-container grid_img"></div>
+        </div>
+        <div class="skeleton single_grid">
+          <div className="post-container grid_img"></div>
+        </div>
+        <div class="skeleton single_grid">
+          <div className="post-container grid_img"></div>
+        </div>
+      </div>
       <div class="grids">
         {posts
           .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
@@ -244,12 +255,12 @@ function Home() {
               Addis Ababa
             </span>
             <span class="section__paragraph">
-            LUMAX has distinguished our company as the real estate and
-              rentals agency that helps property professionals and tenants
-              access the expert and accessible solutions that they need. We have helped thousands of Ethiopian
-              families buy, sell and rent their homes. Let our team of
-              property professionals help you buy, sell or rent the property
-              that you need.
+              LUMAX has distinguished our company as the real estate and rentals
+              agency that helps property professionals and tenants access the
+              expert and accessible solutions that they need. We have helped
+              thousands of Ethiopian families buy, sell and rent their homes.
+              Let our team of property professionals help you buy, sell or rent
+              the property that you need.
             </span>
           </div>
 

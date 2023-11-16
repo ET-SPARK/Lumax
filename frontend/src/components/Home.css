@@ -108,7 +108,23 @@
 .single_grid {
     position: relative;
     overflow: hidden;
+
+}
+
+.skeleton {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    animation: skeleton-loading 1s linear infinite alternate;
+    opacity: .6;
+}
+
+@keyframes skeleton-loading {
+    0% {
+        background-color: hsl(200, 20%, 70%);
+    }
+
+    100% {
+        background-color: hsl(200, 20%, 95%);
+    }
 }
 
 .property_card {
@@ -354,6 +370,8 @@ sup {
 .section__heading_align_center h3 {
     font-weight: lighter;
 }
+
+
 
 @media screen and (max-width: 768px) {
     .grids {
