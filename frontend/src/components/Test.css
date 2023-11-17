@@ -1,0 +1,10 @@
+.gallery {
+    display: grid;
+    grid-template-rows: 1fr 2fr;
+    gap: 2px;
+}
+
+.gallery_image {
+    background-color: #ccc;
+    height: 200px;
+}

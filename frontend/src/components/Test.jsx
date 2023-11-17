@@ -7,10 +7,9 @@ function Test() {
   return (
     <div>
       <Header />
-      <div className="gallery__images">
-        <div className="gallery__image">1</div>
-        <div className="gallery__image">2</div>
-        <div className="gallery__image">3</div>
+      <div class="gallery">
+        <span class="gallery_image">1</span>
+        <span class="gallery_image ">2</span>
       </div>
       <Footer />
     </div>
