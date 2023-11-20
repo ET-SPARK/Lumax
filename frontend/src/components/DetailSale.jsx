@@ -202,6 +202,21 @@ function DetailSale() {
               alt="Full Screen"
             />
           </Modal>
+
+          <div className="sub_image">
+            <div className="sub_image_cont">
+              <img src="https://s3.entegral.net/b/f_ef4e8b49325b4e75a451be2b99fc3380.jpg" />
+            </div>
+            <div className="sub_image_cont">
+              <img src="https://s3.entegral.net/b/f_d6f1770ee69d4ba4b73a4191036c2e4f.jpg" />
+            </div>
+            <div className="sub_image_cont">
+              <img src="https://s3.entegral.net/b/f_33e1f30ae09b4653bb123008a7617fe0.jpg" />
+            </div>
+            <div className="sub_image_cont">
+              <img src="https://s3.entegral.net/b/f_1f6d2731b5e0479ab6d0e189c4787f9b.jpg" />
+            </div>
+          </div>
         </div>
         <div className="detail_section_type_property_dev_img">
           <div className="detail_section_type_property_col">

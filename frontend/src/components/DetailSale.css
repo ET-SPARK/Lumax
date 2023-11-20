@@ -32,3 +32,42 @@
     right: 3em;
     padding: 10px;
 }
+
+.sub_image {
+    display: flex;
+    margin-top: 5px;
+    justify-content: space-between;
+}
+
+.sub_image_cont {
+    width: 170px;
+    height: 175px;
+}
+
+.sub_image_cont img {
+    width: 170px;
+    height: 175px;
+}
+
+.single_grid {
+    overflow: hidden;
+}
+
+.sub_image {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    animation: skeleton-loading 1s linear infinite alternate;
+}
+
+.sub_image_cont {
+    background-color: hsl(200, 20%, 70%);
+}
+
+@keyframes skeleton-loading {
+    0% {
+        background-color: hsl(200, 20%, 70%);
+    }
+
+    100% {
+        background-color: hsl(200, 20%, 95%);
+    }
+}
