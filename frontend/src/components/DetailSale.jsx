@@ -2,14 +2,29 @@ import React, { useEffect, useState } from "react";
 import Footer from "./Footer";
 import Header from "./Header";
 import "./Detail.css";
+import "./DetailSale.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCaretDown, faLocationDot } from "@fortawesome/free-solid-svg-icons";
+import {
+  faCaretDown,
+  faLocationDot,
+  faXmark,
+} from "@fortawesome/free-solid-svg-icons";
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
 import ReCAPTCHA from "react-google-recaptcha";
+import Modal from "react-modal";
 
 function DetailSale() {
   const [onPress, setOnPress] = useState(false);
+  const [modalIsOpen, setModalIsOpen] = useState(false);
+
+  const openModal = () => {
+    setModalIsOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalIsOpen(false);
+  };
 
   const [formData, setFormData] = useState({
     image: "",
@@ -141,7 +156,7 @@ function DetailSale() {
   };
   return (
     <div>
-      <Header />
+      {!modalIsOpen && <Header />}
       <div className="property__detail_summary">
         <div className="property__detail_summary_header">
           <div>
@@ -170,7 +185,23 @@ function DetailSale() {
       </div>
       <div className="detail_section_type_property">
         <div className="detail_section_type_property_dev_img">
-          <img src={formData.image} />
+          <img src={formData.image} alt="Post" onClick={openModal} />
+          <Modal
+            isOpen={modalIsOpen}
+            onRequestClose={closeModal}
+            contentLabel="Image Modal"
+            className="full_screen_modal"
+            overlayClassName="full_screen_overlay"
+          >
+            <button className="modal_close_button" onClick={closeModal}>
+              <FontAwesomeIcon icon={faXmark} />
+            </button>
+            <img
+              className="full_screen_img"
+              src={formData.image}
+              alt="Full Screen"
+            />
+          </Modal>
         </div>
         <div className="detail_section_type_property_dev_img">
           <div className="detail_section_type_property_col">
