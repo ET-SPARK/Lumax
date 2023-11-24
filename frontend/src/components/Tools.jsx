@@ -8,7 +8,6 @@ import "./Tools.css";
 import { Link } from "react-router-dom";
 
 function Tools() {
-  ds;
   const settings = {
     dots: true,
     infinite: true,
