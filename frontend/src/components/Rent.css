@@ -3,3 +3,11 @@
     text-decoration: none;
     font-weight: bold;
 }
+
+.view_section__content {
+    margin-top: 50px;
+}
+
+.icon_mar {
+    margin-left: 10px;
+}

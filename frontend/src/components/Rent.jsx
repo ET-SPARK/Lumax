@@ -2,8 +2,7 @@ import React, { useEffect, useState } from "react";
 import {
   faBed,
   faBath,
-  faBuilding,
-  faBuildingUser,
+  faArrowRight,
   faVectorSquare,
   faWarehouse,
 } from "@fortawesome/free-solid-svg-icons";
@@ -141,7 +140,8 @@ function Rent() {
       )}
       <div className="view_section__content">
         <Link to="/for-rent-detail" className="view_section__content_link">
-          View all properties for rent
+          View all properties for rent{" "}
+          <FontAwesomeIcon className="icon_mar" icon={faArrowRight} />
         </Link>
       </div>
       <Footer />

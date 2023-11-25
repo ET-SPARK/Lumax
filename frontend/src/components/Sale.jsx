@@ -5,6 +5,7 @@ import {
   faBath,
   faVectorSquare,
   faWarehouse,
+  faArrowRight,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Footer from "./Footer";
@@ -139,6 +140,7 @@ function Sale() {
       <div className="view_section__content">
         <Link to="/for-sale-detail" className="view_section__content_link">
           View all properties for sale
+          <FontAwesomeIcon className="icon_mar" icon={faArrowRight} />
         </Link>
       </div>
       <Footer />
