@@ -36,7 +36,7 @@ function DetailSaleView() {
       {posts.length === 0 ? (
         <div className="grids">
           <div class="skeleton single_grid">
-            <div className="post-container grid_img">
+            <div className="post-container grid_imgs">
               {/* Your existing content */}
               <div class="skeleton-text"></div>
               <div class="skeleton-last"></div>
@@ -44,7 +44,7 @@ function DetailSaleView() {
             </div>
           </div>
           <div class="skeleton single_grid">
-            <div className="post-container grid_img">
+            <div className="post-container grid_imgs">
               {/* Your existing content */}
               <div class="skeleton-text"></div>
               <div class="skeleton-last"></div>
@@ -52,7 +52,7 @@ function DetailSaleView() {
             </div>
           </div>
           <div class="skeleton single_grid">
-            <div className="post-container grid_img">
+            <div className="post-container grid_imgs">
               {/* Your existing content */}
               <div class="skeleton-text"></div>
               <div class="skeleton-last"></div>
@@ -68,7 +68,7 @@ function DetailSaleView() {
               <div key={post._id} class="single_grid">
                 <Link to={`/detail-sale/${post._id}`} class="property_card">
                   <div className="post-container">
-                    <img className="grid_img" src={post.image} alt="Post" />
+                    <img className="grid_imgs" src={post.image} alt="Post" />
                     <div className="overlay-text">
                       <p>{post.status}</p>
                     </div>
