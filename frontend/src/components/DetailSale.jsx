@@ -17,6 +17,25 @@ import Modal from "react-modal";
 function DetailSale() {
   const [onPress, setOnPress] = useState(false);
   const [modalIsOpen, setModalIsOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedImageUrl, setSelectedImageUrl] = useState("");
+
+  const handleOpenModal = (image) => {
+    setSelectedImageUrl(image);
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setSelectedImageUrl("");
+    setIsModalOpen(false);
+  };
+
+  const galleryImages = [
+    "https://s3.entegral.net/b/f_ef4e8b49325b4e75a451be2b99fc3380.jpg",
+    "https://s3.entegral.net/b/f_d6f1770ee69d4ba4b73a4191036c2e4f.jpg",
+    "https://s3.entegral.net/b/f_33e1f30ae09b4653bb123008a7617fe0.jpg",
+    "https://s3.entegral.net/b/f_1f6d2731b5e0479ab6d0e189c4787f9b.jpg",
+  ];
 
   const openModal = () => {
     setModalIsOpen(true);
@@ -156,7 +175,7 @@ function DetailSale() {
   };
   return (
     <div>
-      {!modalIsOpen && <Header />}
+      {!modalIsOpen && !isModalOpen && <Header />}
       <div className="property__detail_summary">
         <div className="property__detail_summary_header">
           <div>
@@ -204,19 +223,33 @@ function DetailSale() {
           </Modal>
 
           <div className="sub_image">
-            <div className="sub_image_cont">
-              <img src="https://s3.entegral.net/b/f_ef4e8b49325b4e75a451be2b99fc3380.jpg" />
-            </div>
-            <div className="sub_image_cont">
-              <img src="https://s3.entegral.net/b/f_d6f1770ee69d4ba4b73a4191036c2e4f.jpg" />
-            </div>
-            <div className="sub_image_cont">
-              <img src="https://s3.entegral.net/b/f_33e1f30ae09b4653bb123008a7617fe0.jpg" />
-            </div>
-            <div className="sub_image_cont">
-              <img src="https://s3.entegral.net/b/f_1f6d2731b5e0479ab6d0e189c4787f9b.jpg" />
-            </div>
+            {galleryImages.map((image, index) => (
+              <div className="sub_image_cont" key={index}>
+                <img
+                  src={image}
+                  alt={`Image ${index + 1}`}
+                  onClick={() => handleOpenModal(image)}
+                />
+              </div>
+            ))}
           </div>
+
+          <Modal
+            isOpen={isModalOpen}
+            onRequestClose={handleCloseModal}
+            contentLabel="Image Modal"
+            className="full_screen_modal"
+            overlayClassName="full_screen_overlay"
+          >
+            <button className="modal_close_button" onClick={handleCloseModal}>
+              <FontAwesomeIcon icon={faXmark} />
+            </button>
+            <img
+              className="full_screen_img"
+              src={selectedImageUrl}
+              alt="Full Screen"
+            />
+          </Modal>
         </div>
         <div className="detail_section_type_property_dev_img">
           <div className="detail_section_type_property_col">
