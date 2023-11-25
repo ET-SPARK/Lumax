@@ -71,3 +71,15 @@
         background-color: hsl(200, 20%, 95%);
     }
 }
+
+@media screen and (max-width: 768px) {
+    .sub_image_cont img {
+        width: 70px;
+        height: 73px;
+    }
+
+    .sub_image_cont {
+        width: 70px;
+        height: 73px;
+    }
+}
