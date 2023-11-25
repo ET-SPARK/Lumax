@@ -47,7 +47,7 @@ function Tools() {
           <Link to="/for-sale">
             <button className="button button_size_small">Buy A Property</button>
           </Link>
-          <Link to="/for-sale">
+          <Link to="/for-rent">
             <button class="button button_size_small">Rent A Property</button>
           </Link>
         </div>
