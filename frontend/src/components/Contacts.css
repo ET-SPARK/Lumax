@@ -3,6 +3,10 @@
     flex-direction: column;
 }
 
+.contact__details {
+    overflow-x: hidden;
+}
+
 .contact__office_heading {
     font-weight: 700;
     font-size: 18px;
