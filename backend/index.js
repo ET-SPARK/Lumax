@@ -143,6 +143,10 @@ app.post("/sale", async (req, res) => {
   try {
     const {
       image,
+      image2,
+      image3,
+      image4,
+      image5,
       price,
       type,
       place,
@@ -158,6 +162,10 @@ app.post("/sale", async (req, res) => {
 
     const newSale = new Sale({
       image,
+      image2,
+      image3,
+      image4,
+      image5,
       price,
       type,
       place,

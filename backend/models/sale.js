@@ -5,6 +5,22 @@ const saleSchema = new mongoose.Schema({
     type: String, // Assuming image is stored as a URL
     required: true,
   },
+  image2: {
+    type: String, // Assuming image is stored as a URL
+    required: true,
+  },
+  image3: {
+    type: String, // Assuming image is stored as a URL
+    required: true,
+  },
+  image4: {
+    type: String, // Assuming image is stored as a URL
+    required: true,
+  },
+  image5: {
+    type: String, // Assuming image is stored as a URL
+    required: true,
+  },
   price: {
     type: String,
     required: true,

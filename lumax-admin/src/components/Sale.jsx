@@ -40,6 +40,10 @@ function Sale() {
 
   const [formData, setFormData] = useState({
     image: "",
+    image2: "",
+    image3: "",
+    image4: "",
+    image5: "",
     price: "",
     type: "",
     place: "",
@@ -72,6 +76,10 @@ function Sale() {
         // Clear the form fields after successful submission
         setFormData({
           image: "",
+          image2: "",
+          image3: "",
+          image4: "",
+          image5: "",
           price: "",
           type: "",
           place: "",
@@ -104,6 +112,46 @@ function Sale() {
                 id="image"
                 name="image"
                 value={formData.image}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="form-group1">
+              <label htmlFor="image">Image URL2:</label>
+              <input
+                type="text"
+                id="image"
+                name="image2"
+                value={formData.image2}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="form-group1">
+              <label htmlFor="image">Image URL3:</label>
+              <input
+                type="text"
+                id="image"
+                name="image3"
+                value={formData.image3}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="form-group1">
+              <label htmlFor="image">Image URL4:</label>
+              <input
+                type="text"
+                id="image"
+                name="image4"
+                value={formData.image4}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="form-group1">
+              <label htmlFor="image">Image URL5:</label>
+              <input
+                type="text"
+                id="image"
+                name="image5"
+                value={formData.image5}
                 onChange={handleChange}
               />
             </div>

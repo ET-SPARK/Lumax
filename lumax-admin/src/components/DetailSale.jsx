@@ -15,6 +15,10 @@ import { Link, useParams } from "react-router-dom";
 function DetailSale() {
   const [formData, setFormData] = useState({
     image: "",
+    image2: "",
+    image3: "",
+    image4: "",
+    image5: "",
     price: "",
     type: "",
     place: "",
@@ -45,6 +49,10 @@ function DetailSale() {
         // Set the formData state with the retrieved data
         setFormData({
           image: postData.image,
+          image2: postData.image2,
+          image3: postData.image3,
+          image4: postData.image4,
+          image5: postData.image5,
           price: postData.price,
           type: postData.type,
           place: postData.place,
@@ -110,6 +118,46 @@ function DetailSale() {
                 id="image"
                 name="image"
                 value={formData.image}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="form-group1">
+              <label htmlFor="image">Image URL2:</label>
+              <input
+                type="text"
+                id="image"
+                name="image2"
+                value={formData.image2}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="form-group1">
+              <label htmlFor="image">Image URL3:</label>
+              <input
+                type="text"
+                id="image"
+                name="image3"
+                value={formData.image3}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="form-group1">
+              <label htmlFor="image">Image URL4:</label>
+              <input
+                type="text"
+                id="image"
+                name="image4"
+                value={formData.image4}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="form-group1">
+              <label htmlFor="image">Image URL4:</label>
+              <input
+                type="text"
+                id="image"
+                name="image5"
+                value={formData.image5}
                 onChange={handleChange}
               />
             </div>
