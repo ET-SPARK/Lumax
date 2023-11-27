@@ -17,25 +17,18 @@ import Modal from "react-modal";
 function DetailSale() {
   const [onPress, setOnPress] = useState(false);
   const [modalIsOpen, setModalIsOpen] = useState(false);
-  const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedImageUrl, setSelectedImageUrl] = useState("");
 
-  const handleOpenModal = (image) => {
-    setSelectedImageUrl(image);
-    setIsModalOpen(true);
-  };
+  const [onPress2, setOnPress2] = useState(false);
+  const [modalIsOpen2, setModalIsOpen2] = useState(false);
 
-  const handleCloseModal = () => {
-    setSelectedImageUrl("");
-    setIsModalOpen(false);
-  };
+  const [onPress3, setOnPress3] = useState(false);
+  const [modalIsOpen3, setModalIsOpen3] = useState(false);
 
-  const galleryImages = [
-    "https://s3.entegral.net/b/f_ef4e8b49325b4e75a451be2b99fc3380.jpg",
-    "https://s3.entegral.net/b/f_d6f1770ee69d4ba4b73a4191036c2e4f.jpg",
-    "https://s3.entegral.net/b/f_33e1f30ae09b4653bb123008a7617fe0.jpg",
-    "https://s3.entegral.net/b/f_1f6d2731b5e0479ab6d0e189c4787f9b.jpg",
-  ];
+  const [onPress4, setOnPress4] = useState(false);
+  const [modalIsOpen4, setModalIsOpen4] = useState(false);
+
+  const [onPress5, setOnPress5] = useState(false);
+  const [modalIsOpen5, setModalIsOpen5] = useState(false);
 
   const openModal = () => {
     setModalIsOpen(true);
@@ -43,6 +36,38 @@ function DetailSale() {
 
   const closeModal = () => {
     setModalIsOpen(false);
+  };
+
+  const openModal2 = () => {
+    setModalIsOpen2(true);
+  };
+
+  const closeModal2 = () => {
+    setModalIsOpen2(false);
+  };
+
+  const openModal3 = () => {
+    setModalIsOpen3(true);
+  };
+
+  const closeModal3 = () => {
+    setModalIsOpen3(false);
+  };
+
+  const openModal4 = () => {
+    setModalIsOpen4(true);
+  };
+
+  const closeModal4 = () => {
+    setModalIsOpen4(false);
+  };
+
+  const openModal5 = () => {
+    setModalIsOpen5(true);
+  };
+
+  const closeModal5 = () => {
+    setModalIsOpen5(false);
   };
 
   const [formData, setFormData] = useState({
@@ -182,7 +207,11 @@ function DetailSale() {
   };
   return (
     <div>
-      {!modalIsOpen && !isModalOpen && <Header />}
+      {!modalIsOpen &&
+        !modalIsOpen2 &&
+        !modalIsOpen3 &&
+        !modalIsOpen4 &&
+        !modalIsOpen5 && <Header />}
       <div className="property__detail_summary">
         <div className="property__detail_summary_header">
           <div>
@@ -231,15 +260,15 @@ function DetailSale() {
 
           <div className="sub_image">
             <div className="sub_image_cont">
-              <img src={formData.image2} alt="Post" onClick={openModal} />
+              <img src={formData.image2} alt="Post" onClick={openModal2} />
               <Modal
-                isOpen={modalIsOpen}
-                onRequestClose={closeModal}
+                isOpen={modalIsOpen2}
+                onRequestClose={closeModal2}
                 contentLabel="Image Modal"
                 className="full_screen_modal"
                 overlayClassName="full_screen_overlay"
               >
-                <button className="modal_close_button" onClick={closeModal}>
+                <button className="modal_close_button" onClick={closeModal2}>
                   <FontAwesomeIcon icon={faXmark} />
                 </button>
                 <img
@@ -251,15 +280,15 @@ function DetailSale() {
             </div>
 
             <div className="sub_image_cont">
-              <img src={formData.image3} alt="Post" onClick={openModal} />
+              <img src={formData.image3} alt="Post" onClick={openModal3} />
               <Modal
-                isOpen={modalIsOpen}
-                onRequestClose={closeModal}
+                isOpen={modalIsOpen3}
+                onRequestClose={closeModal3}
                 contentLabel="Image Modal"
                 className="full_screen_modal"
                 overlayClassName="full_screen_overlay"
               >
-                <button className="modal_close_button" onClick={closeModal}>
+                <button className="modal_close_button" onClick={closeModal3}>
                   <FontAwesomeIcon icon={faXmark} />
                 </button>
                 <img
@@ -271,15 +300,15 @@ function DetailSale() {
             </div>
 
             <div className="sub_image_cont">
-              <img src={formData.image4} alt="Post" onClick={openModal} />
+              <img src={formData.image4} alt="Post" onClick={openModal4} />
               <Modal
-                isOpen={modalIsOpen}
-                onRequestClose={closeModal}
+                isOpen={modalIsOpen4}
+                onRequestClose={closeModal4}
                 contentLabel="Image Modal"
                 className="full_screen_modal"
                 overlayClassName="full_screen_overlay"
               >
-                <button className="modal_close_button" onClick={closeModal}>
+                <button className="modal_close_button" onClick={closeModal4}>
                   <FontAwesomeIcon icon={faXmark} />
                 </button>
                 <img
@@ -290,15 +319,15 @@ function DetailSale() {
               </Modal>
             </div>
             <div className="sub_image_cont">
-              <img src={formData.image5} alt="Post" onClick={openModal} />
+              <img src={formData.image5} alt="Post" onClick={openModal5} />
               <Modal
-                isOpen={modalIsOpen}
-                onRequestClose={closeModal}
+                isOpen={modalIsOpen5}
+                onRequestClose={closeModal5}
                 contentLabel="Image Modal"
                 className="full_screen_modal"
                 overlayClassName="full_screen_overlay"
               >
-                <button className="modal_close_button" onClick={closeModal}>
+                <button className="modal_close_button" onClick={closeModal5}>
                   <FontAwesomeIcon icon={faXmark} />
                 </button>
                 <img
@@ -309,23 +338,6 @@ function DetailSale() {
               </Modal>
             </div>
           </div>
-
-          <Modal
-            isOpen={isModalOpen}
-            onRequestClose={handleCloseModal}
-            contentLabel="Image Modal"
-            className="full_screen_modal"
-            overlayClassName="full_screen_overlay"
-          >
-            <button className="modal_close_button" onClick={handleCloseModal}>
-              <FontAwesomeIcon icon={faXmark} />
-            </button>
-            <img
-              className="full_screen_img"
-              src={selectedImageUrl}
-              alt="Full Screen"
-            />
-          </Modal>
         </div>
         <div className="detail_section_type_property_dev_img">
           <div className="detail_section_type_property_col">
