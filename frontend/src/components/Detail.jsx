@@ -7,6 +7,7 @@ import { faCaretDown, faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
 import ReCAPTCHA from "react-google-recaptcha";
+import Modal from "react-modal";
 
 function Detail() {
   const [onPress, setOnPress] = useState(false);
