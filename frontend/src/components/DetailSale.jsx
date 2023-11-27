@@ -423,7 +423,7 @@ function DetailSale() {
             required
           ></textarea>
         </div>
-        <div className="textare">
+        <div className="textare rec">
           <ReCAPTCHA
             sitekey={import.meta.env.VITE_APP_RECAPTCHA_SITE_KEY}
             onChange={handleCaptchaChange}
