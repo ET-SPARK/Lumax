@@ -152,7 +152,7 @@ function DetailSale() {
               />
             </div>
             <div className="form-group1">
-              <label htmlFor="image">Image URL4:</label>
+              <label htmlFor="image">Image URL5:</label>
               <input
                 type="text"
                 id="image"
