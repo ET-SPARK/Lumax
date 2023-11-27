@@ -124,18 +124,23 @@
     }
 
     .footer__bottom span {
-        margin-left: 50px;
+        margin-left: 20px !important;
         margin-left: 100px;
     }
 
     .footer__bottom img {
         margin-top: 20px;
         margin-left: 20px;
+        width: 100px;
     }
 
     .footer__bottom_logo {
-        display: block;
+        display: flex;
         margin-left: 100px;
         margin-top: 10px;
+    }
+
+    .footer__bottom_mark {
+        font-size: 14px !important;
     }
 }
