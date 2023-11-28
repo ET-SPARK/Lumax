@@ -467,6 +467,11 @@ function Detail() {
           </span>
         </div>
       </form>
+      <div>
+        <h3 className="section__heading_about ">
+          You may also be interested in these properties
+        </h3>
+      </div>
       <div class="grids">
         {posts
           .filter((post) => post._id !== postId)
