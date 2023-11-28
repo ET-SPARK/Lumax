@@ -362,9 +362,6 @@ function Detail() {
               <b>Covered Parking:&nbsp;&nbsp;</b>
               {formData.numberOfGarage}
             </span>
-            <span>
-              <b>Garden:&nbsp;&nbsp;</b>yes?
-            </span>
           </div>
         </div>
       </div>
