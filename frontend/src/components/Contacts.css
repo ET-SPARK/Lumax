@@ -109,4 +109,51 @@
     .contact__office img {
         display: none;
     }
+
+    .contact__details_space {
+        margin-left: 50px;
+    }
+
+    .contact__office_heading {
+        margin-left: 50px;
+    }
+
+    .textare {
+        margin-left: 50px;
+    }
+
+    .form__disclaimer {
+        margin-left: 50px;
+    }
+}
+
+@media screen and (max-width: 390px) {
+    .contact__details_space {
+        margin-left: 80px;
+    }
+
+    .contact__detail_key {
+        font-weight: 700;
+        flex-basis: 100px;
+        font-size: 12px;
+    }
+
+    .contact__office_heading {
+        margin-left: 80px;
+        font-size: 14px;
+    }
+
+    .textare {
+        margin-left: 80px;
+    }
+
+    .form__disclaimer {
+        margin-left: 80px;
+    }
+
+    .dropdown_input {
+        padding: 10px 0px;
+        padding-right: 10px;
+        padding-left: 5px;
+    }
 }

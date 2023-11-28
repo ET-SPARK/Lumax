@@ -37,3 +37,9 @@
     background-color: #000;
     /* Change the active dot color as needed */
 }
+
+@media screen and (max-width: 768px) {
+    .slider-image {
+        height: 800px;
+    }
+}

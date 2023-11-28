@@ -94,7 +94,7 @@ function Contacts() {
       <div className="contact__details">
         <div className="contact__office">
           <span className="contact__office_heading">
-            Huurkor Properties East – Sunnyside Branch
+            Lumax Properties East – Sunnyside Branch
           </span>
           <span className="contact__details_space">
             <span className="contact__detail_key">
@@ -103,7 +103,7 @@ function Contacts() {
               &nbsp; Address
             </span>
             <span className="contact__detail_value">
-              187 Robert Sobukwe Sunnyside Pretoria Gauteng
+              187 Robert Sobukwe Sunnyside
             </span>
           </span>
           <span className="contact__details_space">
