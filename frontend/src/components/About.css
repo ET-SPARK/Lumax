@@ -52,3 +52,15 @@
     font-size: 14px;
     line-height: 28px;
 }
+
+@media screen and (max-width: 450px) {
+    .section__paragraph {
+        font-size: 12px;
+        line-height: 18px;
+    }
+
+    .section__sub {
+        margin: 0 20px;
+    }
+
+}

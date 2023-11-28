@@ -40,6 +40,13 @@
 
 @media screen and (max-width: 768px) {
     .slider-image {
-        height: 800px;
+        height: 820px;
+    }
+}
+
+
+@media screen and (max-width: 390px) {
+    .slider-image {
+        height: 650px;
     }
 }
