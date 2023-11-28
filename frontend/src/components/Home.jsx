@@ -177,7 +177,7 @@ function Home() {
                       {post.price}&nbsp;br&nbsp; / &nbsp;month
                     </span>
                     <span class="property-card__summary card__price_text">
-                      {post.type},&nbsp; Renral Monthly
+                      {post.type},&nbsp;
                     </span>
                     <span class="property-card__summary card__price_text">
                       {post.place}

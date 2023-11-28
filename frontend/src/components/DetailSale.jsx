@@ -240,104 +240,114 @@ function DetailSale() {
       </div>
       <div className="detail_section_type_property">
         <div className="detail_section_type_property_dev_img">
-          <img src={formData.image} alt="Post" onClick={openModal} />
-          <Modal
-            isOpen={modalIsOpen}
-            onRequestClose={closeModal}
-            contentLabel="Image Modal"
-            className="full_screen_modal"
-            overlayClassName="full_screen_overlay"
-          >
-            <button className="modal_close_button" onClick={closeModal}>
-              <FontAwesomeIcon icon={faXmark} />
-            </button>
-            <img
-              className="full_screen_img"
-              src={formData.image}
-              alt="Full Screen"
-            />
-          </Modal>
-
-          <div className="sub_image">
-            <div className="sub_image_cont">
-              <img src={formData.image2} alt="Post" onClick={openModal2} />
-              <Modal
-                isOpen={modalIsOpen2}
-                onRequestClose={closeModal2}
-                contentLabel="Image Modal"
-                className="full_screen_modal"
-                overlayClassName="full_screen_overlay"
-              >
-                <button className="modal_close_button" onClick={closeModal2}>
-                  <FontAwesomeIcon icon={faXmark} />
-                </button>
-                <img
-                  className="full_screen_img"
-                  src={formData.image2}
-                  alt="Full Screen"
-                />
-              </Modal>
-            </div>
-
-            <div className="sub_image_cont">
-              <img src={formData.image3} alt="Post" onClick={openModal3} />
-              <Modal
-                isOpen={modalIsOpen3}
-                onRequestClose={closeModal3}
-                contentLabel="Image Modal"
-                className="full_screen_modal"
-                overlayClassName="full_screen_overlay"
-              >
-                <button className="modal_close_button" onClick={closeModal3}>
-                  <FontAwesomeIcon icon={faXmark} />
-                </button>
-                <img
-                  className="full_screen_img"
-                  src={formData.image3}
-                  alt="Full Screen"
-                />
-              </Modal>
-            </div>
-
-            <div className="sub_image_cont">
-              <img src={formData.image4} alt="Post" onClick={openModal4} />
-              <Modal
-                isOpen={modalIsOpen4}
-                onRequestClose={closeModal4}
-                contentLabel="Image Modal"
-                className="full_screen_modal"
-                overlayClassName="full_screen_overlay"
-              >
-                <button className="modal_close_button" onClick={closeModal4}>
-                  <FontAwesomeIcon icon={faXmark} />
-                </button>
-                <img
-                  className="full_screen_img"
-                  src={formData.image4}
-                  alt="Full Screen"
-                />
-              </Modal>
-            </div>
-            <div className="sub_image_cont">
-              <img src={formData.image5} alt="Post" onClick={openModal5} />
-              <Modal
-                isOpen={modalIsOpen5}
-                onRequestClose={closeModal5}
-                contentLabel="Image Modal"
-                className="full_screen_modal"
-                overlayClassName="full_screen_overlay"
-              >
-                <button className="modal_close_button" onClick={closeModal5}>
-                  <FontAwesomeIcon icon={faXmark} />
-                </button>
-                <img
-                  className="full_screen_img"
-                  src={formData.image5}
-                  alt="Full Screen"
-                />
-              </Modal>
-            </div>
+          <div className="first_image">
+            <img src={formData.image} alt="Post" onClick={openModal} />
+            <Modal
+              isOpen={modalIsOpen}
+              onRequestClose={closeModal}
+              contentLabel="Image Modal"
+              className="full_screen_modal"
+              overlayClassName="full_screen_overlay"
+            >
+              <button className="modal_close_button" onClick={closeModal}>
+                <FontAwesomeIcon icon={faXmark} />
+              </button>
+              <img
+                className="full_screen_img"
+                src={formData.image}
+                alt="Full Screen"
+              />
+            </Modal>
           </div>
+          {formData.image.length === 0 ? (
+            <div className="sub_image">
+              <div className="sub_image_cont"></div>
+              <div className="sub_image_cont"></div>
+              <div className="sub_image_cont"></div>
+              <div className="sub_image_cont"></div>
+            </div>
+          ) : (
+            <div className="sub_image">
+              <div className="sub_image_cont">
+                <img src={formData.image2} alt="Post" onClick={openModal2} />
+                <Modal
+                  isOpen={modalIsOpen2}
+                  onRequestClose={closeModal2}
+                  contentLabel="Image Modal"
+                  className="full_screen_modal"
+                  overlayClassName="full_screen_overlay"
+                >
+                  <button className="modal_close_button" onClick={closeModal2}>
+                    <FontAwesomeIcon icon={faXmark} />
+                  </button>
+                  <img
+                    className="full_screen_img"
+                    src={formData.image2}
+                    alt="Full Screen"
+                  />
+                </Modal>
+              </div>
+
+              <div className="sub_image_cont">
+                <img src={formData.image3} alt="Post" onClick={openModal3} />
+                <Modal
+                  isOpen={modalIsOpen3}
+                  onRequestClose={closeModal3}
+                  contentLabel="Image Modal"
+                  className="full_screen_modal"
+                  overlayClassName="full_screen_overlay"
+                >
+                  <button className="modal_close_button" onClick={closeModal3}>
+                    <FontAwesomeIcon icon={faXmark} />
+                  </button>
+                  <img
+                    className="full_screen_img"
+                    src={formData.image3}
+                    alt="Full Screen"
+                  />
+                </Modal>
+              </div>
+
+              <div className="sub_image_cont">
+                <img src={formData.image4} alt="Post" onClick={openModal4} />
+                <Modal
+                  isOpen={modalIsOpen4}
+                  onRequestClose={closeModal4}
+                  contentLabel="Image Modal"
+                  className="full_screen_modal"
+                  overlayClassName="full_screen_overlay"
+                >
+                  <button className="modal_close_button" onClick={closeModal4}>
+                    <FontAwesomeIcon icon={faXmark} />
+                  </button>
+                  <img
+                    className="full_screen_img"
+                    src={formData.image4}
+                    alt="Full Screen"
+                  />
+                </Modal>
+              </div>
+              <div className="sub_image_cont">
+                <img src={formData.image5} alt="Post" onClick={openModal5} />
+                <Modal
+                  isOpen={modalIsOpen5}
+                  onRequestClose={closeModal5}
+                  contentLabel="Image Modal"
+                  className="full_screen_modal"
+                  overlayClassName="full_screen_overlay"
+                >
+                  <button className="modal_close_button" onClick={closeModal5}>
+                    <FontAwesomeIcon icon={faXmark} />
+                  </button>
+                  <img
+                    className="full_screen_img"
+                    src={formData.image5}
+                    alt="Full Screen"
+                  />
+                </Modal>
+              </div>
+            </div>
+          )}
         </div>
         <div className="detail_section_type_property_dev_img">
           <div className="detail_section_type_property_col">
@@ -363,9 +373,6 @@ function DetailSale() {
             <span>
               <b>Covered Parking:&nbsp;&nbsp;</b>
               {formData.numberOfGarage}
-            </span>
-            <span>
-              <b>Garden:&nbsp;&nbsp;</b>yes?
             </span>
           </div>
         </div>

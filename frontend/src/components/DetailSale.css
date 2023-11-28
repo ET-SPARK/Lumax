@@ -47,6 +47,12 @@
 .sub_image_cont img {
     width: 170px;
     height: 175px;
+
+}
+
+.first_image {
+    box-shadow: 0 12px 14px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
 }
 
 .single_grid {
@@ -54,7 +60,7 @@
 }
 
 .sub_image {
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 12px 14px rgba(0, 0, 0, 0.5);
     animation: skeleton-loading 1s linear infinite alternate;
 }
 
