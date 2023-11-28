@@ -90,8 +90,16 @@
     }
 
 
+}
 
+@media screen and (max-width: 420px) {
+    .property__detail_summary_header {
+        padding-right: 20px;
+    }
 
+    .detail_section_type_property {
+        padding: 0 70px
+    }
 }
 
 @media screen and (max-width: 390px) {
@@ -121,5 +129,9 @@
 @media screen and (max-width: 390px) {
     .detail_section_type_property {
         padding: 0 40px
+    }
+
+    .property__detail_summary_header {
+        padding-right: 10px !important;
     }
 }
