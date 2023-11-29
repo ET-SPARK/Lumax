@@ -38,6 +38,8 @@
     /* Change the active dot color as needed */
 }
 
+
+
 @media screen and (max-width: 768px) {
     .slider-image {
         height: 820px;
@@ -72,4 +74,10 @@
         font-size: 26px;
     }
 
+}
+
+@media screen and (min-width: 720px)and (max-width: 767px) {
+    .slider-image {
+        height: 1520px !important;
+    }
 }
