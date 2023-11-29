@@ -474,3 +474,33 @@ sup {
         margin-top: 20px;
     }
 }
+
+@media screen and (min-width: 820px) and (max-width: 1024px) {
+
+    .container_type_global_image img {
+        width: 200px;
+    }
+
+    .container_type_global {
+        padding: 0 -20px;
+    }
+
+    .grid_img {
+        width: 500px;
+        height: 250px;
+    }
+
+    .grids {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        margin-right: 70px;
+        margin-left: 70px;
+        margin-top: 20px;
+    }
+
+    .grid {
+        margin-right: 70px;
+        margin-left: 70px;
+    }
+}

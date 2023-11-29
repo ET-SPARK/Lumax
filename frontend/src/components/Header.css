@@ -175,3 +175,15 @@ li:last-child {
         display: contents;
     }
 }
+
+@media screen and (min-width: 820px) and (max-width: 1024px) {
+    .headerSection {
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+
+    .prop {
+        top: 5em;
+        right: 18em;
+    }
+}
