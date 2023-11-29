@@ -80,7 +80,7 @@
 
 @media screen and (max-width: 768px) {
     .sub_image_cont img {
-        width: 52px;
+        width: 55px;
         height: 63px;
     }
 
@@ -104,6 +104,12 @@
     .detail_section_type_property {
         padding: 5px 50px
     }
+
+    .sub_image_cont img {
+        width: 62px;
+        height: 63px;
+    }
+
 
     .property__detail_summary_header {
         padding-right: 20px;
