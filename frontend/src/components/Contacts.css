@@ -167,3 +167,44 @@
         margin-left: 30px;
     }
 }
+
+@media screen and (min-width: 820px) and (max-width: 1024px) {
+    .contact__office img {
+        width: 400px;
+        height: 800px;
+    }
+
+    .contact__detail_key {
+
+        font-size: 18px;
+    }
+
+    .contact__details_space {
+        margin-left: 10px;
+    }
+
+    .contact__office_heading {
+        margin-left: 10px;
+    }
+
+    .form__disclaimer {
+        margin-left: 10px;
+    }
+
+}
+
+@media screen and (min-width: 820px) and (max-width: 920px) {
+    .contact__office img {
+        width: 325px;
+        height: 800px;
+    }
+
+    .dropdown_input {
+        padding-right: 20px;
+    }
+
+    .form__disclaimer {
+        margin-left: 10px;
+    }
+
+}
