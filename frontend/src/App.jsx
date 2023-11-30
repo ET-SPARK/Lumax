@@ -14,6 +14,7 @@ import DetailSale from "./components/DetailSale";
 import Tools from "./components/Tools";
 import Victim from "./components/Victim";
 import Privacy from "./components/Privacy";
+import Nopage from "./components/Nopage";
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
         <Route path="/tools" element={<Tools />} />
         <Route path="/victim" element={<Victim />} />
         <Route path="/privacy-policy" element={<Privacy />} />
+        <Route path="*" element={<Nopage />} />
       </Routes>
     </Router>
   );

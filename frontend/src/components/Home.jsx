@@ -15,7 +15,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Footer from "./Footer";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import axios from "axios";
 import Tools from "./Tools";
 
@@ -104,7 +104,11 @@ function Home() {
             .slice(0, 6) // Get only the first 6 posts
             .map((post) => (
               <div key={post._id} class="single_grid">
-                <Link to={`/detail/${post._id}`} class="property_card">
+                <Link
+                  as={NavLink}
+                  to={`/detail/${post._id}`}
+                  class="property_card"
+                >
                   <div className="post-container">
                     <img className="grid_img" src={post.image} alt="Post" />
                     <div className="overlay-text">
