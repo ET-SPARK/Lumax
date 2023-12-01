@@ -392,6 +392,10 @@ sup {
     font-weight: lighter;
 }
 
+.section_type_story h1 {
+    text-align: center;
+}
+
 
 
 @media screen and (max-width: 768px) {

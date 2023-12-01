@@ -168,7 +168,7 @@ function Home() {
             .slice(0, 6) // Get only the first 6 posts
             .map((post) => (
               <div key={post._id} class="single_grid">
-                <Link to={`/detail/${post._id}`} class="property_card">
+                <Link to={`/detail-sale/${post._id}`} class="property_card">
                   <div className="post-container">
                     <img className="grid_img" src={post.image} alt="Post" />
                     <div className="overlay-text">
@@ -225,7 +225,6 @@ function Home() {
             ))}
         </div>
       )}
-
       <div class="section_type_story">
         <div class="section__heading">
           <div class="grid grid_cols_3">
