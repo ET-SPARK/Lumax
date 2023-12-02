@@ -18,10 +18,37 @@ import Footer from "./Footer";
 import { Link, NavLink } from "react-router-dom";
 import axios from "axios";
 import Tools from "./Tools";
+import "animate.css";
 
 function Home() {
   const [posts, setPosts] = useState([]);
   const [sales, setSales] = useState([]);
+
+  const [isAnimated, setIsAnimated] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const targetElement = document.querySelector(".section_type_story");
+      const targetPosition = targetElement.offsetTop;
+      const scrollPosition = window.scrollY;
+
+      if (scrollPosition >= targetPosition) {
+        setIsAnimated(true);
+      }
+    };
+
+    // Attach the scroll event listener
+    window.addEventListener("scroll", handleScroll);
+
+    // Clean up the event listener on component unmount
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const animationClasses = isAnimated
+    ? "animate__animated animate__bounce"
+    : "";
 
   useEffect(() => {
     // Fetch posts when the component mounts
@@ -168,7 +195,10 @@ function Home() {
             .slice(0, 6) // Get only the first 6 posts
             .map((post) => (
               <div key={post._id} class="single_grid">
-                <Link to={`/detail-sale/${post._id}`} class="property_card">
+                <Link
+                  to={`/detail-sale/${post._id}`}
+                  class="property_card animate__animated animate__bounce"
+                >
                   <div className="post-container">
                     <img className="grid_img" src={post.image} alt="Post" />
                     <div className="overlay-text">
@@ -178,7 +208,7 @@ function Home() {
                   <div class="property-card__price">
                     <span class="card__price_text">
                       {" "}
-                      {post.price}&nbsp;br&nbsp; / &nbsp;month
+                      {post.price}&nbsp;br&nbsp;
                     </span>
                     <span class="property-card__summary card__price_text">
                       {post.type},&nbsp;
@@ -225,7 +255,7 @@ function Home() {
             ))}
         </div>
       )}
-      <div class="section_type_story">
+      <div class="section_type_story animate__animated animate__bounce">
         <div class="section__heading">
           <div class="grid grid_cols_3">
             <Link to="/for-sale" class=" single_grid_text">
@@ -263,8 +293,8 @@ function Home() {
                 <FontAwesomeIcon icon={faAddressCard} />
               </div>
             </Link>
-            <Link to="/" class=" single_grid_text">
-              <div class="property__card">
+            <Link to="/" className={`single_grid_text ${animationClasses}`}>
+              <div className="property__card">
                 {" "}
                 Property Alerts&nbsp;
                 <FontAwesomeIcon icon={faBell} />
