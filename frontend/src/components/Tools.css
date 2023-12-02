@@ -80,7 +80,7 @@
 
 @media screen and (max-width: 768px) {
     .slider-image {
-        height: 820px;
+        height: 850px;
     }
 
     .waviy {
@@ -101,15 +101,23 @@
     }
 }
 
+@media screen and (min-width: 391px) and (max-width: 415px) {
+    .slider-image {
+        height: 810px;
+    }
+}
+
 @media screen and (max-width: 360px) {
     .slider-image {
         height: 650px;
     }
 }
 
+
+
 @media screen and (min-width: 820px) and (max-width: 1024px) {
     .slider-image {
-        height: 1260px;
+        height: 1270px;
 
     }
 
@@ -126,6 +134,6 @@
 
 @media screen and (min-width: 720px)and (max-width: 767px) {
     .slider-image {
-        height: 1520px !important;
+        height: 1620px !important;
     }
 }

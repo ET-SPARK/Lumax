@@ -28,8 +28,12 @@ function Header() {
     <header class="sticky-header">
       <div class="headerSection">
         <div class="header__topbar">
-          <Link to="/">
-            <img src={Logo} alt="logo" class="header__logo" />
+          <Link to="/" className="no_und">
+            {/* <img src={Logo} alt="logo" class="header__logo" /> */}
+            <div class="content">
+              <h2>LUMAX</h2>
+              <h2>LUMAX</h2>
+            </div>
           </Link>
           {onpressNav ? (
             <FontAwesomeIcon
