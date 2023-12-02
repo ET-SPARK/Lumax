@@ -1,13 +1,7 @@
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-
 .waviy {
     position: relative;
     -webkit-box-reflect: below -20px linear-gradient(transparent, rgba(0, 0, 0, .2));
-    font-size: 30px;
+    font-size: 32px;
 }
 
 .waviy span {
@@ -88,12 +82,22 @@
     .slider-image {
         height: 820px;
     }
+
+    .waviy {
+        font-size: 30px;
+        white-space: nowrap;
+    }
 }
 
 
 @media screen and (max-width: 390px) {
     .slider-image {
         height: 750px;
+    }
+
+    .waviy {
+        font-size: 26px;
+        white-space: nowrap;
     }
 }
 
