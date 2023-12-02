@@ -25,6 +25,7 @@ function Home() {
   const [sales, setSales] = useState([]);
 
   const [isAnimated, setIsAnimated] = useState(false);
+  const [isAnimatedR, setIsAnimatedR] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -34,6 +35,9 @@ function Home() {
 
       if (scrollPosition >= targetPosition) {
         setIsAnimated(true);
+      }
+      if (scrollPosition >= targetPosition) {
+        setIsAnimatedR(true);
       }
     };
 
@@ -47,7 +51,10 @@ function Home() {
   }, []);
 
   const animationClasses = isAnimated
-    ? "animate__animated animate__bounce"
+    ? "animate__animated animate__bounceInLeft"
+    : "";
+  const animationClassesR = isAnimatedR
+    ? "animate__animated animate__bounceInRight"
     : "";
 
   useEffect(() => {
@@ -134,7 +141,7 @@ function Home() {
                 <Link
                   as={NavLink}
                   to={`/detail/${post._id}`}
-                  class="property_card"
+                  class="property_card animate__animated animate__bounce"
                 >
                   <div className="post-container">
                     <img className="grid_img" src={post.image} alt="Post" />
@@ -258,42 +265,57 @@ function Home() {
       <div class="section_type_story animate__animated animate__bounce">
         <div class="section__heading">
           <div class="grid grid_cols_3">
-            <Link to="/for-sale" class=" single_grid_text">
+            <Link
+              to="/for-sale"
+              className={`single_grid_text ${animationClasses}`}
+            >
               <div class="property__card">
                 {" "}
                 For Sale&nbsp;
                 <FontAwesomeIcon icon={faBuilding} />
               </div>
             </Link>
-            <Link to="/for-rent" class=" single_grid_text">
+            <Link
+              to="/for-rent"
+              className={`single_grid_text ${animationClassesR}`}
+            >
               <div class="property__card">
                 {" "}
                 For Rent&nbsp;
                 <FontAwesomeIcon icon={faBuildingUser} />
               </div>
             </Link>
-            <Link to="/news" class=" single_grid_text">
+            <Link
+              to="/news"
+              className={`single_grid_text ${animationClassesR}`}
+            >
               <div class="property__card">
                 {" "}
                 News&nbsp;
                 <FontAwesomeIcon icon={faNewspaper} />
               </div>
             </Link>
-            <Link to="/contact" class=" single_grid_text">
+            <Link
+              to="/contact"
+              className={`single_grid_text ${animationClasses}`}
+            >
               <div class="property__card">
                 {" "}
                 Contact Us&nbsp;
                 <FontAwesomeIcon icon={faAddressBook} />
               </div>
             </Link>
-            <Link to="/about" class=" single_grid_text">
+            <Link
+              to="/about"
+              className={`single_grid_text ${animationClasses}`}
+            >
               <div class="property__card">
                 {" "}
                 About Us&nbsp;
                 <FontAwesomeIcon icon={faAddressCard} />
               </div>
             </Link>
-            <Link to="/" className={`single_grid_text ${animationClasses}`}>
+            <Link to="/" className={`single_grid_text ${animationClassesR}`}>
               <div className="property__card">
                 {" "}
                 Property Alerts&nbsp;

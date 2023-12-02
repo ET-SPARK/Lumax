@@ -1,3 +1,23 @@
+.animate__animated.animate__bounceInLeft {
+    --animate-duration: 4s;
+}
+
+/* This changes all the animations globally */
+:root {
+    --animate-duration: 800ms;
+    --animate-delay: 0.9s;
+}
+
+.animate__animated.animate__bounceInRight {
+    --animate-duration: 4s;
+}
+
+/* This changes all the animations globally */
+:root {
+    --animate-duration: 800ms;
+    --animate-delay: 0.9s;
+}
+
 .container {
     height: 100vh;
     margin: 0;
