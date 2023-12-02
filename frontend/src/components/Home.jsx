@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Header from "./Header";
 import "./Home.css";
 import {
@@ -26,6 +26,38 @@ function Home() {
 
   const [isAnimated, setIsAnimated] = useState(false);
   const [isAnimatedR, setIsAnimatedR] = useState(false);
+
+  const sectionRef = useRef(null);
+  useEffect(() => {
+    const options = {
+      root: null,
+      rootMargin: "0px",
+      threshold: 0.5, // Adjust as needed
+    };
+
+    const handleIntersect = (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // The target element is in the viewport
+          setIsAnimated(true);
+          setIsAnimatedR(true);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(handleIntersect, options);
+
+    if (sectionRef.current) {
+      observer.observe(sectionRef.current);
+    }
+
+    // Clean up the observer on component unmount
+    return () => {
+      if (sectionRef.current) {
+        observer.unobserve(sectionRef.current);
+      }
+    };
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -262,12 +294,13 @@ function Home() {
             ))}
         </div>
       )}
-      <div class="section_type_story animate__animated animate__bounce">
+      <div class="section_type_story">
         <div class="section__heading">
           <div class="grid grid_cols_3">
             <Link
               to="/for-sale"
               className={`single_grid_text ${animationClasses}`}
+              ref={sectionRef}
             >
               <div class="property__card">
                 {" "}
@@ -278,6 +311,7 @@ function Home() {
             <Link
               to="/for-rent"
               className={`single_grid_text ${animationClassesR}`}
+              ref={sectionRef}
             >
               <div class="property__card">
                 {" "}
@@ -287,7 +321,8 @@ function Home() {
             </Link>
             <Link
               to="/news"
-              className={`single_grid_text ${animationClassesR}`}
+              className={`single_grid_text ${animationClasses}`}
+              ref={sectionRef}
             >
               <div class="property__card">
                 {" "}
@@ -297,7 +332,8 @@ function Home() {
             </Link>
             <Link
               to="/contact"
-              className={`single_grid_text ${animationClasses}`}
+              className={`single_grid_text ${animationClassesR}`}
+              ref={sectionRef}
             >
               <div class="property__card">
                 {" "}
@@ -308,6 +344,7 @@ function Home() {
             <Link
               to="/about"
               className={`single_grid_text ${animationClasses}`}
+              ref={sectionRef}
             >
               <div class="property__card">
                 {" "}
@@ -315,7 +352,11 @@ function Home() {
                 <FontAwesomeIcon icon={faAddressCard} />
               </div>
             </Link>
-            <Link to="/" className={`single_grid_text ${animationClassesR}`}>
+            <Link
+              to="/"
+              className={`single_grid_text ${animationClassesR}`}
+              ref={sectionRef}
+            >
               <div className="property__card">
                 {" "}
                 Property Alerts&nbsp;

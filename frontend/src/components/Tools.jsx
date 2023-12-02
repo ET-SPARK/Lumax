@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Footer from "./Footer";
 import Header from "./Header";
 import Slider from "react-slick";
@@ -6,8 +6,48 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./Tools.css";
 import { Link } from "react-router-dom";
+import "animate.css";
 
 function Tools() {
+  const [isAnimated, setIsAnimated] = useState(false);
+  const [isAnimatedR, setIsAnimatedR] = useState(false);
+  const [isAnimatedD, setIsAnimatedD] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const targetElement = document.querySelector(".hero_section__heading");
+      const targetPosition = targetElement.offsetTop;
+      const scrollPosition = window.scrollY;
+
+      if (scrollPosition >= targetPosition) {
+        setIsAnimated(true);
+      }
+      if (scrollPosition >= targetPosition) {
+        setIsAnimatedR(true);
+      }
+      if (scrollPosition >= targetPosition) {
+        setIsAnimatedD(true);
+      }
+    };
+
+    // Attach the scroll event listener
+    window.addEventListener("scroll", handleScroll);
+
+    // Clean up the event listener on component unmount
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const animationClasses = isAnimated
+    ? "animate__animated animate__bounceInLeft"
+    : "";
+  const animationClassesR = isAnimatedR
+    ? "animate__animated animate__bounceInRight"
+    : "";
+  const animationClassesD = isAnimatedD
+    ? "animate__animated animate__bounceInDown"
+    : "";
   const settings = {
     dots: true,
     infinite: true,
@@ -41,14 +81,20 @@ function Tools() {
       </div>
       <div class="hero_section__heading">
         <div>
-          <p class="section_heading">Finding Your Home</p>
+          <p className={`section_heading ${animationClassesD}`}>
+            Finding Your Home
+          </p>
         </div>
         <div class="hero__buttons">
           <Link to="/for-sale">
-            <button className="button button_size_small">Buy A Property</button>
+            <button className={`button button_size_small ${animationClasses}`}>
+              Buy A Property
+            </button>
           </Link>
           <Link to="/for-rent">
-            <button class="button button_size_small">Rent A Property</button>
+            <button className={`button button_size_small ${animationClassesR}`}>
+              Rent A Property
+            </button>
           </Link>
         </div>
       </div>
