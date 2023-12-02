@@ -81,9 +81,25 @@ function Tools() {
       </div>
       <div class="hero_section__heading">
         <div>
-          <p className={`section_heading ${animationClassesD}`}>
-            Finding Your Home
-          </p>
+          <div className={` section_heading ${animationClassesD}`}>
+            <div className="waviy">
+              <span style={{ "--i": 1 }}>F</span>
+              <span style={{ "--i": 2 }}>I</span>
+              <span style={{ "--i": 3 }}>N</span>
+              <span style={{ "--i": 4 }}>D</span>
+              <span style={{ "--i": 5 }}>I</span>
+              <span style={{ "--i": 6 }}>N</span>
+              <span style={{ "--i": 7 }}>G</span>&nbsp;
+              <span style={{ "--i": 8 }}>Y</span>
+              <span style={{ "--i": 9 }}>O</span>
+              <span style={{ "--i": 10 }}>U</span>
+              <span style={{ "--i": 11 }}>R</span>&nbsp;
+              <span style={{ "--i": 12 }}>H</span>
+              <span style={{ "--i": 13 }}>O</span>
+              <span style={{ "--i": 14 }}>M</span>
+              <span style={{ "--i": 15 }}>E</span>
+            </div>
+          </div>
         </div>
         <div class="hero__buttons">
           <Link to="/for-sale">
@@ -92,7 +108,9 @@ function Tools() {
             </button>
           </Link>
           <Link to="/for-rent">
-            <button className={`button button_size_small ${animationClassesR}`}>
+            <button
+              className={`button button_size_small blue ${animationClassesR}`}
+            >
               Rent A Property
             </button>
           </Link>
