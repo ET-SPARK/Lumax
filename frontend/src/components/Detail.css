@@ -34,6 +34,16 @@
     margin-top: 3px;
 }
 
+.header_color {
+    color: #ab3b3f;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.line_str {
+    white-space: nowrap;
+}
+
 .vertical-line {
     width: 1px;
     /* Set the desired width of your vertical line */
@@ -45,7 +55,6 @@
 }
 
 .property__detail_summary_header h1 {
-    color: black;
     font-size: 28px;
 }
 

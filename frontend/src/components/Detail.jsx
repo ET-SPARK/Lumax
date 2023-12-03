@@ -204,7 +204,7 @@ function Detail() {
         <div className="property__detail_summary_header">
           <div>
             {" "}
-            <h1>{formData.title}</h1>
+            <h1 className="header_color">{formData.title}</h1>
           </div>
           <div>
             {" "}
@@ -217,7 +217,7 @@ function Detail() {
         <div className="property__detail_summary_price">
           <div>
             {" "}
-            <h3>&nbsp;{formData.price}&nbsp; ETB</h3>
+            <h3 className="header_color">&nbsp;{formData.price}&nbsp; br</h3>
           </div>
           <div>
             / &nbsp;<b>month</b> &nbsp;
@@ -258,7 +258,7 @@ function Detail() {
             {currentImageIndex + 1} of {formData.images.length}
           </div>
           <div className="detail_section_type_property_col">
-            <h3>Property Details</h3>
+            <h3 className="header_color">Property Details</h3>
             <span>
               <FontAwesomeIcon icon={faLocationDot} />
               &nbsp; <b>{formData.place}</b>
@@ -284,7 +284,7 @@ function Detail() {
         </div>
         <div className="detail_section_type_property_dev_img">
           <div className="detail_section_type_property_col">
-            <h3>Property Features</h3>
+            <h3 className="header_color line_str">Property Features</h3>
             <span>
               <b>Property Type:&nbsp;&nbsp;</b>
               {formData.type}
@@ -305,7 +305,7 @@ function Detail() {
         </div>
       </div>
       <form className="form_detail" onSubmit={handleSubmit}>
-        <h3>Make an enquiry</h3>
+        <h3 className="header_color">Make an enquiry</h3>
         <span className="form_detail_subtitle">
           Interested in this property? Please fill in your details below, and we
           will contact you as soon as possible.
