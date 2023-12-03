@@ -8,10 +8,10 @@ import {
   faLocationDot,
   faBed,
   faBath,
-  faLessThan,
+  faArrowLeft,
   faVectorSquare,
   faWarehouse,
-  faGreaterThan,
+  faArrowRight,
 } from "@fortawesome/free-solid-svg-icons";
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
@@ -48,56 +48,12 @@ function Detail() {
   const [onPress, setOnPress] = useState(false);
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
-  const [onPress2, setOnPress2] = useState(false);
-  const [modalIsOpen2, setModalIsOpen2] = useState(false);
-
-  const [onPress3, setOnPress3] = useState(false);
-  const [modalIsOpen3, setModalIsOpen3] = useState(false);
-
-  const [onPress4, setOnPress4] = useState(false);
-  const [modalIsOpen4, setModalIsOpen4] = useState(false);
-
-  const [onPress5, setOnPress5] = useState(false);
-  const [modalIsOpen5, setModalIsOpen5] = useState(false);
-
   const openModal = () => {
     setModalIsOpen(true);
   };
 
   const closeModal = () => {
     setModalIsOpen(false);
-  };
-
-  const openModal2 = () => {
-    setModalIsOpen2(true);
-  };
-
-  const closeModal2 = () => {
-    setModalIsOpen2(false);
-  };
-
-  const openModal3 = () => {
-    setModalIsOpen3(true);
-  };
-
-  const closeModal3 = () => {
-    setModalIsOpen3(false);
-  };
-
-  const openModal4 = () => {
-    setModalIsOpen4(true);
-  };
-
-  const closeModal4 = () => {
-    setModalIsOpen4(false);
-  };
-
-  const openModal5 = () => {
-    setModalIsOpen5(true);
-  };
-
-  const closeModal5 = () => {
-    setModalIsOpen5(false);
   };
 
   const [formData, setFormData] = useState({
@@ -227,13 +183,23 @@ function Detail() {
     setCaptchaVerified(true);
   };
 
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const showNextImage = () => {
+    setCurrentImageIndex(
+      (prevIndex) => (prevIndex + 1) % formData.images.length
+    );
+  };
+
+  const showPreviousImage = () => {
+    setCurrentImageIndex(
+      (prevIndex) =>
+        (prevIndex - 1 + formData.images.length) % formData.images.length
+    );
+  };
+
   return (
     <div>
-      {!modalIsOpen &&
-        !modalIsOpen2 &&
-        !modalIsOpen3 &&
-        !modalIsOpen4 &&
-        !modalIsOpen5 && <Header />}
+      {!modalIsOpen && <Header />}
       <div className="property__detail_summary">
         <div className="property__detail_summary_header">
           <div>
@@ -267,14 +233,37 @@ function Detail() {
         <div className="detail_section_type_property_dev_img">
           <div className="buttons_for_img">
             <div>
-              <FontAwesomeIcon icon={faLessThan} className="change_icon" />
+              <FontAwesomeIcon
+                icon={faArrowLeft}
+                className="change_icon"
+                onClick={showPreviousImage}
+              />
             </div>
             <div>
-              <img src={formData.images[0]} alt="Post" onClick={openModal} />
+              <img
+                src={formData.images[currentImageIndex]}
+                alt="Post"
+                onClick={openModal}
+              />
             </div>
             <div>
-              <FontAwesomeIcon icon={faGreaterThan} className="change_icon" />
+              <FontAwesomeIcon
+                icon={faArrowRight}
+                className="change_icon"
+                onClick={showNextImage}
+              />
             </div>
+          </div>
+          <div className="index_order">
+            {currentImageIndex + 1} of {formData.images.length}
+          </div>
+          <div className="detail_section_type_property_col">
+            <h3>Property Details</h3>
+            <span>
+              <FontAwesomeIcon icon={faLocationDot} />
+              &nbsp; <b>{formData.place}</b>
+            </span>
+            <span>{formData.description}</span>
           </div>
           <Modal
             isOpen={modalIsOpen}
@@ -288,100 +277,13 @@ function Detail() {
             </button>
             <img
               className="full_screen_img"
-              src={formData.images[0]}
+              src={formData.images[currentImageIndex]}
               alt="Full Screen"
             />
           </Modal>
-
-          {/* <div className="sub_image">
-            <div className="sub_image_cont">
-              <img src={formData.image2} alt="Post" onClick={openModal2} />
-              <Modal
-                isOpen={modalIsOpen2}
-                onRequestClose={closeModal2}
-                contentLabel="Image Modal"
-                className="full_screen_modal"
-                overlayClassName="full_screen_overlay"
-              >
-                <button className="modal_close_button" onClick={closeModal2}>
-                  <FontAwesomeIcon icon={faXmark} />
-                </button>
-                <img
-                  className="full_screen_img"
-                  src={formData.image2}
-                  alt="Full Screen"
-                />
-              </Modal>
-            </div>
-
-            <div className="sub_image_cont">
-              <img src={formData.image3} alt="Post" onClick={openModal3} />
-              <Modal
-                isOpen={modalIsOpen3}
-                onRequestClose={closeModal3}
-                contentLabel="Image Modal"
-                className="full_screen_modal"
-                overlayClassName="full_screen_overlay"
-              >
-                <button className="modal_close_button" onClick={closeModal3}>
-                  <FontAwesomeIcon icon={faXmark} />
-                </button>
-                <img
-                  className="full_screen_img"
-                  src={formData.image3}
-                  alt="Full Screen"
-                />
-              </Modal>
-            </div>
-
-            <div className="sub_image_cont">
-              <img src={formData.image4} alt="Post" onClick={openModal4} />
-              <Modal
-                isOpen={modalIsOpen4}
-                onRequestClose={closeModal4}
-                contentLabel="Image Modal"
-                className="full_screen_modal"
-                overlayClassName="full_screen_overlay"
-              >
-                <button className="modal_close_button" onClick={closeModal4}>
-                  <FontAwesomeIcon icon={faXmark} />
-                </button>
-                <img
-                  className="full_screen_img"
-                  src={formData.image4}
-                  alt="Full Screen"
-                />
-              </Modal>
-            </div>
-            <div className="sub_image_cont">
-              <img src={formData.image5} alt="Post" onClick={openModal5} />
-              <Modal
-                isOpen={modalIsOpen5}
-                onRequestClose={closeModal5}
-                contentLabel="Image Modal"
-                className="full_screen_modal"
-                overlayClassName="full_screen_overlay"
-              >
-                <button className="modal_close_button" onClick={closeModal5}>
-                  <FontAwesomeIcon icon={faXmark} />
-                </button>
-                <img
-                  className="full_screen_img"
-                  src={formData.image5}
-                  alt="Full Screen"
-                />
-              </Modal>
-            </div>
-          </div> */}
         </div>
         <div className="detail_section_type_property_dev_img">
           <div className="detail_section_type_property_col">
-            <h3>Property Details</h3>
-            <span>
-              <FontAwesomeIcon icon={faLocationDot} />
-              &nbsp; <b>{formData.place}</b>
-            </span>
-            <span>{formData.description}</span>
             <h3>Property Features</h3>
             <span>
               <b>Property Type:&nbsp;&nbsp;</b>
@@ -484,7 +386,7 @@ function Detail() {
             <div key={post._id} class="single_grid">
               <Link to={`/detail/${post._id}`} class="property_card">
                 <div className="post-container">
-                  <img className="grid_img" src={post.image} alt="Post" />
+                  <img className="grid_img" src={post.images[0]} alt="Post" />
                   <div className="overlay-text">
                     <p>{post.status}</p>
                   </div>

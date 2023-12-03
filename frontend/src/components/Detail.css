@@ -15,7 +15,23 @@
 }
 
 .change_icon {
-    font-size: 30px;
+    background-color: #ab3b3f;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    color: white;
+
+}
+
+.change_icon:hover {
+    background-color: black;
+
+}
+
+.index_order {
+    text-align: end;
+    margin-top: 3px;
 }
 
 .vertical-line {
