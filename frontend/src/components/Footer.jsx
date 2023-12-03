@@ -151,7 +151,24 @@ function Footer() {
           </div>
           <div>
             <Link to="/" className="footer_link">
-              <img src={Logo} alt="logo" />
+              {/* <img src={Logo} alt="logo" /> */}
+              <svg viewBox="0 0 400 100" width="80" height="20">
+                <symbol id="s-text">
+                  <text textAnchor="middle" x="50%" y="80%">
+                    SPARK.{" "}
+                  </text>
+                  <text textAnchor="middle" x="52%" y="80%">
+                    SPARK.{" "}
+                  </text>
+                </symbol>
+                <g className="g-ants">
+                  <use xlinkHref="#s-text" className="text-copy"></use>
+                  <use xlinkHref="#s-text" className="text-copy"></use>
+                  <use xlinkHref="#s-text" className="text-copy"></use>
+                  <use xlinkHref="#s-text" className="text-copy"></use>
+                  <use xlinkHref="#s-text" className="text-copy"></use>
+                </g>
+              </svg>
             </Link>
           </div>
         </div>
