@@ -1,24 +1,28 @@
 const mongoose = require("mongoose");
 
 const postSchema = new mongoose.Schema({
-  image: {
-    type: String, // Assuming image is stored as a URL
-    required: true,
-  },
-  image2: {
-    type: String, // Assuming image is stored as a URL
-    required: true,
-  },
-  image3: {
-    type: String, // Assuming image is stored as a URL
-    required: true,
-  },
-  image4: {
-    type: String, // Assuming image is stored as a URL
-    required: true,
-  },
-  image5: {
-    type: String, // Assuming image is stored as a URL
+  // image: {
+  //   type: String, // Assuming image is stored as a URL
+  //   required: true,
+  // },
+  // image2: {
+  //   type: String, // Assuming image is stored as a URL
+  //   required: true,
+  // },
+  // image3: {
+  //   type: String, // Assuming image is stored as a URL
+  //   required: true,
+  // },
+  // image4: {
+  //   type: String, // Assuming image is stored as a URL
+  //   required: true,
+  // },
+  // image5: {
+  //   type: String, // Assuming image is stored as a URL
+  //   required: true,
+  // },
+  images: {
+    type: [String], // Assuming images are stored as URLs in an array
     required: true,
   },
   price: {

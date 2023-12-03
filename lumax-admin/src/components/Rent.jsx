@@ -40,11 +40,7 @@ function Rent() {
   };
 
   const [formData, setFormData] = useState({
-    image: "",
-    image2: "",
-    image3: "",
-    image4: "",
-    image5: "",
+    images: [""],
     price: "",
     type: "",
     place: "",
@@ -76,11 +72,7 @@ function Rent() {
         console.log("Form data sent successfully:", response.data);
         // Clear the form fields after successful submission
         setFormData({
-          image: "",
-          image2: "",
-          image3: "",
-          image4: "",
-          image5: "",
+          images: [""],
           price: "",
           type: "",
           place: "",
@@ -98,6 +90,18 @@ function Rent() {
       }
     }
   };
+  const handleImageChange = (e, index) => {
+    const newImages = [...formData.images];
+    newImages[index] = e.target.value;
+    setFormData({ ...formData, images: newImages });
+  };
+
+  const handleAddImage = () => {
+    setFormData((prevData) => ({
+      ...prevData,
+      images: [...prevData.images, ""],
+    }));
+  };
 
   return (
     <div>
@@ -106,55 +110,26 @@ function Rent() {
       <form onSubmit={handleSubmit}>
         <div className="form_flex">
           <div>
-            <div className="form-group1">
-              <label htmlFor="image">Image URL:</label>
-              <input
-                type="text"
-                id="image"
-                name="image"
-                value={formData.image}
-                onChange={handleChange}
-              />
-            </div>
-            <div className="form-group1">
-              <label htmlFor="image">Image URL2:</label>
-              <input
-                type="text"
-                id="image"
-                name="image2"
-                value={formData.image2}
-                onChange={handleChange}
-              />
-            </div>
-            <div className="form-group1">
-              <label htmlFor="image">Image URL3:</label>
-              <input
-                type="text"
-                id="image"
-                name="image3"
-                value={formData.image3}
-                onChange={handleChange}
-              />
-            </div>
-            <div className="form-group1">
-              <label htmlFor="image">Image URL4:</label>
-              <input
-                type="text"
-                id="image"
-                name="image4"
-                value={formData.image4}
-                onChange={handleChange}
-              />
-            </div>
-            <div className="form-group1">
-              <label htmlFor="image">Image URL5:</label>
-              <input
-                type="text"
-                id="image"
-                name="image5"
-                value={formData.image5}
-                onChange={handleChange}
-              />
+            <div>
+              {formData.images.map((image, index) => (
+                <div className="form-group1" key={index}>
+                  <label htmlFor={`image${index}`}>Image URL:</label>
+                  <div className="image-input">
+                    <input
+                      type="text"
+                      id={`image${index}`}
+                      name={`image${index}`}
+                      value={image}
+                      onChange={(e) => handleImageChange(e, index)}
+                    />
+                    {index === formData.images.length - 1 && (
+                      <button type="button" onClick={handleAddImage}>
+                        Add More Image
+                      </button>
+                    )}
+                  </div>
+                </div>
+              ))}
             </div>
             <div className="form-group1">
               <label htmlFor="price">Price:</label>
@@ -280,7 +255,7 @@ function Rent() {
             <div key={post._id} class="single_grid">
               <Link to={`/detail/${post._id}`} class="property_card">
                 <div className="post-container">
-                  <img className="grid_img" src={post.image} alt="Post" />
+                  <img className="grid_img" src={post.images[0]} alt="Post" />
                   <div className="overlay-text">
                     <p>{post.status}</p>
                   </div>

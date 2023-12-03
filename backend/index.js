@@ -32,11 +32,7 @@ const Post = require("./models/post");
 app.post("/post", async (req, res) => {
   try {
     const {
-      image,
-      image2,
-      image3,
-      image4,
-      image5,
+      images,
       price,
       type,
       place,
@@ -51,11 +47,7 @@ app.post("/post", async (req, res) => {
     } = req.body;
 
     const newPost = new Post({
-      image,
-      image2,
-      image3,
-      image4,
-      image5,
+      images,
       price,
       type,
       place,
@@ -150,11 +142,7 @@ const Sale = require("./models/sale");
 app.post("/sale", async (req, res) => {
   try {
     const {
-      image,
-      image2,
-      image3,
-      image4,
-      image5,
+      images,
       price,
       type,
       place,
@@ -169,11 +157,7 @@ app.post("/sale", async (req, res) => {
     } = req.body;
 
     const newSale = new Sale({
-      image,
-      image2,
-      image3,
-      image4,
-      image5,
+      images,
       price,
       type,
       place,

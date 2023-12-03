@@ -40,7 +40,7 @@ function DetailRentView() {
             <div key={post._id} class="single_grid">
               <Link to={`/detail/${post._id}`} class="property_card">
                 <div className="post-container">
-                  <img className="grid_img" src={post.image} alt="Post" />
+                  <img className="grid_img" src={post.images[0]} alt="Post" />
                   <div className="overlay-text">
                     <p>{post.status}</p>
                   </div>
@@ -80,12 +80,13 @@ function DetailRentView() {
                       &nbsp; {post.numberOfBath}&nbsp;
                     </div>
                     <div class="property-card__features_bed">
-                      <FontAwesomeIcon icon={faVectorSquare} /> &nbsp;
-                      {post.propertySize}&nbsp; m<sup>2</sup>&nbsp;
+                      <FontAwesomeIcon icon={faVectorSquare} />
+                      &nbsp;
+                      {post.propertySize}m<sup>2</sup>&nbsp;
                     </div>
                     <div>
                       <FontAwesomeIcon icon={faWarehouse} />
-                      &nbsp; {post.numberOfGarage}&nbsp;
+                      &nbsp;{post.numberOfGarage}&nbsp;
                     </div>
                   </div>
                 </div>

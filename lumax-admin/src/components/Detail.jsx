@@ -14,11 +14,7 @@ import { Link, useParams } from "react-router-dom";
 
 function Detail() {
   const [formData, setFormData] = useState({
-    image: "",
-    image2: "",
-    image3: "",
-    image4: "",
-    image5: "",
+    images: [""],
     price: "",
     type: "",
     place: "",
@@ -47,11 +43,7 @@ function Detail() {
 
         // Set the formData state with the retrieved data
         setFormData({
-          image: postData.image,
-          image2: postData.image2,
-          image3: postData.image3,
-          image4: postData.image4,
-          image5: postData.image5,
+          images: postData.images,
           price: postData.price,
           type: postData.type,
           place: postData.place,
@@ -102,6 +94,11 @@ function Detail() {
       console.error("Error deleting post:", error);
     }
   };
+  const handleImageChange = (e, index) => {
+    const newImages = [...formData.images];
+    newImages[index] = e.target.value;
+    setFormData({ ...formData, images: newImages });
+  };
 
   return (
     <div>
@@ -110,55 +107,21 @@ function Detail() {
       <form>
         <div className="form_flex">
           <div>
-            <div className="form-group1">
-              <label htmlFor="image">Image URL:</label>
-              <input
-                type="text"
-                id="image"
-                name="image"
-                value={formData.image}
-                onChange={handleChange}
-              />
-            </div>
-            <div className="form-group1">
-              <label htmlFor="image">Image URL2:</label>
-              <input
-                type="text"
-                id="image"
-                name="image2"
-                value={formData.image2}
-                onChange={handleChange}
-              />
-            </div>
-            <div className="form-group1">
-              <label htmlFor="image">Image URL3:</label>
-              <input
-                type="text"
-                id="image"
-                name="image3"
-                value={formData.image3}
-                onChange={handleChange}
-              />
-            </div>
-            <div className="form-group1">
-              <label htmlFor="image">Image URL4:</label>
-              <input
-                type="text"
-                id="image"
-                name="image4"
-                value={formData.image4}
-                onChange={handleChange}
-              />
-            </div>
-            <div className="form-group1">
-              <label htmlFor="image">Image URL5:</label>
-              <input
-                type="text"
-                id="image"
-                name="image5"
-                value={formData.image5}
-                onChange={handleChange}
-              />
+            <div>
+              {formData.images.map((image, index) => (
+                <div className="form-group1" key={index}>
+                  <label htmlFor={`image${index}`}>{`Image URL ${
+                    index + 1
+                  }:`}</label>
+                  <input
+                    type="text"
+                    id={`image${index}`}
+                    name={`image${index}`}
+                    value={formData.images[index]}
+                    onChange={(e) => handleImageChange(e, index)}
+                  />
+                </div>
+              ))}
             </div>
             <div className="form-group1">
               <label htmlFor="price">Price:</label>
