@@ -176,7 +176,7 @@ function Home() {
                   class="property_card animate__animated animate__bounce"
                 >
                   <div className="post-container">
-                    <img className="grid_img" src={post.image} alt="Post" />
+                    <img className="grid_img" src={post.images[0]} alt="Post" />
                     <div className="overlay-text">
                       <p>{post.status}</p>
                     </div>
@@ -239,7 +239,7 @@ function Home() {
                   class="property_card animate__animated animate__bounce"
                 >
                   <div className="post-container">
-                    <img className="grid_img" src={post.image} alt="Post" />
+                    <img className="grid_img" src={post.images[0]} alt="Post" />
                     <div className="overlay-text">
                       <p>{post.status}</p>
                     </div>

@@ -83,7 +83,7 @@ function Rent() {
               <div key={post._id} class="single_grid">
                 <Link to={`/detail/${post._id}`} class="property_card">
                   <div className="post-container">
-                    <img className="grid_img" src={post.image} alt="Post" />
+                    <img className="grid_img" src={post.images[0]} alt="Post" />
                     <div className="overlay-text">
                       <p>{post.status}</p>
                     </div>

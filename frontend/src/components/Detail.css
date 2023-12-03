@@ -5,6 +5,19 @@
     margin-top: 3em;
 }
 
+.buttons_for_img {
+    display: flex;
+    align-items: center;
+}
+
+.buttons_for_img img {
+    margin: 0 10px;
+}
+
+.change_icon {
+    font-size: 30px;
+}
+
 .vertical-line {
     width: 1px;
     /* Set the desired width of your vertical line */

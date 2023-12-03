@@ -8,9 +8,10 @@ import {
   faLocationDot,
   faBed,
   faBath,
-  faArrowRight,
+  faLessThan,
   faVectorSquare,
   faWarehouse,
+  faGreaterThan,
 } from "@fortawesome/free-solid-svg-icons";
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
@@ -100,11 +101,7 @@ function Detail() {
   };
 
   const [formData, setFormData] = useState({
-    image: "",
-    image2: "",
-    image3: "",
-    image4: "",
-    image5: "",
+    images: [""],
     price: "",
     type: "",
     place: "",
@@ -133,11 +130,7 @@ function Detail() {
 
         // Set the formData state with the retrieved data
         setFormData({
-          image: postData.image,
-          image2: postData.image2,
-          image3: postData.image3,
-          image4: postData.image4,
-          image5: postData.image5,
+          images: postData.images,
           price: postData.price, // Assuming price is a key in your postData object
           type: postData.type,
           place: postData.place,
@@ -272,7 +265,17 @@ function Detail() {
       </div>
       <div className="detail_section_type_property">
         <div className="detail_section_type_property_dev_img">
-          <img src={formData.image} alt="Post" onClick={openModal} />
+          <div className="buttons_for_img">
+            <div>
+              <FontAwesomeIcon icon={faLessThan} className="change_icon" />
+            </div>
+            <div>
+              <img src={formData.images[0]} alt="Post" onClick={openModal} />
+            </div>
+            <div>
+              <FontAwesomeIcon icon={faGreaterThan} className="change_icon" />
+            </div>
+          </div>
           <Modal
             isOpen={modalIsOpen}
             onRequestClose={closeModal}
@@ -285,12 +288,12 @@ function Detail() {
             </button>
             <img
               className="full_screen_img"
-              src={formData.image}
+              src={formData.images[0]}
               alt="Full Screen"
             />
           </Modal>
 
-          <div className="sub_image">
+          {/* <div className="sub_image">
             <div className="sub_image_cont">
               <img src={formData.image2} alt="Post" onClick={openModal2} />
               <Modal
@@ -369,7 +372,7 @@ function Detail() {
                 />
               </Modal>
             </div>
-          </div>
+          </div> */}
         </div>
         <div className="detail_section_type_property_dev_img">
           <div className="detail_section_type_property_col">
