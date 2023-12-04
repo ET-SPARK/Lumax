@@ -283,21 +283,47 @@ function Detail() {
           </Modal>
           <div className="property_features">
             <h3>Property Features</h3>
-            <span>
-              <b>Property Type:&nbsp;&nbsp;</b>
-              {formData.type}
+            <span className="property_features_row">
+              <span>
+                {" "}
+                <b>Property Type</b>
+              </span>
+              <span> {formData.type}</span>
+              <span>
+                {" "}
+                <b>Bedrooms</b>
+              </span>
+              <span> {formData.numberOfBed}</span>
             </span>
-            <span>
-              <b>Bedrooms:&nbsp;&nbsp;</b>
-              {formData.numberOfBed}
+            <span className="property_features_row">
+              <span>
+                {" "}
+                <b>Bathrooms</b>
+              </span>
+              <span> {formData.numberOfBath}</span>
+              <span>
+                {" "}
+                <b>Garages</b>
+              </span>
+              <span> {formData.numberOfGarage}</span>
             </span>
-            <span>
-              <b>Bathrooms:&nbsp;&nbsp;</b>
-              {formData.numberOfBath}
-            </span>
-            <span>
-              <b>Covered Parking:&nbsp;&nbsp;</b>
-              {formData.numberOfGarage}
+            <span className="property_features_row">
+              <span>
+                {" "}
+                <b>Floor Size</b>
+              </span>
+              <span>
+                {" "}
+                {formData.propertySize}m<sup>2</sup>
+              </span>
+              <span>
+                {" "}
+                <b>Land Size</b>
+              </span>
+              <span>
+                {" "}
+                "?"m<sup>2</sup>
+              </span>
             </span>
           </div>
         </div>

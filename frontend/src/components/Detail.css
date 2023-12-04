@@ -50,6 +50,19 @@
     flex-direction: column;
 }
 
+.property_features_row {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 30px;
+}
+
+.property_features_row b {
+    background-color: #ab3b3f;
+    padding: 10px;
+    border-radius: 50%;
+    font-weight: lighter;
+}
+
 .vertical-line {
     width: 1px;
     /* Set the desired width of your vertical line */
