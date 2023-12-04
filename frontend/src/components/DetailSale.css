@@ -102,6 +102,12 @@
     .property_features_row {
         margin: 10px 10px;
     }
+
+    .change_icon {
+        width: 25px;
+        height: 25px;
+
+    }
 }
 
 @media screen and (max-width: 420px) {

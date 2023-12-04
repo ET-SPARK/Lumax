@@ -289,7 +289,7 @@ function Detail() {
             <span className="property_features_row">
               <span>
                 {" "}
-                <b>Property Type</b>
+                <b>Type</b>
               </span>
               <span> {formData.type}</span>
               <span>
