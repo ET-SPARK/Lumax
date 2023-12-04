@@ -258,7 +258,9 @@ function DetailSale() {
               <FontAwesomeIcon icon={faLocationDot} />
               &nbsp; <b>{formData.place}</b>
             </span>
-            <span>{formData.description}</span>
+            <span>
+              <p>{formData.description}</p>
+            </span>
           </div>
           <Modal
             isOpen={modalIsOpen}

@@ -10,9 +10,7 @@
     align-items: center;
 }
 
-.buttons_for_img img {
-    margin: 0 10px;
-}
+
 
 .change_icon {
     background-color: #ab3b3f;
@@ -248,4 +246,6 @@
     .form_detail_subtitle {
         text-align: center;
     }
+
+
 }
