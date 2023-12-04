@@ -11,6 +11,8 @@ import {
   faBath,
   faVectorSquare,
   faWarehouse,
+  faArrowLeft,
+  faArrowRight,
 } from "@fortawesome/free-solid-svg-icons";
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
@@ -19,6 +21,20 @@ import Modal from "react-modal";
 
 function DetailSale() {
   const [posts, setPosts] = useState([]);
+
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const showNextImage = () => {
+    setCurrentImageIndex(
+      (prevIndex) => (prevIndex + 1) % formData.images.length
+    );
+  };
+
+  const showPreviousImage = () => {
+    setCurrentImageIndex(
+      (prevIndex) =>
+        (prevIndex - 1 + formData.images.length) % formData.images.length
+    );
+  };
   useEffect(() => {
     // Fetch posts when the component mounts
     async function fetchPosts() {
@@ -44,18 +60,6 @@ function DetailSale() {
   const [onPress, setOnPress] = useState(false);
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
-  const [onPress2, setOnPress2] = useState(false);
-  const [modalIsOpen2, setModalIsOpen2] = useState(false);
-
-  const [onPress3, setOnPress3] = useState(false);
-  const [modalIsOpen3, setModalIsOpen3] = useState(false);
-
-  const [onPress4, setOnPress4] = useState(false);
-  const [modalIsOpen4, setModalIsOpen4] = useState(false);
-
-  const [onPress5, setOnPress5] = useState(false);
-  const [modalIsOpen5, setModalIsOpen5] = useState(false);
-
   const openModal = () => {
     setModalIsOpen(true);
   };
@@ -64,44 +68,8 @@ function DetailSale() {
     setModalIsOpen(false);
   };
 
-  const openModal2 = () => {
-    setModalIsOpen2(true);
-  };
-
-  const closeModal2 = () => {
-    setModalIsOpen2(false);
-  };
-
-  const openModal3 = () => {
-    setModalIsOpen3(true);
-  };
-
-  const closeModal3 = () => {
-    setModalIsOpen3(false);
-  };
-
-  const openModal4 = () => {
-    setModalIsOpen4(true);
-  };
-
-  const closeModal4 = () => {
-    setModalIsOpen4(false);
-  };
-
-  const openModal5 = () => {
-    setModalIsOpen5(true);
-  };
-
-  const closeModal5 = () => {
-    setModalIsOpen5(false);
-  };
-
   const [formData, setFormData] = useState({
-    image: "",
-    image2: "",
-    image3: "",
-    image4: "",
-    image5: "",
+    images: [""],
     price: "",
     type: "",
     place: "",
@@ -130,11 +98,7 @@ function DetailSale() {
 
         // Set the formData state with the retrieved data
         setFormData({
-          image: postData.image,
-          image2: postData.image2,
-          image3: postData.image3,
-          image4: postData.image4,
-          image5: postData.image5,
+          images: postData.images,
           price: postData.price, // Assuming price is a key in your postData object
           type: postData.type,
           place: postData.place,
@@ -233,16 +197,12 @@ function DetailSale() {
   };
   return (
     <div>
-      {!modalIsOpen &&
-        !modalIsOpen2 &&
-        !modalIsOpen3 &&
-        !modalIsOpen4 &&
-        !modalIsOpen5 && <Header />}
+      {!modalIsOpen && <Header />}
       <div className="property__detail_summary">
         <div className="property__detail_summary_header">
           <div>
             {" "}
-            <h1>{formData.title}</h1>
+            <h1 className="header_color">{formData.title}</h1>
           </div>
           <div>
             {" "}
@@ -255,7 +215,7 @@ function DetailSale() {
         <div className="property__detail_summary_price">
           <div>
             {" "}
-            <h3>&nbsp;{formData.price}&nbsp; ETB</h3>
+            <h3 className="header_color">&nbsp;{formData.price}&nbsp; br</h3>
           </div>
           <div
             onClick={() => {
@@ -266,214 +226,175 @@ function DetailSale() {
       </div>
       <div className="detail_section_type_property">
         <div className="detail_section_type_property_dev_img">
-          <div className="first_image">
-            <img src={formData.image} alt="Post" onClick={openModal} />
-            <Modal
-              isOpen={modalIsOpen}
-              onRequestClose={closeModal}
-              contentLabel="Image Modal"
-              className="full_screen_modal"
-              overlayClassName="full_screen_overlay"
-            >
-              <button className="modal_close_button" onClick={closeModal}>
-                <FontAwesomeIcon icon={faXmark} />
-              </button>
-              <img
-                className="full_screen_img"
-                src={formData.image}
-                alt="Full Screen"
+          <div className="buttons_for_img">
+            <div>
+              <FontAwesomeIcon
+                icon={faArrowLeft}
+                className="change_icon"
+                onClick={showPreviousImage}
               />
-            </Modal>
+            </div>
+            <div>
+              <img
+                src={formData.images[currentImageIndex]}
+                alt="Post"
+                onClick={openModal}
+              />
+            </div>
+            <div>
+              <FontAwesomeIcon
+                icon={faArrowRight}
+                className="change_icon"
+                onClick={showNextImage}
+              />
+            </div>
           </div>
-          {formData.image.length === 0 ? (
-            <div className="sub_image">
-              <div className="sub_image_cont"></div>
-              <div className="sub_image_cont"></div>
-              <div className="sub_image_cont"></div>
-              <div className="sub_image_cont"></div>
-            </div>
-          ) : (
-            <div className="sub_image">
-              <div className="sub_image_cont">
-                <img src={formData.image2} alt="Post" onClick={openModal2} />
-                <Modal
-                  isOpen={modalIsOpen2}
-                  onRequestClose={closeModal2}
-                  contentLabel="Image Modal"
-                  className="full_screen_modal"
-                  overlayClassName="full_screen_overlay"
-                >
-                  <button className="modal_close_button" onClick={closeModal2}>
-                    <FontAwesomeIcon icon={faXmark} />
-                  </button>
-                  <img
-                    className="full_screen_img"
-                    src={formData.image2}
-                    alt="Full Screen"
-                  />
-                </Modal>
-              </div>
-
-              <div className="sub_image_cont">
-                <img src={formData.image3} alt="Post" onClick={openModal3} />
-                <Modal
-                  isOpen={modalIsOpen3}
-                  onRequestClose={closeModal3}
-                  contentLabel="Image Modal"
-                  className="full_screen_modal"
-                  overlayClassName="full_screen_overlay"
-                >
-                  <button className="modal_close_button" onClick={closeModal3}>
-                    <FontAwesomeIcon icon={faXmark} />
-                  </button>
-                  <img
-                    className="full_screen_img"
-                    src={formData.image3}
-                    alt="Full Screen"
-                  />
-                </Modal>
-              </div>
-
-              <div className="sub_image_cont">
-                <img src={formData.image4} alt="Post" onClick={openModal4} />
-                <Modal
-                  isOpen={modalIsOpen4}
-                  onRequestClose={closeModal4}
-                  contentLabel="Image Modal"
-                  className="full_screen_modal"
-                  overlayClassName="full_screen_overlay"
-                >
-                  <button className="modal_close_button" onClick={closeModal4}>
-                    <FontAwesomeIcon icon={faXmark} />
-                  </button>
-                  <img
-                    className="full_screen_img"
-                    src={formData.image4}
-                    alt="Full Screen"
-                  />
-                </Modal>
-              </div>
-              <div className="sub_image_cont">
-                <img src={formData.image5} alt="Post" onClick={openModal5} />
-                <Modal
-                  isOpen={modalIsOpen5}
-                  onRequestClose={closeModal5}
-                  contentLabel="Image Modal"
-                  className="full_screen_modal"
-                  overlayClassName="full_screen_overlay"
-                >
-                  <button className="modal_close_button" onClick={closeModal5}>
-                    <FontAwesomeIcon icon={faXmark} />
-                  </button>
-                  <img
-                    className="full_screen_img"
-                    src={formData.image5}
-                    alt="Full Screen"
-                  />
-                </Modal>
-              </div>
-            </div>
-          )}
-        </div>
-        <div className="detail_section_type_property_dev_img">
+          <div className="index_order">
+            {currentImageIndex + 1} of {formData.images.length}
+          </div>
           <div className="detail_section_type_property_col">
-            <h3>Property Details</h3>
+            <h3 className="header_color">Property Details</h3>
             <span>
               <FontAwesomeIcon icon={faLocationDot} />
               &nbsp; <b>{formData.place}</b>
             </span>
             <span>{formData.description}</span>
+          </div>
+          <Modal
+            isOpen={modalIsOpen}
+            onRequestClose={closeModal}
+            contentLabel="Image Modal"
+            className="full_screen_modal"
+            overlayClassName="full_screen_overlay"
+          >
+            <button className="modal_close_button" onClick={closeModal}>
+              <FontAwesomeIcon icon={faXmark} />
+            </button>
+            <img
+              className="full_screen_img"
+              src={formData.images[currentImageIndex]}
+              alt="Full Screen"
+            />
+          </Modal>
+          <div className="property_features">
             <h3>Property Features</h3>
-            <span>
-              <b>Property Type:&nbsp;&nbsp;</b>
-              {formData.type}
+            <span className="property_features_row">
+              <span>
+                {" "}
+                <b>Property Type</b>
+              </span>
+              <span> {formData.type}</span>
+              <span>
+                {" "}
+                <b>Bedrooms</b>
+              </span>
+              <span> {formData.numberOfBed}</span>
             </span>
-            <span>
-              <b>Bedrooms:&nbsp;&nbsp;</b>
-              {formData.numberOfBed}
+            <span className="property_features_row">
+              <span>
+                {" "}
+                <b>Bathrooms</b>
+              </span>
+              <span> {formData.numberOfBath}</span>
+              <span>
+                {" "}
+                <b>Garages</b>
+              </span>
+              <span> {formData.numberOfGarage}</span>
             </span>
-            <span>
-              <b>Bathrooms:&nbsp;&nbsp;</b>
-              {formData.numberOfBath}
-            </span>
-            <span>
-              <b>Covered Parking:&nbsp;&nbsp;</b>
-              {formData.numberOfGarage}
+            <span className="property_features_row">
+              <span>
+                {" "}
+                <b>Floor Size</b>
+              </span>
+              <span>
+                {" "}
+                {formData.propertySize}m<sup>2</sup>
+              </span>
+              <span>
+                {" "}
+                <b>Land Size</b>
+              </span>
+              <span>
+                {" "}
+                "?"m<sup>2</sup>
+              </span>
             </span>
           </div>
         </div>
+        <div className="detail_section_type_property_dev_img">
+          <div className="detail_section_type_property_col">
+            <form className="form_detail" onSubmit={handleSubmit}>
+              <h3 className="header_color">Make an enquiry</h3>
+              <span className="form_detail_subtitle">
+                Interested in this property? Please fill in your details below,
+                and we will contact you as soon as possible.
+              </span>
+              <div className="textared">
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  className="dropdown_inputd"
+                  value={formValues.name}
+                  onChange={handleChange}
+                  maxLength={50}
+                />
+              </div>
+              <div className="textared">
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  className="dropdown_inputd"
+                  value={formValues.email}
+                  onChange={handleChange}
+                  maxLength={50}
+                />
+              </div>
+              <div className="textared">
+                <input
+                  type="text"
+                  id="phone"
+                  name="phone"
+                  className="dropdown_inputd"
+                  value={formValues.phone}
+                  onChange={handleChange}
+                  maxLength={50}
+                />
+              </div>
+
+              <div className="textared">
+                <textarea
+                  className="dropdown_inputd  dropdown_inputd_comm"
+                  id="comments"
+                  name="comments"
+                  onChange={handleChange}
+                  value={formValues.comments}
+                  maxLength={250}
+                ></textarea>
+              </div>
+              <div className="textared">
+                <ReCAPTCHA
+                  sitekey={import.meta.env.VITE_APP_RECAPTCHA_SITE_KEY}
+                  onChange={handleCaptchaChange}
+                />
+              </div>
+              <div className="form__disclaimerd">
+                <span>
+                  By clicking on "submit" you agree to our{" "}
+                  <Link to="/privacy-policy" className="footer_link">
+                    <p> Privacy Policy</p>
+                  </Link>
+                </span>
+                <span>
+                  <input type="submit" name="submit" className="submitd" />
+                </span>
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
-      <form className="form_detail" onSubmit={handleSubmit}>
-        <h3>Make an enquiry</h3>
-        <span className="form_detail_subtitle">
-          Interested in this property? Please fill in your details below, and we
-          will contact you as soon as possible.
-        </span>
-        <div className="textare">
-          <input
-            type="text"
-            id="name"
-            name="name"
-            className="dropdown_input"
-            value={formValues.name}
-            onChange={handleChange}
-            maxLength={50}
-            required
-          />
-        </div>
-        <div className="textare">
-          <input
-            type="email"
-            id="email"
-            name="email"
-            className="dropdown_input"
-            value={formValues.email}
-            onChange={handleChange}
-            maxLength={50}
-            required
-          />
-        </div>
-        <div className="textare">
-          <input
-            type="text"
-            id="phone"
-            name="phone"
-            className="dropdown_input"
-            value={formValues.phone}
-            onChange={handleChange}
-            maxLength={50}
-            required
-          />
-        </div>
-        <div className="textare">
-          <textarea
-            className="dropdown_input"
-            id="comments"
-            name="comments"
-            value={formValues.comments}
-            onChange={handleChange}
-            maxLength={250}
-            required
-          ></textarea>
-        </div>
-        <div className="textare rec">
-          <ReCAPTCHA
-            sitekey={import.meta.env.VITE_APP_RECAPTCHA_SITE_KEY}
-            onChange={handleCaptchaChange}
-          />
-        </div>
-        <div className="form__disclaimer">
-          <span>
-            By clicking on "submit" you agree to our{" "}
-            <Link to="/privacy-policy" className="footer_link">
-              <p> Privacy Policy</p>
-            </Link>
-          </span>
-          <span>
-            <input type="submit" name="submit" className="submit" />
-          </span>
-        </div>
-      </form>
       <div>
         <h3 className="section__heading_about ">
           You may also be interested in these properties
@@ -488,7 +409,7 @@ function DetailSale() {
             <div key={post._id} class="single_grid">
               <Link to={`/detail-sale/${post._id}`} class="property_card">
                 <div className="post-container">
-                  <img className="grid_img" src={post.image} alt="Post" />
+                  <img className="grid_img" src={post.images[0]} alt="Post" />
                   <div className="overlay-text">
                     <p>{post.status}</p>
                   </div>
@@ -496,7 +417,7 @@ function DetailSale() {
                 <div class="property-card__price">
                   <span class="card__price_text">
                     {" "}
-                    {post.price}&nbsp;br&nbsp; / &nbsp;month
+                    {post.price}&nbsp;br&nbsp;
                   </span>
                   <span class="property-card__summary card__price_text">
                     {post.type},&nbsp;
