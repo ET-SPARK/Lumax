@@ -281,10 +281,8 @@ function Detail() {
               alt="Full Screen"
             />
           </Modal>
-        </div>
-        <div className="detail_section_type_property_dev_img">
-          <div className="detail_section_type_property_col">
-            <h3 className="header_color line_str">Property Features</h3>
+          <div className="property_features">
+            <h3>Property Features</h3>
             <span>
               <b>Property Type:&nbsp;&nbsp;</b>
               {formData.type}
@@ -303,75 +301,80 @@ function Detail() {
             </span>
           </div>
         </div>
-      </div>
-      <form className="form_detail" onSubmit={handleSubmit}>
-        <h3 className="header_color">Make an enquiry</h3>
-        <span className="form_detail_subtitle">
-          Interested in this property? Please fill in your details below, and we
-          will contact you as soon as possible.
-        </span>
-        <div className="textare">
-          <input
-            type="text"
-            id="name"
-            name="name"
-            className="dropdown_input"
-            value={formValues.name}
-            onChange={handleChange}
-            maxLength={50}
-          />
-        </div>
-        <div className="textare">
-          <input
-            type="email"
-            id="email"
-            name="email"
-            className="dropdown_input"
-            value={formValues.email}
-            onChange={handleChange}
-            maxLength={50}
-          />
-        </div>
-        <div className="textare">
-          <input
-            type="text"
-            id="phone"
-            name="phone"
-            className="dropdown_input"
-            value={formValues.phone}
-            onChange={handleChange}
-            maxLength={50}
-          />
-        </div>
+        <div className="detail_section_type_property_dev_img">
+          <div className="detail_section_type_property_col">
+            <form className="form_detail" onSubmit={handleSubmit}>
+              <h3 className="header_color">Make an enquiry</h3>
+              <span className="form_detail_subtitle">
+                Interested in this property? Please fill in your details below,
+                and we will contact you as soon as possible.
+              </span>
+              <div className="textared">
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  className="dropdown_inputd"
+                  value={formValues.name}
+                  onChange={handleChange}
+                  maxLength={50}
+                />
+              </div>
+              <div className="textared">
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  className="dropdown_inputd"
+                  value={formValues.email}
+                  onChange={handleChange}
+                  maxLength={50}
+                />
+              </div>
+              <div className="textared">
+                <input
+                  type="text"
+                  id="phone"
+                  name="phone"
+                  className="dropdown_inputd"
+                  value={formValues.phone}
+                  onChange={handleChange}
+                  maxLength={50}
+                />
+              </div>
 
-        <div className="textare">
-          <textarea
-            className="dropdown_input"
-            id="comments"
-            name="comments"
-            onChange={handleChange}
-            value={formValues.comments}
-            maxLength={250}
-          ></textarea>
+              <div className="textared">
+                <textarea
+                  className="dropdown_inputd  dropdown_inputd_comm"
+                  id="comments"
+                  name="comments"
+                  onChange={handleChange}
+                  value={formValues.comments}
+                  maxLength={250}
+                ></textarea>
+              </div>
+              <div className="textared">
+                <ReCAPTCHA
+                  sitekey={import.meta.env.VITE_APP_RECAPTCHA_SITE_KEY}
+                  onChange={handleCaptchaChange}
+                />
+              </div>
+              <div className="form__disclaimerd">
+                <span>
+                  By clicking on "submit" you agree to our{" "}
+                  <Link to="/privacy-policy" className="footer_link">
+                    <p> Privacy Policy</p>
+                  </Link>
+                </span>
+                <span>
+                  <input type="submit" name="submit" className="submitd" />
+                </span>
+              </div>
+            </form>
+          </div>
         </div>
-        <div className="textare">
-          <ReCAPTCHA
-            sitekey={import.meta.env.VITE_APP_RECAPTCHA_SITE_KEY}
-            onChange={handleCaptchaChange}
-          />
-        </div>
-        <div className="form__disclaimer">
-          <span>
-            By clicking on "submit" you agree to our{" "}
-            <Link to="/privacy-policy" className="footer_link">
-              <p> Privacy Policy</p>
-            </Link>
-          </span>
-          <span>
-            <input type="submit" name="submit" className="submit" />
-          </span>
-        </div>
-      </form>
+      </div>
+
       <div>
         <h3 className="section__heading_about ">
           You may also be interested in these properties

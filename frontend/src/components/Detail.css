@@ -42,6 +42,12 @@
 
 .line_str {
     white-space: nowrap;
+
+}
+
+.property_features {
+    display: flex;
+    flex-direction: column;
 }
 
 .vertical-line {
@@ -117,8 +123,8 @@
     padding-bottom: 10px;
     margin-top: 60px;
     background: white;
-    margin: 30px;
-    padding: 30px 30px;
+    margin: 10px;
+    padding: 15px 10px;
 }
 
 .detail_section_type_property_col {
@@ -131,11 +137,53 @@
 }
 
 .form_detail {
-    margin: 10px 250px;
+    margin: 0;
 }
 
 .form_detail h3 span {
     text-align: center;
+}
+
+.textared {
+    margin: 20px 0;
+}
+
+.dropdown_inputd {
+    border: 2px solid gray;
+    padding: 10px 10px;
+    font-size: 14px;
+    width: 90%;
+    border-radius: 5px;
+}
+
+.dropdown_inputd_comm {
+    height: 8em !important;
+}
+
+.form__disclaimerd {
+    margin-top: 10px;
+}
+
+.submitd {
+    background: #ab3b3f;
+    color: #fff;
+    box-shadow: none;
+    border-color: #ab3b3f;
+    border: #ab3b3f;
+    border-radius: 3px;
+    padding: 10px 20px;
+    box-shadow: 0 12px 14px rgba(0, 0, 0, 0.5);
+}
+
+.island_no_padding_bottom_section {
+    background: white;
+    margin-top: 50px;
+    padding: 0 70px;
+    width: 70%;
+}
+
+.island_no_padding_bottom {
+    background: #f6f7f9;
 }
 
 @media screen and (max-width: 768px) {
