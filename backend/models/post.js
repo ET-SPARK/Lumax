@@ -61,6 +61,10 @@ const postSchema = new mongoose.Schema({
     type: String, // You can use a specific data type that represents the size
     required: true,
   },
+  landSize: {
+    type: String,
+    required: true,
+  },
   status: {
     type: String,
     required: true,

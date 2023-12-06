@@ -79,6 +79,7 @@ function DetailSale() {
     numberOfBath: "",
     numberOfGarage: "",
     propertySize: "",
+    landSize: "",
     status: "",
     ref: "",
   });
@@ -108,6 +109,7 @@ function DetailSale() {
           numberOfBath: postData.numberOfBath,
           numberOfGarage: postData.numberOfGarage,
           propertySize: postData.propertySize,
+          landSize: postData.landSize,
           status: postData.status,
           ref: postData.ref,
         });
@@ -350,7 +352,7 @@ function DetailSale() {
                   </span>
                   <span>
                     {" "}
-                    "?"m<sup>2</sup>
+                    {formData.landSize}m<sup>2</sup>
                   </span>
                 </span>
               </div>

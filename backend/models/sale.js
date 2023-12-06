@@ -61,6 +61,10 @@ const saleSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  landSize: {
+    type: String,
+    required: true,
+  },
   status: {
     type: String,
     required: true,

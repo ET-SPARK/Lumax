@@ -42,6 +42,7 @@ app.post("/post", async (req, res) => {
       numberOfBath,
       numberOfGarage,
       propertySize,
+      landSize,
       status,
       ref,
     } = req.body;
@@ -57,6 +58,7 @@ app.post("/post", async (req, res) => {
       numberOfBath,
       numberOfGarage,
       propertySize,
+      landSize,
       status,
       ref,
     });
@@ -152,6 +154,7 @@ app.post("/sale", async (req, res) => {
       numberOfBath,
       numberOfGarage,
       propertySize,
+      landSize,
       status,
       ref,
     } = req.body;
@@ -167,6 +170,7 @@ app.post("/sale", async (req, res) => {
       numberOfBath,
       numberOfGarage,
       propertySize,
+      landSize,
       status,
       ref,
     });
