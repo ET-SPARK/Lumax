@@ -24,6 +24,7 @@ function Detail() {
     numberOfBath: "",
     numberOfGarage: "",
     propertySize: "",
+    landSize: "",
     status: "",
     ref: "",
   });
@@ -53,6 +54,7 @@ function Detail() {
           numberOfBath: postData.numberOfBath,
           numberOfGarage: postData.numberOfGarage,
           propertySize: postData.propertySize,
+          landSize: postData.landSize,
           status: postData.status,
           ref: postData.ref,
         });
@@ -175,6 +177,16 @@ function Detail() {
             </div>
           </div>
           <div>
+            <div className="form-group1">
+              <label htmlFor="landSize">Land Size:</label>
+              <input
+                type="text"
+                id="landSize"
+                name="landSize"
+                value={formData.landSize}
+                onChange={handleChange}
+              />
+            </div>
             <div className="form-group1">
               <label htmlFor="type">Type:</label>
               <input
