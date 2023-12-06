@@ -200,278 +200,316 @@ function Detail() {
   return (
     <div>
       {!modalIsOpen && <Header />}
-      <div className="property__detail_summary">
-        <div className="property__detail_summary_header">
-          <div>
-            {" "}
-            <h1 className="header_color">{formData.title}</h1>
-          </div>
-          <div>
-            {" "}
-            <span>
-              <b>Ref # {formData.ref} :&nbsp;</b>
-              Apartment in {formData.place}
-            </span>
-          </div>
-        </div>
-        <div className="property__detail_summary_price">
-          <div>
-            {" "}
-            <h3 className="header_color">&nbsp;{formData.price}&nbsp; br</h3>
-          </div>
-          <div>
-            / &nbsp;<b>month</b> &nbsp;
-          </div>
-          <div
-            onClick={() => {
-              handleOnPress(setOnPress);
-            }}
-          ></div>
-        </div>
-      </div>
-      <div className="detail_section_type_property">
-        <div className="detail_section_type_property_dev_img">
-          <div className="buttons_for_img">
-            <div>
-              <FontAwesomeIcon
-                icon={faArrowLeft}
-                className="change_icon"
-                onClick={showPreviousImage}
-              />
-            </div>
-            <div>
-              <img
-                src={formData.images[currentImageIndex]}
-                alt="Post"
-                onClick={openModal}
-              />
-            </div>
-            <div>
-              <FontAwesomeIcon
-                icon={faArrowRight}
-                className="change_icon"
-                onClick={showNextImage}
-              />
+      {posts.length === 0 ? (
+        <div className="grids">
+          <div class="skeleton single_grid">
+            <div className="post-container grid_img">
+              {/* Your existing content */}
+              <div class="skeleton-text"></div>
+              <div class="skeleton-last"></div>
+              <div class="skeleton-text"></div>
             </div>
           </div>
-          <div className="index_order">
-            {currentImageIndex + 1} of {formData.images.length}
+          <div class="skeleton single_grid">
+            <div className="post-container grid_img">
+              {/* Your existing content */}
+              <div class="skeleton-text"></div>
+              <div class="skeleton-last"></div>
+              <div class="skeleton-text"></div>
+            </div>
           </div>
-          <div className="detail_section_type_property_col">
-            <h3 className="header_color">Property Details</h3>
-            <span>
-              <FontAwesomeIcon icon={faLocationDot} />
-              &nbsp; <b>{formData.place}</b>
-            </span>
-            <span>
-              {" "}
-              <p>{formData.description}</p>
-            </span>
-          </div>
-          <Modal
-            isOpen={modalIsOpen}
-            onRequestClose={closeModal}
-            contentLabel="Image Modal"
-            className="full_screen_modal"
-            overlayClassName="full_screen_overlay"
-          >
-            <button className="modal_close_button" onClick={closeModal}>
-              <FontAwesomeIcon icon={faXmark} />
-            </button>
-            <img
-              className="full_screen_img"
-              src={formData.images[currentImageIndex]}
-              alt="Full Screen"
-            />
-          </Modal>
-          <div className="property_features">
-            <h3>Property Features</h3>
-            <span className="property_features_row">
-              <span>
-                {" "}
-                <b>Type</b>
-              </span>
-              <span> {formData.type}</span>
-              <span>
-                {" "}
-                <b>Bedrooms</b>
-              </span>
-              <span> {formData.numberOfBed}</span>
-            </span>
-            <span className="property_features_row">
-              <span>
-                {" "}
-                <b>Bathrooms</b>
-              </span>
-              <span> {formData.numberOfBath}</span>
-              <span>
-                {" "}
-                <b>Garages</b>
-              </span>
-              <span> {formData.numberOfGarage}</span>
-            </span>
-            <span className="property_features_row">
-              <span>
-                {" "}
-                <b>Floor Size</b>
-              </span>
-              <span>
-                {" "}
-                {formData.propertySize}m<sup>2</sup>
-              </span>
-              <span>
-                {" "}
-                <b>Land Size</b>
-              </span>
-              <span>
-                {" "}
-                "?"m<sup>2</sup>
-              </span>
-            </span>
+          <div class="skeleton single_grid">
+            <div className="post-container grid_img">
+              {/* Your existing content */}
+              <div class="skeleton-text"></div>
+              <div class="skeleton-last"></div>
+              <div class="skeleton-text"></div>
+            </div>
           </div>
         </div>
-        <div className="detail_section_type_property_dev_img">
-          <div className="detail_section_type_property_col">
-            <form className="form_detail" onSubmit={handleSubmit}>
-              <h3 className="header_color">Make an enquiry</h3>
-              <span className="form_detail_subtitle">
-                Interested in this property? Please fill in your details below,
-                and we will contact you as soon as possible.
-              </span>
-              <div className="textared">
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  className="dropdown_inputd"
-                  value={formValues.name}
-                  onChange={handleChange}
-                  maxLength={50}
-                />
+      ) : (
+        <>
+          <div className="property__detail_summary">
+            <div className="property__detail_summary_header">
+              <div>
+                {" "}
+                <h1 className="header_color">{formData.title}</h1>
               </div>
-              <div className="textared">
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  className="dropdown_inputd"
-                  value={formValues.email}
-                  onChange={handleChange}
-                  maxLength={50}
-                />
-              </div>
-              <div className="textared">
-                <input
-                  type="text"
-                  id="phone"
-                  name="phone"
-                  className="dropdown_inputd"
-                  value={formValues.phone}
-                  onChange={handleChange}
-                  maxLength={50}
-                />
-              </div>
-
-              <div className="textared">
-                <textarea
-                  className="dropdown_inputd  dropdown_inputd_comm"
-                  id="comments"
-                  name="comments"
-                  onChange={handleChange}
-                  value={formValues.comments}
-                  maxLength={250}
-                ></textarea>
-              </div>
-              <div className="textared">
-                <ReCAPTCHA
-                  sitekey={import.meta.env.VITE_APP_RECAPTCHA_SITE_KEY}
-                  onChange={handleCaptchaChange}
-                />
-              </div>
-              <div className="form__disclaimerd">
+              <div>
+                {" "}
                 <span>
-                  By clicking on "submit" you agree to our{" "}
-                  <Link to="/privacy-policy" className="footer_link">
-                    <p> Privacy Policy</p>
-                  </Link>
-                </span>
-                <span>
-                  <input type="submit" name="submit" className="submitd" />
+                  <b>Ref # {formData.ref} :&nbsp;</b>
+                  Apartment in {formData.place}
                 </span>
               </div>
-            </form>
+            </div>
+            <div className="property__detail_summary_price">
+              <div>
+                {" "}
+                <h3 className="header_color">
+                  &nbsp;{formData.price}&nbsp; br
+                </h3>
+              </div>
+              <div>
+                / &nbsp;<b>month</b> &nbsp;
+              </div>
+              <div
+                onClick={() => {
+                  handleOnPress(setOnPress);
+                }}
+              ></div>
+            </div>
           </div>
-        </div>
-      </div>
-
-      <div>
-        <h3 className="section__heading_about ">
-          You may also be interested in these properties
-        </h3>
-      </div>
-      <div class="grids">
-        {posts
-          .filter((post) => post._id !== postId)
-          .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
-          .slice(0, 3) // Get only the first 3 posts
-          .map((post) => (
-            <div key={post._id} class="single_grid">
-              <Link to={`/detail/${post._id}`} class="property_card">
-                <div className="post-container">
-                  <img className="grid_img" src={post.images[0]} alt="Post" />
-                  <div className="overlay-text">
-                    <p>{post.status}</p>
-                  </div>
+          <div className="detail_section_type_property">
+            <div className="detail_section_type_property_dev_img">
+              <div className="buttons_for_img">
+                <div>
+                  <FontAwesomeIcon
+                    icon={faArrowLeft}
+                    className="change_icon"
+                    onClick={showPreviousImage}
+                  />
                 </div>
-                <div class="property-card__price">
-                  <span class="card__price_text">
+                <div>
+                  <img
+                    src={formData.images[currentImageIndex]}
+                    alt="Post"
+                    onClick={openModal}
+                  />
+                </div>
+                <div>
+                  <FontAwesomeIcon
+                    icon={faArrowRight}
+                    className="change_icon"
+                    onClick={showNextImage}
+                  />
+                </div>
+              </div>
+              <div className="index_order">
+                {currentImageIndex + 1} of {formData.images.length}
+              </div>
+              <div className="detail_section_type_property_col">
+                <h3 className="header_color">Property Details</h3>
+                <span>
+                  <FontAwesomeIcon icon={faLocationDot} />
+                  &nbsp; <b>{formData.place}</b>
+                </span>
+                <span>
+                  {" "}
+                  <p>{formData.description}</p>
+                </span>
+              </div>
+              <Modal
+                isOpen={modalIsOpen}
+                onRequestClose={closeModal}
+                contentLabel="Image Modal"
+                className="full_screen_modal"
+                overlayClassName="full_screen_overlay"
+              >
+                <button className="modal_close_button" onClick={closeModal}>
+                  <FontAwesomeIcon icon={faXmark} />
+                </button>
+                <img
+                  className="full_screen_img"
+                  src={formData.images[currentImageIndex]}
+                  alt="Full Screen"
+                />
+              </Modal>
+              <div className="property_features">
+                <h3>Property Features</h3>
+                <span className="property_features_row">
+                  <span>
                     {" "}
-                    {post.price}&nbsp;br&nbsp; / &nbsp;month
+                    <b>Type</b>
                   </span>
-                  <span class="property-card__summary card__price_text">
-                    {post.type},&nbsp;
+                  <span> {formData.type}</span>
+                  <span>
+                    {" "}
+                    <b>Bedrooms</b>
                   </span>
-                  <span class="property-card__summary card__price_text">
-                    {post.place}
+                  <span> {formData.numberOfBed}</span>
+                </span>
+                <span className="property_features_row">
+                  <span>
+                    {" "}
+                    <b>Bathrooms</b>
                   </span>
-                </div>
-                <div class="property-card__details">
-                  <span class="property-card__heading">{post.title}</span>
-                  <span class="property-card__discription">
-                    {expandedDescriptions[post._id] ? (
-                      post.description
-                    ) : (
-                      <>
-                        {post.description.slice(0, 150)}
-                        {post.description.length > 150 && <span>...</span>}
-                      </>
-                    )}
+                  <span> {formData.numberOfBath}</span>
+                  <span>
+                    {" "}
+                    <b>Garages</b>
                   </span>
-                  <div class="property-card__features">
-                    <div class="property-card__features_bed">
-                      <FontAwesomeIcon icon={faBed} />
-                      &nbsp;
-                      {post.numberOfBed}&nbsp;
-                    </div>
-                    <div>
-                      <FontAwesomeIcon icon={faBath} />
-                      &nbsp; {post.numberOfBath}&nbsp;
-                    </div>
-                    <div class="property-card__features_bed">
-                      <FontAwesomeIcon icon={faVectorSquare} />
-                      &nbsp;
-                      {post.propertySize}m<sup>2</sup>&nbsp;
-                    </div>
-                    <div>
-                      <FontAwesomeIcon icon={faWarehouse} />
-                      &nbsp;{post.numberOfGarage}&nbsp;
-                    </div>
-                  </div>
-                </div>
-              </Link>
+                  <span> {formData.numberOfGarage}</span>
+                </span>
+                <span className="property_features_row">
+                  <span>
+                    {" "}
+                    <b>Floor Size</b>
+                  </span>
+                  <span>
+                    {" "}
+                    {formData.propertySize}m<sup>2</sup>
+                  </span>
+                  <span>
+                    {" "}
+                    <b>Land Size</b>
+                  </span>
+                  <span>
+                    {" "}
+                    "?"m<sup>2</sup>
+                  </span>
+                </span>
+              </div>
             </div>
-          ))}
-      </div>
+            <div className="detail_section_type_property_dev_img">
+              <div className="detail_section_type_property_col">
+                <form className="form_detail" onSubmit={handleSubmit}>
+                  <h3 className="header_color">Make an enquiry</h3>
+                  <span className="form_detail_subtitle">
+                    Interested in this property? Please fill in your details
+                    below, and we will contact you as soon as possible.
+                  </span>
+                  <div className="textared">
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      className="dropdown_inputd"
+                      value={formValues.name}
+                      onChange={handleChange}
+                      maxLength={50}
+                    />
+                  </div>
+                  <div className="textared">
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      className="dropdown_inputd"
+                      value={formValues.email}
+                      onChange={handleChange}
+                      maxLength={50}
+                    />
+                  </div>
+                  <div className="textared">
+                    <input
+                      type="text"
+                      id="phone"
+                      name="phone"
+                      className="dropdown_inputd"
+                      value={formValues.phone}
+                      onChange={handleChange}
+                      maxLength={50}
+                    />
+                  </div>
+
+                  <div className="textared">
+                    <textarea
+                      className="dropdown_inputd  dropdown_inputd_comm"
+                      id="comments"
+                      name="comments"
+                      onChange={handleChange}
+                      value={formValues.comments}
+                      maxLength={250}
+                    ></textarea>
+                  </div>
+                  <div className="textared">
+                    <ReCAPTCHA
+                      sitekey={import.meta.env.VITE_APP_RECAPTCHA_SITE_KEY}
+                      onChange={handleCaptchaChange}
+                    />
+                  </div>
+                  <div className="form__disclaimerd">
+                    <span>
+                      By clicking on "submit" you agree to our{" "}
+                      <Link to="/privacy-policy" className="footer_link">
+                        <p> Privacy Policy</p>
+                      </Link>
+                    </span>
+                    <span>
+                      <input type="submit" name="submit" className="submitd" />
+                    </span>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h3 className="section__heading_about ">
+              You may also be interested in these properties
+            </h3>
+          </div>
+          <div class="grids">
+            {posts
+              .filter((post) => post._id !== postId)
+              .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
+              .slice(0, 3) // Get only the first 3 posts
+              .map((post) => (
+                <div key={post._id} class="single_grid">
+                  <Link to={`/detail/${post._id}`} class="property_card">
+                    <div className="post-container">
+                      <img
+                        className="grid_img"
+                        src={post.images[0]}
+                        alt="Post"
+                      />
+                      <div className="overlay-text">
+                        <p>{post.status}</p>
+                      </div>
+                    </div>
+                    <div class="property-card__price">
+                      <span class="card__price_text">
+                        {" "}
+                        {post.price}&nbsp;br&nbsp; / &nbsp;month
+                      </span>
+                      <span class="property-card__summary card__price_text">
+                        {post.type},&nbsp;
+                      </span>
+                      <span class="property-card__summary card__price_text">
+                        {post.place}
+                      </span>
+                    </div>
+                    <div class="property-card__details">
+                      <span class="property-card__heading">{post.title}</span>
+                      <span class="property-card__discription">
+                        {expandedDescriptions[post._id] ? (
+                          post.description
+                        ) : (
+                          <>
+                            {post.description.slice(0, 150)}
+                            {post.description.length > 150 && <span>...</span>}
+                          </>
+                        )}
+                      </span>
+                      <div class="property-card__features">
+                        <div class="property-card__features_bed">
+                          <FontAwesomeIcon icon={faBed} />
+                          &nbsp;
+                          {post.numberOfBed}&nbsp;
+                        </div>
+                        <div>
+                          <FontAwesomeIcon icon={faBath} />
+                          &nbsp; {post.numberOfBath}&nbsp;
+                        </div>
+                        <div class="property-card__features_bed">
+                          <FontAwesomeIcon icon={faVectorSquare} />
+                          &nbsp;
+                          {post.propertySize}m<sup>2</sup>&nbsp;
+                        </div>
+                        <div>
+                          <FontAwesomeIcon icon={faWarehouse} />
+                          &nbsp;{post.numberOfGarage}&nbsp;
+                        </div>
+                      </div>
+                    </div>
+                  </Link>
+                </div>
+              ))}
+          </div>
+        </>
+      )}
+
       <Footer />
     </div>
   );
