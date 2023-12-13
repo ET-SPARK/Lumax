@@ -179,10 +179,10 @@ function DetailSale() {
       console.log("Form data sent to the server:", response.data);
       alert("Form data sent. We will contact you soon.");
       setFormValues({
-        name: "",
-        email: "",
-        phone: "",
-        comments: "",
+        name: "Name",
+        email: "Email",
+        phone: "Phone Number",
+        comments: "comment",
       });
     } catch (error) {
       console.error("Error submitting form:", error);

@@ -165,10 +165,10 @@ function Detail() {
 
       console.log("Form data sent to the server:", response.data);
       setFormValues({
-        name: "",
-        email: "",
-        phone: "",
-        comments: "",
+        name: "Name",
+        email: "Email",
+        phone: "Phone Number",
+        comments: "comment",
       });
       alert("Form data sent. We will contact you soon.");
     } catch (error) {
