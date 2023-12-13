@@ -95,7 +95,6 @@ function Home() {
       try {
         const response = await axios.get("http://localhost:3000/posts");
         setPosts(response.data);
-        console.log(posts);
       } catch (error) {
         console.error("Error fetching posts:", error);
       }
@@ -109,7 +108,6 @@ function Home() {
       try {
         const response = await axios.get("http://localhost:3000/sales");
         setSales(response.data);
-        console.log(sales);
       } catch (error) {
         console.error("Error fetching posts:", error);
       }

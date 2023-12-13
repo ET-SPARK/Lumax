@@ -66,7 +66,7 @@ function Contacts() {
         "http://localhost:3000/contact",
         postData
       );
-      console.log("Form data sent to the server:", response.data);
+
       setFormValues({
         name: "Name",
         email: "Email",

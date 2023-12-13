@@ -27,7 +27,6 @@ function Detail() {
       try {
         const response = await axios.get("http://localhost:3000/posts");
         setPosts(response.data);
-        console.log(posts);
       } catch (error) {
         console.error("Error fetching posts:", error);
       }
@@ -83,7 +82,6 @@ function Detail() {
         const postData = response.data;
 
         // Log the retrieved data to the console
-        console.log("Fetched data:", postData);
 
         // Set the formData state with the retrieved data
         setFormData({
@@ -115,7 +113,6 @@ function Detail() {
     setOnPress(!onPress);
   };
   const [isCaptchaVerified, setCaptchaVerified] = useState(false);
-  console.log(formData.ref);
 
   const [formValues, setFormValues] = useState({
     name: "Name",
@@ -163,7 +160,6 @@ function Detail() {
         postData
       );
 
-      console.log("Form data sent to the server:", response.data);
       setFormValues({
         name: "Name",
         email: "Email",

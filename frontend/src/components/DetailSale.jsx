@@ -95,7 +95,6 @@ function DetailSale() {
         const postData = response.data;
 
         // Log the retrieved data to the console
-        console.log("Fetched data:", postData);
 
         // Set the formData state with the retrieved data
         setFormData({
@@ -176,7 +175,6 @@ function DetailSale() {
         postData
       );
 
-      console.log("Form data sent to the server:", response.data);
       alert("Form data sent. We will contact you soon.");
       setFormValues({
         name: "Name",

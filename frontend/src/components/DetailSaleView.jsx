@@ -20,7 +20,6 @@ function DetailSaleView() {
       try {
         const response = await axios.get("http://localhost:3000/sales");
         setPosts(response.data);
-        console.log(posts);
       } catch (error) {
         console.error("Error fetching posts:", error);
       }
