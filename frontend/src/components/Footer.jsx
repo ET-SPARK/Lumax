@@ -12,15 +12,19 @@ import { Link } from "react-router-dom";
 function Footer() {
   return (
     <div>
-      <div class="footer__top">
-        <div class="footet_top_col">
-          <div class="footer_top_row">
-            <div class="footer_top_row_footer_heading_links">
-              <span class="footer_top_row_footer_heading">
+      <div className="footer__top">
+        <div className="footet_top_col">
+          <div className="footer_top_row">
+            <div className="footer_top_row_footer_heading_links">
+              <span className="footer_top_row_footer_heading">
                 {" "}
                 Contact Information
               </span>
-              <a href="#" class="footer_top_row_footer_heading_links_style">
+
+              <Link
+                to="/"
+                className="footer_top_row_footer_heading_links_style"
+              >
                 <div className="footer_top_row_footer_heading_links_style_icon icon_item">
                   <div>
                     <FontAwesomeIcon icon={faLocationDot} />
@@ -32,8 +36,11 @@ function Footer() {
                     </p>
                   </div>
                 </div>
-              </a>
-              <a href="#" class="footer_top_row_footer_heading_links_style">
+              </Link>
+              <Link
+                to="/"
+                className="footer_top_row_footer_heading_links_style"
+              >
                 <div className="footer_top_row_footer_heading_links_style_icon icon_item">
                   <div>
                     <FontAwesomeIcon icon={faPhone} />
@@ -42,8 +49,11 @@ function Footer() {
                     <p>012 400 8600</p>
                   </div>
                 </div>
-              </a>
-              <a href="#" class="footer_top_row_footer_heading_links_style">
+              </Link>
+              <Link
+                to="/"
+                className="footer_top_row_footer_heading_links_style"
+              >
                 <div className="footer_top_row_footer_heading_links_style_icon">
                   <div>
                     <FontAwesomeIcon icon={faEnvelope} />
@@ -52,14 +62,23 @@ function Footer() {
                     <p> admin@huurkor.co.za</p>
                   </div>
                 </div>
-              </a>
+              </Link>
             </div>
             <div>
-              <span class="footer_top_row_footer_heading">social media</span>
+              <span className="footer_top_row_footer_heading">
+                social media
+              </span>
             </div>
             <div>
-              <span class="footer_top_row_footer_heading"> Quick Links</span>
-              <a href="#" class="footer_top_row_footer_heading_links_style">
+              <span className="footer_top_row_footer_heading">
+                {" "}
+                Quick Links
+              </span>
+
+              <Link
+                to="/"
+                className="footer_top_row_footer_heading_links_style"
+              >
                 <div className="footer_top_row_footer_heading_links_style_icon">
                   <div className="footer_top_row_footer_heading_links_style_icon_text">
                     <Link to="/contact" className="footer_link">
@@ -67,8 +86,11 @@ function Footer() {
                     </Link>
                   </div>
                 </div>
-              </a>
-              <a href="#" class="footer_top_row_footer_heading_links_style">
+              </Link>
+              <Link
+                to="/"
+                className="footer_top_row_footer_heading_links_style"
+              >
                 <div className="footer_top_row_footer_heading_links_style_icon">
                   <div className="footer_top_row_footer_heading_links_style_icon_text">
                     <Link to="/privacy-policy" className="footer_link">
@@ -76,8 +98,11 @@ function Footer() {
                     </Link>
                   </div>
                 </div>
-              </a>
-              <a href="#" class="footer_top_row_footer_heading_links_style">
+              </Link>
+              <Link
+                to="/"
+                className="footer_top_row_footer_heading_links_style"
+              >
                 <div className="footer_top_row_footer_heading_links_style_icon">
                   <div className="footer_top_row_footer_heading_links_style_icon_text">
                     <Link to="/victim" className="footer_link">
@@ -85,61 +110,64 @@ function Footer() {
                     </Link>
                   </div>
                 </div>
-              </a>
+              </Link>
             </div>
           </div>
-          <div class="footer_top_row_footer_heading_links2">
-            <span class="footer_top_row_footer_heading">
+          <div className="footer_top_row_footer_heading_links2">
+            <span className="footer_top_row_footer_heading">
               Refine your property search
             </span>
             <div>
-              <div class="footer__navigation_block">
+              <div className="footer__navigation_block">
                 <span className="footer__navigation_block_text">
                   Residential for sale:
                 </span>
-                <a href="#" className="footer__navigation_block_text_link">
+                <Link to="/" className="footer__navigation_block_text_link">
+                  {" "}
                   Pretoria(112),
-                </a>
-                <a href="#" className="footer__navigation_block_text_link">
+                </Link>
+                <Link to="/" className="footer__navigation_block_text_link">
                   Akasia (04),
-                </a>
-                <a href="#" className="footer__navigation_block_text_link">
+                </Link>
+                <Link to="/" className="footer__navigation_block_text_link">
+                  {" "}
                   Brakpan (3)
-                </a>
+                </Link>
               </div>
-              <div class="footer__navigation_block">
+              <div className="footer__navigation_block">
                 <span className="footer__navigation_block_text">
                   Residential for rent:
                 </span>
-                <a href="#" className="footer__navigation_block_text_link">
+                <Link to="/" className="footer__navigation_block_text_link">
                   Pretoria(112),
-                </a>
-                <a href="#" className="footer__navigation_block_text_link">
+                </Link>
+                <Link to="/" className="footer__navigation_block_text_link">
+                  {" "}
                   Akasia (04),
-                </a>
-                <a href="#" className="footer__navigation_block_text_link">
+                </Link>
+                <Link to="/" className="footer__navigation_block_text_link">
                   Brakpan (3)
-                </a>
+                </Link>
               </div>
-              <div class="footer__navigation_block">
+              <div className="footer__navigation_block">
                 <span className="footer__navigation_block_text">
                   Commercial to rent:
                 </span>
-                <a href="#" className="footer__navigation_block_text_link">
+                <Link to="/" className="footer__navigation_block_text_link">
                   Pretoria(112),
-                </a>
-                <a href="#" className="footer__navigation_block_text_link">
+                </Link>
+                <Link to="/" className="footer__navigation_block_text_link">
                   Akasia (04),
-                </a>
-                <a href="#" className="footer__navigation_block_text_link">
+                </Link>
+                <Link to="/" className="footer__navigation_block_text_link">
                   Brakpan (3)
-                </a>
+                </Link>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="footer__bottom">
+      <div className="footer__bottom">
         <div>
           <span className="footer__bottom_mark">
             © LUMAX Property Management. All rights reserved

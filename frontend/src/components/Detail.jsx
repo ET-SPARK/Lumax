@@ -200,28 +200,28 @@ function Detail() {
       {!modalIsOpen && <Header />}
       {posts.length === 0 ? (
         <div className="grids">
-          <div class="skeleton single_grid">
+          <div className="skeleton single_grid">
             <div className="post-container grid_img">
               {/* Your existing content */}
-              <div class="skeleton-text"></div>
-              <div class="skeleton-last"></div>
-              <div class="skeleton-text"></div>
+              <div className="skeleton-text"></div>
+              <div className="skeleton-last"></div>
+              <div className="skeleton-text"></div>
             </div>
           </div>
-          <div class="skeleton single_grid">
+          <div className="skeleton single_grid">
             <div className="post-container grid_img">
               {/* Your existing content */}
-              <div class="skeleton-text"></div>
-              <div class="skeleton-last"></div>
-              <div class="skeleton-text"></div>
+              <div className="skeleton-text"></div>
+              <div className="skeleton-last"></div>
+              <div className="skeleton-text"></div>
             </div>
           </div>
-          <div class="skeleton single_grid">
+          <div className="skeleton single_grid">
             <div className="post-container grid_img">
               {/* Your existing content */}
-              <div class="skeleton-text"></div>
-              <div class="skeleton-last"></div>
-              <div class="skeleton-text"></div>
+              <div className="skeleton-text"></div>
+              <div className="skeleton-last"></div>
+              <div className="skeleton-text"></div>
             </div>
           </div>
         </div>
@@ -438,14 +438,14 @@ function Detail() {
               You may also be interested in these properties
             </h3>
           </div>
-          <div class="grids">
+          <div className="grids">
             {posts
               .filter((post) => post._id !== postId)
               .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
               .slice(0, 3) // Get only the first 3 posts
               .map((post) => (
-                <div key={post._id} class="single_grid">
-                  <Link to={`/detail/${post._id}`} class="property_card">
+                <div key={post._id} className="single_grid">
+                  <Link to={`/detail/${post._id}`} className="property_card">
                     <div className="post-container">
                       <img
                         className="grid_img"
@@ -456,21 +456,23 @@ function Detail() {
                         <p>{post.status}</p>
                       </div>
                     </div>
-                    <div class="property-card__price">
-                      <span class="card__price_text">
+                    <div className="property-card__price">
+                      <span className="card__price_text">
                         {" "}
                         {post.price}&nbsp;br&nbsp; / &nbsp;month
                       </span>
-                      <span class="property-card__summary card__price_text">
+                      <span className="property-card__summary card__price_text">
                         {post.type},&nbsp;
                       </span>
-                      <span class="property-card__summary card__price_text">
+                      <span className="property-card__summary card__price_text">
                         {post.place}
                       </span>
                     </div>
-                    <div class="property-card__details">
-                      <span class="property-card__heading">{post.title}</span>
-                      <span class="property-card__discription">
+                    <div className="property-card__details">
+                      <span className="property-card__heading">
+                        {post.title}
+                      </span>
+                      <span className="property-card__discription">
                         {expandedDescriptions[post._id] ? (
                           post.description
                         ) : (
@@ -480,8 +482,8 @@ function Detail() {
                           </>
                         )}
                       </span>
-                      <div class="property-card__features">
-                        <div class="property-card__features_bed">
+                      <div className="property-card__features">
+                        <div className="property-card__features_bed">
                           <FontAwesomeIcon icon={faBed} />
                           &nbsp;
                           {post.numberOfBed}&nbsp;
@@ -490,7 +492,7 @@ function Detail() {
                           <FontAwesomeIcon icon={faBath} />
                           &nbsp; {post.numberOfBath}&nbsp;
                         </div>
-                        <div class="property-card__features_bed">
+                        <div className="property-card__features_bed">
                           <FontAwesomeIcon icon={faVectorSquare} />
                           &nbsp;
                           {post.propertySize}m<sup>2</sup>&nbsp;

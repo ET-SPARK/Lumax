@@ -25,12 +25,12 @@ function Header() {
     setOnPressNav(!onpressNav);
   };
   return (
-    <header class="sticky-header">
-      <div class="headerSection">
-        <div class="header__topbar">
+    <header className="sticky-header">
+      <div className="headerSection">
+        <div className="header__topbar">
           <Link to="/" className="no_und">
             {/* <img src={Logo} alt="logo" class="header__logo" /> */}
-            <div class="content">
+            <div className="content">
               <h2>LUMAX</h2>
               <h2>LUMAX</h2>
             </div>
@@ -52,13 +52,13 @@ function Header() {
         {onpressNav && (
           <div className="mobileHeader">
             <nav>
-              <ul class="navList">
+              <ul className="navList">
                 <li>
-                  <Link to="/" class="link_style">
+                  <Link to="/" className="link_style">
                     Home
                   </Link>
                 </li>
-                <li class="non_link_hov">
+                <li className="non_link_hov">
                   <span
                     onClick={() => {
                       handleOnPress(setOnPress);
@@ -72,14 +72,14 @@ function Header() {
                       <FontAwesomeIcon icon={faCaretUp} />
                     )}
                     {nav && (
-                      <ul class="navList navList_Properties ">
+                      <ul className="navList navList_Properties ">
                         <li>
-                          <Link to="/for-sale" class="link_style">
+                          <Link to="/for-sale" className="link_style">
                             For Sale
                           </Link>
                         </li>
                         <li>
-                          <Link to="/for-rent" class="link_style">
+                          <Link to="/for-rent" className="link_style">
                             For Rent
                           </Link>
                         </li>
@@ -88,17 +88,17 @@ function Header() {
                   </span>
                 </li>
                 <li>
-                  <Link to="/news" class="link_style">
+                  <Link to="/news" className="link_style">
                     News
                   </Link>
                 </li>
                 <li>
-                  <Link to="/about" class="link_style">
+                  <Link to="/about" className="link_style">
                     About Us
                   </Link>
                 </li>
                 <li>
-                  <Link to="/contact" class="link_style">
+                  <Link to="/contact" className="link_style">
                     Contact
                   </Link>
                 </li>
@@ -108,13 +108,13 @@ function Header() {
         )}
         <div className="DektopHeadet">
           <nav>
-            <ul class="navList">
+            <ul className="navList">
               <li>
-                <Link to="/" class="link_style">
+                <Link to="/" className="link_style">
                   Home
                 </Link>
               </li>
-              <li class="non_link_hov">
+              <li className="non_link_hov">
                 <span
                   onClick={() => {
                     handleOnPress(setOnPress);
@@ -128,14 +128,14 @@ function Header() {
                     <FontAwesomeIcon icon={faCaretUp} />
                   )}
                   {nav && (
-                    <ul class="navList navList_Properties ">
+                    <ul className="navList navList_Properties ">
                       <li>
-                        <Link to="/for-sale" class="link_style">
+                        <Link to="/for-sale" className="link_style">
                           For Sale
                         </Link>
                       </li>
                       <li>
-                        <Link to="/for-rent" class="link_style">
+                        <Link to="/for-rent" className="link_style">
                           For Rent
                         </Link>
                       </li>
@@ -144,12 +144,12 @@ function Header() {
                   {onPress && (
                     <span className="prop prop_style">
                       <span>
-                        <Link to="/for-sale" class="link_style">
+                        <Link to="/for-sale" className="link_style">
                           For Sale
                         </Link>
                       </span>
                       <span>
-                        <Link to="/for-rent" class="link_style">
+                        <Link to="/for-rent" className="link_style">
                           For Rent
                         </Link>
                       </span>
@@ -158,17 +158,17 @@ function Header() {
                 </span>
               </li>
               <li>
-                <Link to="/news" class="link_style">
+                <Link to="/news" className="link_style">
                   News
                 </Link>
               </li>
               <li>
-                <Link to="/about" class="link_style">
+                <Link to="/about" className="link_style">
                   About Us
                 </Link>
               </li>
               <li>
-                <Link to="/contact" class="link_style">
+                <Link to="/contact" className="link_style">
                   Contact
                 </Link>
               </li>

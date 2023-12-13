@@ -11,87 +11,87 @@ function News() {
       <div>
         <h1 className="section__heading_about ">Latest News</h1>
       </div>
-      <div class="about_story">
-        <div class="grid">
-          <div class="container_type_global">
-            <div class="container_type_global_image">
+      <div className="about_story">
+        <div className="grid">
+          <div className="container_type_global">
+            <div className="container_type_global_image">
               <img src="https://d4dw57nojnba9.cloudfront.net/eyJidWNrZXQiOiJzMy5lbnRlZ3JhbC5uZXQiLCJrZXkiOiJuZXdzL1RodW1ibmFpbF8yMDIyXzA1XzE2XzA3XzA5XzU2Xzk5NS5qcGVnIiwiZm9ybWF0IjoianBlZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MzYwLCJoZWlnaHQiOjM2MCwiZml0IjoiaW5zaWRlIn19fQ==" />
             </div>
-            <div class="article_card__details">
-              <div class="article_card__heading">
+            <div className="article_card__details">
+              <div className="article_card__heading">
                 Flat Rental Experts | Flats’ Location Near Tuks Seal the Deal
               </div>
-              <div class="article_card__summary">
+              <div className="article_card__summary">
                 Long before the advent of residential flats to rent and Huurkor
                 in Pretoria, the word...
               </div>
             </div>
           </div>
-          <div class="container_type_global">
-            <div class="container_type_global_image">
+          <div className="container_type_global">
+            <div className="container_type_global_image">
               <img src="https://d4dw57nojnba9.cloudfront.net/eyJidWNrZXQiOiJzMy5lbnRlZ3JhbC5uZXQiLCJrZXkiOiJuZXdzL1RodW1ibmFpbF8yMDIyXzA1XzE2XzA3XzAyXzU5XzgyNC5qcGVnIiwiZm9ybWF0IjoianBlZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MzYwLCJoZWlnaHQiOjM2MCwiZml0IjoiaW5zaWRlIn19fQ==" />
             </div>
-            <div class="article_card__details">
-              <div class="article_card__heading">
+            <div className="article_card__details">
+              <div className="article_card__heading">
                 Flat Rental Experts | Flats’ Location Near Tuks Seal the Deal
               </div>
-              <div class="article_card__summary">
+              <div className="article_card__summary">
                 Long before the advent of residential flats to rent and Huurkor
                 in Pretoria, the word...
               </div>
             </div>
           </div>
-          <div class="container_type_global">
-            <div class="container_type_global_image">
+          <div className="container_type_global">
+            <div className="container_type_global_image">
               <img src="https://d4dw57nojnba9.cloudfront.net/eyJidWNrZXQiOiJzMy5lbnRlZ3JhbC5uZXQiLCJrZXkiOiJuZXdzL1RodW1ibmFpbF8yMDIyXzA1XzE2XzA3XzA5XzU2Xzk5NS5qcGVnIiwiZm9ybWF0IjoianBlZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MzYwLCJoZWlnaHQiOjM2MCwiZml0IjoiaW5zaWRlIn19fQ==" />
             </div>
-            <div class="article_card__details">
-              <div class="article_card__heading">
+            <div className="article_card__details">
+              <div className="article_card__heading">
                 Flat Rental Experts | Flats’ Location Near Tuks Seal the Deal
               </div>
-              <div class="article_card__summary">
+              <div className="article_card__summary">
                 Long before the advent of residential flats to rent and Huurkor
                 in Pretoria, the word...
               </div>
             </div>
           </div>
-          <div class="container_type_global">
-            <div class="container_type_global_image">
+          <div className="container_type_global">
+            <div className="container_type_global_image">
               <img src="https://d4dw57nojnba9.cloudfront.net/eyJidWNrZXQiOiJzMy5lbnRlZ3JhbC5uZXQiLCJrZXkiOiJuZXdzL1RodW1ibmFpbF8yMDIyXzA1XzE2XzA3XzAyXzU5XzgyNC5qcGVnIiwiZm9ybWF0IjoianBlZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MzYwLCJoZWlnaHQiOjM2MCwiZml0IjoiaW5zaWRlIn19fQ==" />
             </div>
-            <div class="article_card__details">
-              <div class="article_card__heading">
+            <div className="article_card__details">
+              <div className="article_card__heading">
                 Flat Rental Experts | Flats’ Location Near Tuks Seal the Deal
               </div>
-              <div class="article_card__summary">
+              <div className="article_card__summary">
                 Long before the advent of residential flats to rent and Huurkor
                 in Pretoria, the word...
               </div>
             </div>
           </div>
-          <div class="container_type_global">
-            <div class="container_type_global_image">
+          <div className="container_type_global">
+            <div className="container_type_global_image">
               <img src="https://d4dw57nojnba9.cloudfront.net/eyJidWNrZXQiOiJzMy5lbnRlZ3JhbC5uZXQiLCJrZXkiOiJuZXdzL1RodW1ibmFpbF8yMDIyXzA1XzE2XzA3XzA5XzU2Xzk5NS5qcGVnIiwiZm9ybWF0IjoianBlZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MzYwLCJoZWlnaHQiOjM2MCwiZml0IjoiaW5zaWRlIn19fQ==" />
             </div>
-            <div class="article_card__details">
-              <div class="article_card__heading">
+            <div className="article_card__details">
+              <div className="article_card__heading">
                 Flat Rental Experts | Flats’ Location Near Tuks Seal the Deal
               </div>
-              <div class="article_card__summary">
+              <div className="article_card__summary">
                 Long before the advent of residential flats to rent and Huurkor
                 in Pretoria, the word...
               </div>
             </div>
           </div>
-          <div class="container_type_global">
-            <div class="container_type_global_image">
+          <div className="container_type_global">
+            <div className="container_type_global_image">
               <img src="https://d4dw57nojnba9.cloudfront.net/eyJidWNrZXQiOiJzMy5lbnRlZ3JhbC5uZXQiLCJrZXkiOiJuZXdzL1RodW1ibmFpbF8yMDIyXzA1XzE2XzA3XzAyXzU5XzgyNC5qcGVnIiwiZm9ybWF0IjoianBlZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJ3aWR0aCI6MzYwLCJoZWlnaHQiOjM2MCwiZml0IjoiaW5zaWRlIn19fQ==" />
             </div>
-            <div class="article_card__details">
-              <div class="article_card__heading">
+            <div className="article_card__details">
+              <div className="article_card__heading">
                 Flat Rental Experts | Flats’ Location Near Tuks Seal the Deal
               </div>
-              <div class="article_card__summary">
+              <div className="article_card__summary">
                 Long before the advent of residential flats to rent and Huurkor
                 in Pretoria, the word...
               </div>

@@ -79,7 +79,7 @@ function Tools() {
           ))}
         </Slider>
       </div>
-      <div class="hero_section__heading">
+      <div className="hero_section__heading">
         <div>
           <div className={` section_heading ${animationClassesD}`}>
             <div className="waviy">
@@ -101,7 +101,7 @@ function Tools() {
             </div>
           </div>
         </div>
-        <div class="hero__buttons">
+        <div className="hero__buttons">
           <Link to="/for-sale">
             <button className={`button button_size_small ${animationClasses}`}>
               Buy A Property
