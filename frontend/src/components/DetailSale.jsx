@@ -129,10 +129,10 @@ function DetailSale() {
   const [isCaptchaVerified, setCaptchaVerified] = useState(false);
 
   const [formValues, setFormValues] = useState({
-    name: "Name",
-    email: "Email",
-    phone: "Phone Number",
-    comments: "comment",
+    name: "",
+    email: "",
+    phone: "",
+    comments: "",
   });
 
   const handleSubmit = async (e) => {
@@ -177,10 +177,10 @@ function DetailSale() {
 
       alert("Form data sent. We will contact you soon.");
       setFormValues({
-        name: "Name",
-        email: "Email",
-        phone: "Phone Number",
-        comments: "comment",
+        name: "",
+        email: "",
+        phone: "",
+        comments: "",
       });
     } catch (error) {
       console.error("Error submitting form:", error);
@@ -311,48 +311,63 @@ function DetailSale() {
               </Modal>
               <div className="property_features">
                 <h3>Property Features</h3>
-                <span className="property_features_row">
-                  <span>
-                    {" "}
-                    <b>Type</b>
-                  </span>
-                  <span> {formData.type}</span>
-                  <span>
-                    {" "}
-                    <b>Bedrooms</b>
-                  </span>
-                  <span> {formData.numberOfBed}</span>
-                </span>
-                <span className="property_features_row">
-                  <span>
-                    {" "}
-                    <b>Bathrooms</b>
-                  </span>
-                  <span> {formData.numberOfBath}</span>
-                  <span>
-                    {" "}
-                    <b>Garages</b>
-                  </span>
-                  <span> {formData.numberOfGarage}</span>
-                </span>
-                <span className="property_features_row">
-                  <span>
-                    {" "}
-                    <b>Floor Size</b>
-                  </span>
-                  <span>
-                    {" "}
-                    {formData.propertySize}m<sup>2</sup>
-                  </span>
-                  <span>
-                    {" "}
-                    <b>Land Size</b>
-                  </span>
-                  <span>
-                    {" "}
-                    {formData.landSize}m<sup>2</sup>
-                  </span>
-                </span>
+                <div className="propertyDetailSt">
+                  <div>
+                    <div>
+                      {" "}
+                      <span>
+                        {" "}
+                        <b>Type:</b>
+                      </span>
+                      <span> {formData.type}</span>
+                    </div>
+                    <div>
+                      {" "}
+                      <span>
+                        {" "}
+                        <b>Bedrooms:</b>
+                      </span>
+                      <span> {formData.numberOfBed}</span>
+                    </div>
+                    <div>
+                      <span>
+                        {" "}
+                        <b>Bathrooms:</b>
+                      </span>
+                      <span> {formData.numberOfBath}</span>
+                    </div>
+                  </div>
+                  <div>
+                    <div>
+                      <span>
+                        {" "}
+                        <b>Garages:</b>
+                      </span>
+                      <span> {formData.numberOfGarage}</span>
+                    </div>
+                    <div>
+                      {" "}
+                      <span>
+                        {" "}
+                        <b>Floor Size:</b>
+                      </span>
+                      <span>
+                        {" "}
+                        {formData.propertySize}m<sup>2</sup>
+                      </span>
+                    </div>
+                    <div>
+                      <span>
+                        {" "}
+                        <b>Land Size:</b>
+                      </span>
+                      <span>
+                        {" "}
+                        {formData.landSize}m<sup>2</sup>
+                      </span>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
             <div className="detail_section_type_property_dev_img">
@@ -364,6 +379,7 @@ function DetailSale() {
                     below, and we will contact you as soon as possible.
                   </span>
                   <div className="textared">
+                    <label>Name</label>
                     <input
                       type="text"
                       id="name"
@@ -374,7 +390,9 @@ function DetailSale() {
                       maxLength={50}
                     />
                   </div>
+
                   <div className="textared">
+                    <label>Email</label>
                     <input
                       type="email"
                       id="email"
@@ -386,6 +404,7 @@ function DetailSale() {
                     />
                   </div>
                   <div className="textared">
+                    <label>Phone Number</label>
                     <input
                       type="text"
                       id="phone"
@@ -398,6 +417,7 @@ function DetailSale() {
                   </div>
 
                   <div className="textared">
+                    <label>Comments</label>
                     <textarea
                       className="dropdown_inputd  dropdown_inputd_comm"
                       id="comments"

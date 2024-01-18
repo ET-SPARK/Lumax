@@ -157,6 +157,12 @@
     margin: 20px 0;
 }
 
+.textared label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #ab3b3f;
+}
+
 .dropdown_inputd {
     border: 2px solid gray;
     padding: 10px 10px;
@@ -195,6 +201,11 @@
     background: #f6f7f9;
 }
 
+.propertyDetailSt {
+    display: flex;
+    justify-content: space-around;
+}
+
 @media screen and (max-width: 768px) {
     .property__detail_summary {
         display: block;
@@ -203,6 +214,10 @@
 
     .property__detail_summary h1 {
         font-size: 18px;
+    }
+
+    .propertyDetailSt {
+        display: block;
     }
 
     .detail_prop_style {
