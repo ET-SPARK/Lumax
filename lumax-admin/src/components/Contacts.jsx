@@ -11,7 +11,9 @@ function Contacts() {
     // Fetch contacts when the component mounts
     async function fetchContacts() {
       try {
-        const response = await axios.get("http://localhost:3000/contact");
+        const response = await axios.get(
+          "https://lumax-backend.vercel.app/contact"
+        );
         setPosts(response.data);
         console.log(posts);
       } catch (error) {
@@ -53,7 +55,7 @@ function Contacts() {
                   onClick={async () => {
                     try {
                       await axios.delete(
-                        `http://localhost:3000/contact/${post._id}`
+                        `https://lumax-backend.vercel.app/contact/${post._id}`
                       );
                       console.log("Contact deleted successfully");
                       alert("Contact deleted successfully");

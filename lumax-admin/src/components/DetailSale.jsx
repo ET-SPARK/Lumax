@@ -35,7 +35,7 @@ function DetailSale() {
     async function fetchPostData() {
       try {
         const response = await axios.get(
-          `http://localhost:3000/sale/${postId}`
+          `https://lumax-backend.vercel.app/sale/${postId}`
         );
         const postData = response.data;
         console.log(postData);
@@ -81,7 +81,7 @@ function DetailSale() {
   const handleUpdate = async () => {
     try {
       const response = await axios.put(
-        `http://localhost:3000/sale/${postId}`,
+        `https://lumax-backend.vercel.app/sale/${postId}`,
         formData
       );
       console.log("Sale updated successfully:", response.data);
@@ -93,7 +93,7 @@ function DetailSale() {
 
   const handleDelete = async () => {
     try {
-      await axios.delete(`http://localhost:3000/sale/${postId}`);
+      await axios.delete(`https://lumax-backend.vercel.app/sale/${postId}`);
       console.log("sale deleted successfully");
       alert("sale deleted successfully");
       // You can redirect to another page after deletion if needed

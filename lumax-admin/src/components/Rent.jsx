@@ -19,7 +19,9 @@ function Rent() {
     // Fetch posts when the component mounts
     async function fetchPosts() {
       try {
-        const response = await axios.get("http://localhost:3000/posts");
+        const response = await axios.get(
+          "https://lumax-backend.vercel.app/posts"
+        );
         setPosts(response.data);
         console.log(posts);
       } catch (error) {
@@ -67,7 +69,7 @@ function Rent() {
     } else {
       try {
         const response = await axios.post(
-          "http://localhost:3000/post",
+          "https://lumax-backend.vercel.app/post",
           formData
         );
         console.log("Form data sent successfully:", response.data);

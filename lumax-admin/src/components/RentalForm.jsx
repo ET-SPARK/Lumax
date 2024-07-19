@@ -11,7 +11,9 @@ function RentalForm() {
     // Fetch contacts when the component mounts
     async function fetchContacts() {
       try {
-        const response = await axios.get("http://localhost:3000/comment");
+        const response = await axios.get(
+          "https://lumax-backend.vercel.app/comment"
+        );
         setPosts(response.data);
         console.log(posts);
       } catch (error) {
@@ -52,7 +54,7 @@ function RentalForm() {
                   onClick={async () => {
                     try {
                       await axios.delete(
-                        `http://localhost:3000/comment/${post._id}`
+                        `https://lumax-backend.vercel.app/comment/${post._id}`
                       );
                       console.log("Comment deleted successfully");
                       alert("Comment deleted successfully");
