@@ -6,17 +6,28 @@ const mongoose = require("mongoose");
 const app = express();
 const port = 3000;
 const cors = require("cors");
-<<<<<<< HEAD
+
 app.use(
   cors({
-    origin: ["https://lumax.vercel.app/"],
-    methods: ["POST", "GET"],
+    origin: "https://lumax.vercel.app",
+    methods: ["POST", "GET", "PUT", "DELETE"],
     credentials: true,
   })
 );
-=======
-app.use(cors());
->>>>>>> e44a8c746475b95ed412bbd2da4808465e41e529
+
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "https://lumax.vercel.app");
+  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+  res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
+  next();
+});
+
+app.options("*", (req, res) => {
+  res.header("Access-Control-Allow-Origin", "https://lumax.vercel.app");
+  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+  res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
+  res.sendStatus(200);
+});
 
 app.use(express.json());
 
