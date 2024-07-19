@@ -63,7 +63,7 @@ function Contacts() {
     };
     try {
       const response = await axios.post(
-        "http://localhost:3000/contact",
+        "https://lumax-backend.vercel.app/contact",
         postData
       );
 

@@ -20,7 +20,9 @@ function Sale() {
     // Fetch posts when the component mounts
     async function fetchPosts() {
       try {
-        const response = await axios.get("http://localhost:3000/sales");
+        const response = await axios.get(
+          "https://lumax-backend.vercel.app/sales"
+        );
         setPosts(response.data);
       } catch (error) {
         console.error("Error fetching posts:", error);
