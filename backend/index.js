@@ -8,7 +8,7 @@ const port = 3000;
 const cors = require("cors");
 app.use(
   cors({
-    origin: ["https://lumax-test-jih4.vercel.app"],
+    origin: ["https://lumax-backend.vercel.app/"],
     methods: ["POST", "GET"],
     credentials: true,
   })
