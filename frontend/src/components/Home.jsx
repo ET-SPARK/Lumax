@@ -93,7 +93,9 @@ function Home() {
     // Fetch posts when the component mounts
     async function fetchPosts() {
       try {
-        const response = await axios.get("http://localhost:3000/posts");
+        const response = await axios.get(
+          "https://lumax-backend.vercel.app/posts"
+        );
         setPosts(response.data);
       } catch (error) {
         console.error("Error fetching posts:", error);
@@ -106,7 +108,9 @@ function Home() {
     // Fetch posts when the component mounts
     async function fetchSale() {
       try {
-        const response = await axios.get("http://localhost:3000/sales");
+        const response = await axios.get(
+          "https://lumax-backend.vercel.app/sales"
+        );
         setSales(response.data);
       } catch (error) {
         console.error("Error fetching posts:", error);
