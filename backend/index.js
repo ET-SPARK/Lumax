@@ -6,7 +6,15 @@ const mongoose = require("mongoose");
 const app = express();
 const port = 3000;
 const cors = require("cors");
-app.use(cors());
+app.use(
+  cors({
+    origin: ["https://lumax-test-jih4.vercel.app"],
+    methods: ["POST", "GET"],
+    credentials: true,
+  })
+);
+
+app.use(express.json());
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -25,6 +33,10 @@ mongoose
 
 app.listen(port, () => {
   console.log("server is running on port 3000");
+});
+
+app.get("/", (req, res) => {
+  res.json("Hello");
 });
 
 const Post = require("./models/post");
