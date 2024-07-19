@@ -6,7 +6,13 @@ const mongoose = require("mongoose");
 const app = express();
 const port = 3000;
 const cors = require("cors");
-app.use(cors());
+app.use(
+  cors({
+    origin: ["https://lumax.vercel.app/"],
+    methods: ["POST", "GET"],
+    credentials: true,
+  })
+);
 
 app.use(express.json());
 
